@@ -1,0 +1,27 @@
+input: .
+output: .retype
+url: # Add your website address here
+branding:
+  title: HPA3 - BLC - Documentation
+  label: Docs
+links:
+editor:
+  enabled: false
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."
+
+# -----------------------------------------------------------------------------
+
+search: # Custom configuration of the website search component.
+  hotkeys:
+    - "/" # Keyboard key to set the cursor focus into the search field.
+  maxResults: 20 # Max number of search results to render.
+  minChars: 2 # Min number of characters required to trigger a sear.ch
+  mode:
+    full # The search index creation mode.
+    # Options include: full | partial | basic
+  noResultsFoundMsg: "No results" # Message when no results are found.
+  placeholder: Search # Placeholder text used in the search input field.
+
+# -----------------------------------------------------------------------------
+
