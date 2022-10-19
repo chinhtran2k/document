@@ -13,10 +13,12 @@ This SDK is wroted by typescript
 
 ---
 
-## Adding Wallet
+## Adding Wallet SDK
 
 ```ts
-import { WalletBase } from "WalletManagement";
+import { WalletBaseExtend } from "wallet";
+import { Connection } from "connection";
 
-const wallet = new WalletBase();
+const connection = new Connection("http://localhost:8545");
+const wallet = new WalletBase(connection);
 ```

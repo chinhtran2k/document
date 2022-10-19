@@ -425,7 +425,7 @@ Transfer from an account in wallet to an address
 
 1. [!badge variant="warning" text="accountId"] - [!badge variant="warning" text="number"]: The account id in wallet.
 2. [!badge variant="warning" text="to"] - [!badge variant="warning" text="String"]: The address to transfer to.
-3. [!badge variant="warning" text="value"] - [!badge variant="warning" text="String"]: The value to transfer.
+3. [!badge variant="warning" text="value"] - [!badge variant="warning" text="Number"]: The value to transfer.
 
 #### Returns
 
@@ -480,6 +480,68 @@ wallet.transfer(0, "0xd627E4CFAEd1026077aBe9Fd43Aa750be925a077", 5);
 ---
 
 ## Getters
+
+---
+
+### getListAccount
+
+```ts
+wallet.getListAccount([wallet]);
+```
+
+Get list of account address in wallet
+
+#### Parameters
+
+[!badge variant="warning" text="Object"]: The wallet object.
+
+#### Returns
+
+[!badge variant="danger" text="Array\<String>"]: List of account address in wallet.
+
+#### Example
+
+```ts
+wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBase {
+  ...
+  mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
+  wallet: <ref *1> Wallet {
+    '0': {
+      address: '0x32eB821d88F2E650d4732C4CE974A30Bb4296949',
+      ...
+    },
+    ...
+    '0x32eB821d88F2E650d4732C4CE974A30Bb4296949': {...},
+    '0x32eb821d88f2e650d4732c4ce974a30bb4296949': {...}
+  },
+  walletImported: [],
+  defaultAccount: 0
+}
+wallet.addAccountFromPrivateKey("0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318");
+> WalletBase {
+  ...
+  mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
+  wallet: <ref *1> Wallet {
+    '0': {...},
+    '1': {...},
+    ...
+    length: 2,
+    ...
+    '0x32eB821d88F2E650d4732C4CE974A30Bb4296949': {...},
+    '0x32eb821d88f2e650d4732c4ce974a30bb4296949': {...},
+    '0x2c7536E3605D9C16a7a3D7b1898e529396a65c23': {...},
+    '0x2c7536e3605d9c16a7a3d7b1898e529396a65c23': {...}
+  },
+  walletImported: [ 1 ],
+  defaultAccount: 0
+}
+wallet.getListAccount();
+> [
+  '0x32eB821d88F2E650d4732C4CE974A30Bb4296949',
+  '0x2c7536E3605D9C16a7a3D7b1898e529396a65c23'
+]
+```
 
 ---
 
@@ -711,6 +773,31 @@ wallet.getAccount(0);
 
 ---
 
+### getNonce
+
+```ts
+wallet.getNonce(address);
+```
+
+Get nonce of an address
+
+#### Parameters
+
+[!badge variant="warning" text="address"] - [!badge variant="warning" text="string"]: Address of account
+
+#### Returns
+
+[!badge variant="danger" text="number"]: The nonce of account
+
+#### Example
+
+```ts
+wallet.getNonce("0x32eB821d88F2E650d4732C4CE974A30Bb4296949");
+> 5
+```
+
+---
+
 ## Setters
 
 ---
@@ -729,7 +816,7 @@ Set default account of wallet to interact like Metamask
 
 #### Returns
 
-[!badge variant="danger" text="Object"]: The added wallet.
+[!badge variant="danger" text="Object"]: The wallet.
 
 #### Example
 
@@ -786,28 +873,4 @@ wallet.setDefaultAccount(1);
   walletImported: [ 1 ],
   defaultAccount: 1
 }
-```
-
----
-
-### method
-
-```ts
-wallet.method();
-```
-
-sample method
-
-#### Parameters
-
-none
-
-#### Returns
-
-[!badge variant="danger" text="Object"]: The generated wallet.
-
-#### Example
-
-```ts
-
 ```
