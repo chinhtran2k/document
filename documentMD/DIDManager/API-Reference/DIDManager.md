@@ -31,11 +31,14 @@ Create DID contract by `privateKey`
 #### Example
 
 ```ts
-dids.createDID(privateKey);
+dids.createDID(privateKey, didType);
 > {
+
     txHash: "0xe61615f256624577cb979f51a58ac158c7b34b7eb4598af3c8d2c50ca155d85c",
     didAddress: "0xece7519c282274542231d213A5919337c3F66686"
+
 }
+
 ```
 
 ---
@@ -95,7 +98,7 @@ Remove claim from DID contract
 
 1. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission (check [Key purpose](../Introduction.md/#key-purpose)) to interact with DID
 2. [!badge variant="warning" text="didAddress"] - [!badge variant="warning" text="string"]: DID contract address
-3. [!badge variant="warning" text="claimId"] - [!badge variant="warning" text="number"]: The claim id
+3. [!badge variant="warning" text="claimId"] - [!badge variant="warning" text="string"]: The claim id
 
 #### Returns
 
@@ -125,7 +128,7 @@ Get claim detail of DID by claim id
 #### Parameters
 
 1. [!badge variant="warning" text="didAddress"] - [!badge variant="warning" text="string"]: DID contract address
-2. [!badge variant="warning" text="claimId"] - [!badge variant="warning" text="number"]: The claim id
+2. [!badge variant="warning" text="claimId"] - [!badge variant="warning" text="string"]: The claim id
 
 #### Returns
 

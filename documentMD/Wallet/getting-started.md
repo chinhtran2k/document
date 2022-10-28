@@ -20,5 +20,5 @@ import { WalletBaseExtend } from "wallet";
 import { Connection } from "connection";
 
 const connection = new Connection("http://localhost:8545");
-const wallet = new WalletBase(connection);
+const wallet = new WalletBaseExtend(connection);
 ```

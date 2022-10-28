@@ -58,7 +58,7 @@ Base on W3C define and ERC725 standard
 
 ## Workflow simulation
 
-![DID basic workflow](./image/didflow.png)
+![DID basic workflow](./image/newCONTRACTflow.png)
 
 ---
 

@@ -444,6 +444,38 @@ Transfer from an account in wallet to an address
    - `gasUsed` - `Number` (or `hex String`): The amount of gas used by this specific transaction alone.
    - `logs` - `Array`: Array of log objects, which this transaction generated.
 
+---
+
+### transferToken
+
+```ts
+wallet.transfer(accountId, to, value);
+```
+
+Transfer token from an account in wallet to an address
+
+#### Parameters
+
+1. [!badge variant="warning" text="accountId"] - [!badge variant="warning" text="number"]: The account id in wallet.
+2. [!badge variant="warning" text="to"] - [!badge variant="warning" text="String"]: The address to transfer to.
+3. [!badge variant="warning" text="value"] - [!badge variant="warning" text="Number"]: The value to transfer.
+
+#### Returns
+
+1. [!badge variant="danger" text="nonce"] - [!badge variant="danger" text="number"]: The nonce of the transaction.
+2. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found.
+   - `status` - `Boolean`: `TRUE` if the transaction was successful, `FALSE` if the EVM reverted the transaction.
+   - `blockHash` 32 Bytes - `String`: Hash of the block where this transaction was in.
+   - `blockNumber` - `Number` (or `hex String`): Block number where this transaction was in.
+   - `transactionHash` 32 Bytes - `String`: Hash of the transaction.
+   - `transactionIndex`- `Number` (or `hex String`): Integer of the transactions index position in the block.
+   - `from` - `String`: Address of the sender.
+   - `to` - `String`: Address of the receiver. null when it’s a contract creation transaction.
+   - `contractAddress` - `String`: The contract address created, if the transaction was a contract creation, otherwise null.
+   - `cumulativeGasUsed` - `Number` (or `hex String`): The total amount of gas used when this transaction was executed in the block.
+   - `gasUsed` - `Number` (or `hex String`): The amount of gas used by this specific transaction alone.
+   - `logs` - `Array`: Array of log objects, which this transaction generated.
+
 #### Example
 
 ```ts
@@ -460,20 +492,21 @@ wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle
 }
 wallet.transfer(0, "0xd627E4CFAEd1026077aBe9Fd43Aa750be925a077", 5);
 > {
-  nonce: 0,
+  nonce: 607,
   receipt: {
-    transactionHash: '0xd06433e90341fa3e01fb443334d5ebb1e568887712074674b147c4bed8f00c66',
-    transactionIndex: 0,
-    blockHash: '0x3941967f9660339576accfe30775733199e19b69414ece1c7ec8e825622f0e95',
-    blockNumber: 1,
-    from: '0x32eb821d88f2e650d4732c4ce974a30bb4296949',
-    to: '0xd627e4cfaed1026077abe9fd43aa750be925a077',
-    gasUsed: 21000,
-    cumulativeGasUsed: 21000,
-    contractAddress: null,
-    logs: [],
+    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 36173,
+    logsBloom: '0x00000000000000000080000400000000000000000000000040000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000002000000000000000000000400000000002000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+    logs: [ [Object] ],
     status: true,
-    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+    transactionHash: '0xd750b66715ea1a61b1ed5e66ddee0897d66a344025c86c71dfe513d4bb0dfcba',
+    transactionIndex: 0,
+    blockHash: '0xd31041ed229a32605f26d83c996d232b48f1aa023564b59065cc73e3962b1ede',
+    blockNumber: 1380508,
+    gasUsed: 36173,
+    contractAddress: null,
+    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+    to: '0xDa46c687723751af0e7266A8A32eBe34E21070F0'
   }
 }
 ```
@@ -682,6 +715,58 @@ wallet.addAccountFromPrivateKey("0x4c0883a69102937d6231471b5dbb6204fe51296170827
 }
 wallet.getWalletImported();
 > [ 1 ]
+```
+
+---
+
+### getBalance
+
+```ts
+wallet.getBalance(address);
+```
+
+Get balance (native token) of wallet
+
+#### Parameters
+
+[!badge variant="warning" text="address"] - [!badge variant="warning" text="string"]: Address of account
+
+#### Returns
+
+[!badge variant="danger" text="number"] (wei): Balance of account
+
+#### Example
+
+```ts
+wallet.getBalance("0x51C4B0487e16186da402daebE06C4cD71b5015c8");
+> 99738691695640273754867552
+
+```
+
+---
+
+### getBalanceToken
+
+```ts
+wallet.getBalanceToken(address);
+```
+
+Get balance (native token) of wallet
+
+#### Parameters
+
+[!badge variant="warning" text="address"] - [!badge variant="warning" text="string"]: Address of account
+
+#### Returns
+
+[!badge variant="danger" text="number"] (wei): Balance of account
+
+#### Example
+
+```ts
+wallet.getBalanceToken("0x51C4B0487e16186da402daebE06C4cD71b5015c8");
+> 9999999999999876999989999992605005
+
 ```
 
 ---
