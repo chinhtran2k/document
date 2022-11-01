@@ -34,12 +34,24 @@ Sign and send transaction
 
 #### Returns
 
-[!badge variant="danger" text="Object"]: The signTransactionOutput include info about transaction.
+[!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found.
+
+- `status` - `Boolean`: `TRUE` if the transaction was successful, `FALSE` if the EVM reverted the transaction.
+- `blockHash` 32 Bytes - `String`: Hash of the block where this transaction was in.
+- `blockNumber` - `Number` (or `hex String`): Block number where this transaction was in.
+- `transactionHash` 32 Bytes - `String`: Hash of the transaction.
+- `transactionIndex`- `Number` (or `hex String`): Integer of the transactions index position in the block.
+- `from` - `String`: Address of the sender.
+- `to` - `String`: Address of the receiver. null when it’s a contract creation transaction.
+- `contractAddress` - `String`: The contract address created, if the transaction was a contract creation, otherwise null.
+- `cumulativeGasUsed` - `Number` (or `hex String`): The total amount of gas used when this transaction was executed in the block.
+- `gasUsed` - `Number` (or `hex String`): The amount of gas used by this specific transaction alone.
+- `logs` - `Array`: Array of log objects, which this transaction generated.
 
 #### Example
 
 ```ts
-{
+> {
   nonce: 0,
   receipt: {
     transactionHash: '0xd06433e90341fa3e01fb443334d5ebb1e568887712074674b147c4bed8f00c66',

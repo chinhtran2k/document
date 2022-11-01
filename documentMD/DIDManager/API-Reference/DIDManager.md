@@ -13,30 +13,64 @@ DID manager SDK for manage DIDs
 ### createDID
 
 ```ts
-dids.createDID(privateKey, didType);
+dids.createDID(claimType, data, privateSig, privateKey);
 ```
 
-Create DID contract by `privateKey`
+Create DID contract.
 
 #### Parameters
 
-1. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account to create DID
-2. [!badge variant="warning" text="didType"] - [!badge variant="warning" text="string"]: DID type, default is `ClaimType.PATIENT` (check [DID type](../Introduction.md/#did-type))
+1. [!badge variant="warning" text="claimType"] - [!badge variant="warning" text="ClaimType"]: DID type, default is `ClaimType.PATIENT` (check [DID type](../Introduction.md/#did-type))
+2. [!badge variant="warning" text="data"] - [!badge variant="warning" text="string"]: Init data for different claim, please use user id of off-chain side or use random number as id
+3. [!badge variant="warning" text="privateKeySigner"] - [!badge variant="warning" text="string"]: Private key of signer of claimHolder, get this from server side
+4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
 
 #### Returns
 
-1. [!badge variant="danger" text="txHash"] - [!badge variant="danger" text="String"]: The created transaction hash.
-2. [!badge variant="danger" text="didAddress"] - [!badge variant="danger" text="String"]: The created DID contract address.
+1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check [receipt](../../Wallet/API-Reference/Helper#signAndSendTransaction))
+2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]: Event logs of transaction
+3. [!badge variant="danger" text="claimId"] - [!badge variant="danger" text="string"]: Added claimId of DID contract
 
 #### Example
 
 ```ts
-dids.createDID(privateKey, didType);
+dids.createDID(ClaimTypes.PATIENT,
+    "PATIENT VERIFIED",
+    signerKey,
+    account.privateKey
+  );
 > {
-
-    txHash: "0xe61615f256624577cb979f51a58ac158c7b34b7eb4598af3c8d2c50ca155d85c",
-    didAddress: "0xece7519c282274542231d213A5919337c3F66686"
-
+  receipt: {
+    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 2920716,
+    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000040000000000400000000000000000000000000000000000000000040000000000000000000000000100000000000020000000040000000000000000001000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000100000000000000000040020000000000000002000000000000100000000000000000000020000000000000000000000080000010000008000000000040080000000000000040000000000000000000000000000000000000000000000000',
+    logs: [ [Object], [Object] ],
+    status: true,
+    transactionHash: '0x4a725f16727c8aef8089e844f7ed8f31c3ef849cbca5f8518821d115a0c7576e',
+    transactionIndex: 0,
+    blockHash: '0xf6c8d3101dea27dfe967dcf1d3f132913924367df2c3dcce5706a212ddcd6687',
+    blockNumber: 1394116,
+    gasUsed: 2920716,
+    contractAddress: '0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0',
+    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+    to: null
+  },
+  eventLogs: [
+    {
+      name: 'ClaimAdded',
+      events: [
+        claimId: '0x68ab8d5ae723515a5b77cb01cddf832ce9c6acfca1ab7bfaf8b912eab7b1667a',
+        claimType: '1',
+        scheme: '1',
+        issuer: '0x6beca9eb5ce6b2ad84910b952ea83109c277e30c',
+        signature: '0xeed89b65dbd61e0c83165b1c9aaefe9c43dc624da5164864bad669c5f73b25a81aa24ea1bd29f1c4b857bf021a81f2805543a57a58ffd8d26df0c0535a980e881b',
+        data: '0x50415449454e54205645524946494544',
+        uri: ''
+      ],
+      address: '0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0'
+    }
+  ],
+  claimId: '0x68ab8d5ae723515a5b77cb01cddf832ce9c6acfca1ab7bfaf8b912eab7b1667a'
 }
 
 ```
@@ -46,7 +80,16 @@ dids.createDID(privateKey, didType);
 ### addClaim
 
 ```ts
-dids.addClaim(privateKey, didAddress, claimType, scheme, issuer, data, [uri]);
+dids.addClaim(
+  privateKey,
+  privateKeySigner,
+  targetIdentity,
+  claimType,
+  scheme,
+  issuer,
+  data,
+  [uri]
+);
 ```
 
 Add claim to DID contract
@@ -54,33 +97,56 @@ Add claim to DID contract
 #### Parameters
 
 1. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
-2. [!badge variant="warning" text="didAddress"] - [!badge variant="warning" text="string"]: DID contract address
-3. [!badge variant="warning" text="claimType"] - [!badge variant="warning" text="number"]: The type of claim
-4. [!badge variant="warning" text="scheme"] - [!badge variant="warning" text="number"]: The scheme of claim
-5. [!badge variant="warning" text="issuer"] - [!badge variant="warning" text="string"]: The issuer address of claim
-6. [!badge variant="warning" text="data"] - [!badge variant="warning" text="string"]: The raw data of claim
-7. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"] (optional): The uri of claim
+2. [!badge variant="warning" text="privateKeySigner"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
+3. [!badge variant="warning" text="targetIdentity"] - [!badge variant="warning" text="string"]: DID contract address
+4. [!badge variant="warning" text="claimType"] - [!badge variant="warning" text="ClaimTypes"]: The type of claim
+5. [!badge variant="warning" text="scheme"] - [!badge variant="warning" text="number"]: The scheme of claim
+6. [!badge variant="warning" text="issuer"] - [!badge variant="warning" text="string"]: The issuer address of claim
+7. [!badge variant="warning" text="data"] - [!badge variant="warning" text="string"]: The raw data of claim
+8. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"] (optional): The uri of claim
 
 #### Returns
 
-1. [!badge variant="danger" text="txHash"] - [!badge variant="danger" text="String"]: The transaction hash.
-2. [!badge variant="danger" text="claimId"] - [!badge variant="danger" text="String"]: The claim id.
+1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check [receipt](../../Wallet/API-Reference/Helper#signAndSendTransaction))
+2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]: Event logs of transaction
+3. [!badge variant="danger" text="claimId"] - [!badge variant="danger" text="string"]: Added claimId of DID contract
 
 #### Example
 
 ```ts
 dids.addClaim(
   "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb",
-  "0xece7519c282274542231d213A5919337c3F66686",
+  "187bcbef9261e6c7eaefd8368e2b930a8bd7335cf541d8a05e9337beaf4c5f89",
+  "0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0",
+  2,
   1,
-  1,
-  "0xece7519c282274542231d213A5919337c3F66686",
-  "0x00",
-  ""
+  "0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c",
+  "PATIENT VERIFIED"
 );
 > {
-  txHash: "0x0b5b56505d9bc0fbe0d486781aef199448de3ea5957f8a0dcdb2fe64446bb4e1";
-  claimId: "0x09d15692eec35970279cea4f6b0897861ee2cd6677411cc9f69348a19041edde";
+  receipt: {
+    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 404150,
+    logsBloom: '0x04000000000000000000020000000000000000000000000040000000000000000000000000000000000000000000000000000000000001000000000000040000000000000000000000000000000000000020000000040000000000000000001001000000020040000000000000000800000000001040000000000000000000000000000080000000000000200000000000000000000000000000000002000000000000000000800000000100000000000000000002000000000000000000000000000008000020000000000000000000800080000000000008000040000060080000000000000040000000000000000000000000808000000000000000000000',
+    logs: [ [Object], [Object], [Object], [Object] ],
+    status: true,
+    transactionHash: '0x2f722f67d70a431b67671564e1c6f98643d840c77008561f42d2044c34f316e5',
+    transactionIndex: 0,
+    blockHash: '0x2111d63c23c7a21487e3b301a85ceeb145d0c49c1db96edd57d4041a5151d04e',
+    blockNumber: 1394371,
+    gasUsed: 404150,
+    contractAddress: null,
+    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+    to: '0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0'
+  },
+  eventLogs: [
+    {
+      name: 'ClaimAdded',
+      events: [Array],
+      address: '0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0'
+    }
+  ],
+  claimId: '0x2adc65fdd5682de590acc7ab63eead42dfb7a177458dee8937f9290bf49ceb88'
 }
 ```
 
@@ -89,29 +155,50 @@ dids.addClaim(
 ### removeClaim
 
 ```ts
-dids.removeClaim(privateKey, didAddress, claimId);
+dids.removeClaim(issuer, claimType, targetIdentity, privateKey);
 ```
 
 Remove claim from DID contract
 
 #### Parameters
 
-1. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission (check [Key purpose](../Introduction.md/#key-purpose)) to interact with DID
-2. [!badge variant="warning" text="didAddress"] - [!badge variant="warning" text="string"]: DID contract address
-3. [!badge variant="warning" text="claimId"] - [!badge variant="warning" text="string"]: The claim id
+1. [!badge variant="warning" text="issuer"] - [!badge variant="warning" text="string"]: Issuer (ClaimHolder) contract address
+2. [!badge variant="warning" text="claimType"] - [!badge variant="warning" text="ClaimTypes"]: The type of claim
+3. [!badge variant="warning" text="targetIdentity"] - [!badge variant="warning" text="string"]: DID contract address
+4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission (check [Key purpose](../Introduction.md/#key-purpose)) to interact with DID
 
 #### Returns
 
-1. [!badge variant="danger" text="txHash"] - [!badge variant="danger" text="String"]: The transaction hash.
-2. [!badge variant="danger" text="status"] - [!badge variant="danger" text="String"]: Success or fail.
+1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check [receipt](../../Wallet/API-Reference/Helper#signAndSendTransaction))
+2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]: Event logs of transaction
 
 #### Example
 
 ```ts
-dids.removeClaim("24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb", "0xece7519c282274542231d213A5919337c3F66686", 1);
+dids.removeClaim("0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c", 2, "0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0", "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb");
 > {
-  txHash: "0x0b5b56505d9bc0fbe0d486781aef199448de3ea5957f8a0dcdb2fe64446bb4e1";
-  status: "true";
+  receipt: {
+    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 112893,
+    logsBloom: '0x04000000000000000000020000000000000000000000000040000000000000000000000000000000000000000000000000000000000001000000000000000000000000000100000000000000100000000000010000000000000000000000001009000000020040000000000000000800000000001040000000000000000000000000000080000000000000200000000000000000000000000000000000000000000000000000800000000100000000000000000002000000002000000000000000000008000000000000000000000000800080008000000008000040000020080000000000000040000000000000000000000000808000000000000000000000',
+    logs: [ [Object], [Object], [Object], [Object] ],
+    status: true,
+    transactionHash: '0xd8dd4362bf8543cced2ef087f7fca84a9b34cc3046f8fced67d91ef53b7f53f6',
+    transactionIndex: 0,
+    blockHash: '0xd8d392966e18ff88adeec75e0ec9c10998418b9dd5acaa84e391b745b5d5e41a',
+    blockNumber: 1394799,
+    gasUsed: 112893,
+    contractAddress: null,
+    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+    to: '0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0'
+  },
+  eventLogs: [
+    {
+      name: 'ClaimRemoved',
+      events: [Array],
+      address: '0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0'
+    }
+  ]
 }
 ```
 
@@ -120,7 +207,7 @@ dids.removeClaim("24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644
 ### getCredential
 
 ```ts
-dids.getCredential(didAddress, claimId);
+dids.getCredential(identity, claimId);
 ```
 
 Get claim detail of DID by claim id
@@ -142,14 +229,15 @@ Get claim detail of DID by claim id
 #### Example
 
 ```ts
-dids.getClaim("0xece7519c282274542231d213A5919337c3F66686", "0x09d15692eec35970279cea4f6b0897861ee2cd6677411cc9f69348a19041edde");
+dids.getClaim("0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0", "0x68ab8d5ae723515a5b77cb01cddf832ce9c6acfca1ab7bfaf8b912eab7b1667a");
 > {
-    claimType: 1,
-    scheme: 1,
-    issuer: "0xece7519c282274542231d213a5919337c3f66686",
-    signature: "0x00",
-    data: "0x00",
-    uri: ""
+  ...
+  claimType: '1',
+  scheme: '1',
+  issuer: '0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c',
+  signature: '0xeed89b65dbd61e0c83165b1c9aaefe9c43dc624da5164864bad669c5f73b25a81aa24ea1bd29f1c4b857bf021a81f2805543a57a58ffd8d26df0c0535a980e881b',
+  data: '0x50415449454e54205645524946494544',
+  uri: ''
 }
 
 ```
@@ -159,7 +247,7 @@ dids.getClaim("0xece7519c282274542231d213A5919337c3F66686", "0x09d15692eec359702
 ### getClaimIdsByType
 
 ```ts
-dids.getClaimIdsByType(didAddress, claimType);
+dids.getClaimIdsByType(identity, claimType);
 ```
 
 Get claim ids of DID by claim type
@@ -185,37 +273,110 @@ dids.getClaimIdsByType("0xece7519c282274542231d213a5919337c3f66686", 1);
 ### addKey
 
 ```ts
-dids.addKey(privateKey, didAddress, publicKey, purpose, keyType);
+dids.addKey(purpose, keyType, privateKeyAdd, privateKeyAdd);
 ```
 
-Add key to DID contract
+Add key to Claim holder (only access for Management side)
 
 #### Parameters
 
-1. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
-2. [!badge variant="warning" text="didAddress"] - [!badge variant="warning" text="string"]: DID contract address
-3. [!badge variant="warning" text="publicKey"] - [!badge variant="warning" text="string"]: The public key, a `keccak256` hash of the address of account we want to add to DID
-4. [!badge variant="warning" text="purpose"] - [!badge variant="warning" text="number"]: The purpose of key (check [Key purpose](../Introduction.md/#key-purpose))
-5. [!badge variant="warning" text="keyType"] - [!badge variant="warning" text="number"]: The type of key (check [Schemes](../Introduction.md/#schemes))
+1. [!badge variant="warning" text="purpose"] - [!badge variant="warning" text="KeyPurposes"]: The key purpose (check [Key purpose](../Introduction.md/#key-purpose))
+2. [!badge variant="warning" text="keyType"] - [!badge variant="warning" text="Schemes"]: The key type (check [Schemes](../Introduction.md/#schemes))
+3. [!badge variant="warning" text="privateKeyAdd"] - [!badge variant="warning" text="string"]: The private key of account to add as key
+4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
 
 #### Returns
 
-1. [!badge variant="danger" text="txHash"] - [!badge variant="danger" text="String"]: The transaction hash.
-2. [!badge variant="danger" text="status"] - [!badge variant="danger" text="String"]: Success or fail.
+1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check [receipt](../../Wallet/API-Reference/Helper#signAndSendTransaction))
+2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]: Event logs of transaction
+3. [!badge variant="danger" text="keyAdded"] - [!badge variant="danger" text="string"]: Added key of DID contract
 
 #### Example
 
 ```ts
 dids.addKey(
-  "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb",
-  "0xece7519c282274542231d213A5919337c3F66686",
-  "0xf2791dd4aae12b2e3964c26ffbc5c5c1e33c3500acdf9d5ae89cb95a08c0a7b5",
-  3,
-  1
+  KeyPurposes.CLAIM_SIGNER,
+  Schemes.ECDSA,
+  "28d90c06971d80358c9d33dd755408f84ba67deb0dc2eab41036c5ad8ae245a4",
+  "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
 );
 > {
-  txHash: "0x80142f0adb52a5778d591ceabda92bac030dfefb0d68e82c714b3440ce19d92e";
-  status: "true";
+  receipt: {
+    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 114351,
+    logsBloom: '0x00000000000000000000000040000000000000000000000000000000000000000000040000000000000000200000000000000000020000000000000000040000000000000000000000000100000000000000000000040000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000000000000800000000000000000400000000000000000000000000000000000000000000000000000200000000040000000000000000000000000000000001000000000000000000000000000000000',
+    logs: [ [Object] ],
+    status: true,
+    transactionHash: '0x74c1766cd63881811471ec0c0813e13c4afdd4f14fd9a28da2215d8b8f4a0ebd',
+    transactionIndex: 0,
+    blockHash: '0x2b707c46ce44a615f04e13f8483779d1d958f4683eab849860865a2cdb59a5e0',
+    blockNumber: 1395192,
+    gasUsed: 114351,
+    contractAddress: null,
+    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+    to: '0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c'
+  },
+  eventLogs: [
+    {
+      name: 'KeyAdded',
+      events: [Array],
+      address: '0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c'
+    }
+  ],
+  keyAdded: '0xa8275bd2f2fe9045d2cf8ac51b458741f1fda57c81e8a87c336194cb2b03a296'
+}
+```
+
+---
+
+### removeKey
+
+```ts
+dids.removeKey(keyRemove, privateKey);
+```
+
+Get owner of DID contract
+
+#### Parameters
+
+1. [!badge variant="warning" text="keyRemove"] - [!badge variant="warning" text="string"]: The key to remove
+2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
+
+#### Returns
+
+1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check [receipt](../../Wallet/API-Reference/Helper#signAndSendTransaction))
+2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]: Event logs of transaction
+
+#### Example
+
+```ts
+const removekeyTx = await dids.removeKey(
+    "0xa8275bd2f2fe9045d2cf8ac51b458741f1fda57c81e8a87c336194cb2b03a296",
+    "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
+  );
+> {
+  receipt: {
+    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 21405,
+    logsBloom: '0x00000000000000000000000040000000000000000000000000000000000000000000000000000000000000200000000000000000020000000000000000040000000000000000000000000000000000000000000000040000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000800000000000000000400000000000000000000000000000000000000000000000000000200000040040000000000000002000000000000000001000000000000000000040000000000000',
+    logs: [ [Object] ],
+    status: true,
+    transactionHash: '0xde3d640e5755597840f984af03d929fae35813210ee029878dcae30b27bf8e0b',
+    transactionIndex: 0,
+    blockHash: '0x9892a0015e6fd321799ce7f44abcff03c9203017cd32552e9de4a2600b0f5756',
+    blockNumber: 1397121,
+    gasUsed: 21405,
+    contractAddress: null,
+    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+    to: '0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c'
+  },
+  eventLogs: [
+    {
+      name: 'KeyRemoved',
+      events: [Array],
+      address: '0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c'
+    }
+  ]
 }
 ```
 
@@ -224,50 +385,26 @@ dids.addKey(
 ### verifyCredential
 
 ```ts
-dids.verifyCredential(didClaimHolder, didAddress, claimType);
+dids.verifyCredential(identity, claimType);
 ```
 
-Check if DID has a claim of specific type
+Check if DID has a claim of specific type (remember that our Claim Holder is static on server side)
 
 #### Parameters
 
-1. [!badge variant="warning" text="didClaimHolder"] - [!badge variant="warning" text="string"]: Claim holder (server-side DID) address
-2. [!badge variant="warning" text="didAddress"] - [!badge variant="warning" text="string"]: DID contract address
-3. [!badge variant="warning" text="claimType"] - [!badge variant="warning" text="number"]: The claim type
+1. [!badge variant="warning" text="identity"] - [!badge variant="warning" text="string"]: DID contract address
+2. [!badge variant="warning" text="claimType"] - [!badge variant="warning" text="ClaimTypes"]: The claim type
 
 #### Returns
 
-[!badge variant="danger" text="boolean"]: True if DID has a claim of specific type, false otherwise
+1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check [receipt](../../Wallet/API-Reference/Helper#signAndSendTransaction))
+2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]: Event logs of transaction
 
 #### Example
 
 ```ts
-dids.checkClaim("0xece7519c282274542231d213a5919337c3f66686", "0xece7519c282274542231d213A5919337c3F66686", 1);
+dids.checkClaim("0xece7519c282274542231d213A5919337c3F66686", 1);
 > true
-```
-
----
-
-### getOwner
-
-```ts
-dids.getOwner(didAddress);
-```
-
-Get owner of DID contract
-
-#### Parameters
-
-none
-
-#### Returns
-
-[!badge variant="danger" text="Object"]: The generated wallet.
-
-#### Example
-
-```ts
-
 ```
 
 ## Utils

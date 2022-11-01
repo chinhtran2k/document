@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.720258307746">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.720607745715">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=2.4.0.720258307746" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.720607745715" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.720258307746" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.720607745715" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.720258307746" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.720258307746" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.720607745715" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.720607745715" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -174,9 +174,9 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.createDID(privateKey, didType);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.createDID(claimType, data, privateSig, privateKey);</code></pre>
 </doc-codeblock></div>
-<p>Create DID contract by <code v-pre>privateKey</code></p>
+<p>Create DID contract.</p>
 <doc-anchor-target id="parameters">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#parameters">#</doc-anchor-trigger>
@@ -185,15 +185,25 @@
 </doc-anchor-target>
 <ol>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>claimType</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>ClaimType</span>
+</span>: DID type, default is <code v-pre>ClaimType.PATIENT</code> (check <a href="../../introduction/#did-type">DID type</a>)</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>data</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Init data for different claim, please use user id of off-chain side or use random number as id</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>privateKeySigner</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Private key of signer of claimHolder, get this from server side</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>privateKey</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: Private key of account to create DID</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>didType</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span>: DID type, default is <code v-pre>ClaimType.PATIENT</code> (check <a href="../../introduction/#did-type">DID type</a>)</li>
+</span>: Private key of contract creator - owner of identity contract which will be created</li>
 </ol>
 <doc-anchor-target id="returns">
     <h4>
@@ -203,15 +213,20 @@
 </doc-anchor-target>
 <ol>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>txHash</span>
+    <span>receipt</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>String</span>
-</span>: The created transaction hash.</li>
+    <span>object</span>
+</span>: A transaction receipt object, or null if no receipt was found. (check <a href="../../../wallet/api-reference/helper/#signAndSendTransaction">receipt</a>)</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>didAddress</span>
+    <span>eventLogs</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>String</span>
-</span>: The created DID contract address.</li>
+    <span>object</span>
+</span>: Event logs of transaction</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>claimId</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Added claimId of DID contract</li>
 </ol>
 <doc-anchor-target id="example">
     <h4>
@@ -220,12 +235,43 @@
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.createDID(privateKey, didType);
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.createDID(ClaimTypes.PATIENT,
+    &quot;PATIENT VERIFIED&quot;,
+    signerKey,
+    account.privateKey
+  );
 &gt; {
-
-    txHash: &quot;0xe61615f256624577cb979f51a58ac158c7b34b7eb4598af3c8d2c50ca155d85c&quot;,
-    didAddress: &quot;0xece7519c282274542231d213A5919337c3F66686&quot;
-
+  receipt: {
+    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 2920716,
+    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000040000000000400000000000000000000000000000000000000000040000000000000000000000000100000000000020000000040000000000000000001000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000100000000000000000040020000000000000002000000000000100000000000000000000020000000000000000000000080000010000008000000000040080000000000000040000000000000000000000000000000000000000000000000',
+    logs: [ [Object], [Object] ],
+    status: true,
+    transactionHash: '0x4a725f16727c8aef8089e844f7ed8f31c3ef849cbca5f8518821d115a0c7576e',
+    transactionIndex: 0,
+    blockHash: '0xf6c8d3101dea27dfe967dcf1d3f132913924367df2c3dcce5706a212ddcd6687',
+    blockNumber: 1394116,
+    gasUsed: 2920716,
+    contractAddress: '0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0',
+    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+    to: null
+  },
+  eventLogs: [
+    {
+      name: 'ClaimAdded',
+      events: [
+        claimId: '0x68ab8d5ae723515a5b77cb01cddf832ce9c6acfca1ab7bfaf8b912eab7b1667a',
+        claimType: '1',
+        scheme: '1',
+        issuer: '0x6beca9eb5ce6b2ad84910b952ea83109c277e30c',
+        signature: '0xeed89b65dbd61e0c83165b1c9aaefe9c43dc624da5164864bad669c5f73b25a81aa24ea1bd29f1c4b857bf021a81f2805543a57a58ffd8d26df0c0535a980e881b',
+        data: '0x50415449454e54205645524946494544',
+        uri: ''
+      ],
+      address: '0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0'
+    }
+  ],
+  claimId: '0x68ab8d5ae723515a5b77cb01cddf832ce9c6acfca1ab7bfaf8b912eab7b1667a'
 }
 </code></pre>
 </doc-codeblock></div>
@@ -237,7 +283,16 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.addClaim(privateKey, didAddress, claimType, scheme, issuer, data, [uri]);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.addClaim(
+  privateKey,
+  privateKeySigner,
+  targetIdentity,
+  claimType,
+  scheme,
+  issuer,
+  data,
+  [uri]
+);</code></pre>
 </doc-codeblock></div>
 <p>Add claim to DID contract</p>
 <doc-anchor-target id="parameters-1">
@@ -253,14 +308,19 @@
     <span>string</span>
 </span>: Private key of account that has permission to interact with DID</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>didAddress</span>
+    <span>privateKeySigner</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Private key of account that has permission to interact with DID</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>targetIdentity</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span>: DID contract address</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>claimType</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>number</span>
+    <span>ClaimTypes</span>
 </span>: The type of claim</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>scheme</span>
@@ -291,15 +351,20 @@
 </doc-anchor-target>
 <ol>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>txHash</span>
+    <span>receipt</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>String</span>
-</span>: The transaction hash.</li>
+    <span>object</span>
+</span>: A transaction receipt object, or null if no receipt was found. (check <a href="../../../wallet/api-reference/helper/#signAndSendTransaction">receipt</a>)</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>eventLogs</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>object</span>
+</span>: Event logs of transaction</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>claimId</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>String</span>
-</span>: The claim id.</li>
+    <span>string</span>
+</span>: Added claimId of DID contract</li>
 </ol>
 <doc-anchor-target id="example-1">
     <h4>
@@ -310,16 +375,37 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript">dids.addClaim(
   &quot;24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb&quot;,
-  &quot;0xece7519c282274542231d213A5919337c3F66686&quot;,
+  &quot;187bcbef9261e6c7eaefd8368e2b930a8bd7335cf541d8a05e9337beaf4c5f89&quot;,
+  &quot;0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0&quot;,
+  2,
   1,
-  1,
-  &quot;0xece7519c282274542231d213A5919337c3F66686&quot;,
-  &quot;0x00&quot;,
-  &quot;&quot;
+  &quot;0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c&quot;,
+  &quot;PATIENT VERIFIED&quot;
 );
 &gt; {
-  txHash: &quot;0x0b5b56505d9bc0fbe0d486781aef199448de3ea5957f8a0dcdb2fe64446bb4e1&quot;;
-  claimId: &quot;0x09d15692eec35970279cea4f6b0897861ee2cd6677411cc9f69348a19041edde&quot;;
+  receipt: {
+    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 404150,
+    logsBloom: '0x04000000000000000000020000000000000000000000000040000000000000000000000000000000000000000000000000000000000001000000000000040000000000000000000000000000000000000020000000040000000000000000001001000000020040000000000000000800000000001040000000000000000000000000000080000000000000200000000000000000000000000000000002000000000000000000800000000100000000000000000002000000000000000000000000000008000020000000000000000000800080000000000008000040000060080000000000000040000000000000000000000000808000000000000000000000',
+    logs: [ [Object], [Object], [Object], [Object] ],
+    status: true,
+    transactionHash: '0x2f722f67d70a431b67671564e1c6f98643d840c77008561f42d2044c34f316e5',
+    transactionIndex: 0,
+    blockHash: '0x2111d63c23c7a21487e3b301a85ceeb145d0c49c1db96edd57d4041a5151d04e',
+    blockNumber: 1394371,
+    gasUsed: 404150,
+    contractAddress: null,
+    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+    to: '0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0'
+  },
+  eventLogs: [
+    {
+      name: 'ClaimAdded',
+      events: [Array],
+      address: '0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0'
+    }
+  ],
+  claimId: '0x2adc65fdd5682de590acc7ab63eead42dfb7a177458dee8937f9290bf49ceb88'
 }</code></pre>
 </doc-codeblock></div>
 <hr />
@@ -330,7 +416,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.removeClaim(privateKey, didAddress, claimId);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.removeClaim(issuer, claimType, targetIdentity, privateKey);</code></pre>
 </doc-codeblock></div>
 <p>Remove claim from DID contract</p>
 <doc-anchor-target id="parameters-2">
@@ -341,20 +427,25 @@
 </doc-anchor-target>
 <ol>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>privateKey</span>
+    <span>issuer</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: Private key of account that has permission (check <a href="../../introduction/#key-purpose">Key purpose</a>) to interact with DID</li>
+</span>: Issuer (ClaimHolder) contract address</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>didAddress</span>
+    <span>claimType</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>ClaimTypes</span>
+</span>: The type of claim</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>targetIdentity</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span>: DID contract address</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>claimId</span>
+    <span>privateKey</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: The claim id</li>
+</span>: Private key of account that has permission (check <a href="../../introduction/#key-purpose">Key purpose</a>) to interact with DID</li>
 </ol>
 <doc-anchor-target id="returns-2">
     <h4>
@@ -364,15 +455,15 @@
 </doc-anchor-target>
 <ol>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>txHash</span>
+    <span>receipt</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>String</span>
-</span>: The transaction hash.</li>
+    <span>object</span>
+</span>: A transaction receipt object, or null if no receipt was found. (check <a href="../../../wallet/api-reference/helper/#signAndSendTransaction">receipt</a>)</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>status</span>
+    <span>eventLogs</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>String</span>
-</span>: Success or fail.</li>
+    <span>object</span>
+</span>: Event logs of transaction</li>
 </ol>
 <doc-anchor-target id="example-2">
     <h4>
@@ -381,10 +472,30 @@
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.removeClaim(&quot;24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb&quot;, &quot;0xece7519c282274542231d213A5919337c3F66686&quot;, 1);
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.removeClaim(&quot;0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c&quot;, 2, &quot;0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0&quot;, &quot;24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb&quot;);
 &gt; {
-  txHash: &quot;0x0b5b56505d9bc0fbe0d486781aef199448de3ea5957f8a0dcdb2fe64446bb4e1&quot;;
-  status: &quot;true&quot;;
+  receipt: {
+    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 112893,
+    logsBloom: '0x04000000000000000000020000000000000000000000000040000000000000000000000000000000000000000000000000000000000001000000000000000000000000000100000000000000100000000000010000000000000000000000001009000000020040000000000000000800000000001040000000000000000000000000000080000000000000200000000000000000000000000000000000000000000000000000800000000100000000000000000002000000002000000000000000000008000000000000000000000000800080008000000008000040000020080000000000000040000000000000000000000000808000000000000000000000',
+    logs: [ [Object], [Object], [Object], [Object] ],
+    status: true,
+    transactionHash: '0xd8dd4362bf8543cced2ef087f7fca84a9b34cc3046f8fced67d91ef53b7f53f6',
+    transactionIndex: 0,
+    blockHash: '0xd8d392966e18ff88adeec75e0ec9c10998418b9dd5acaa84e391b745b5d5e41a',
+    blockNumber: 1394799,
+    gasUsed: 112893,
+    contractAddress: null,
+    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+    to: '0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0'
+  },
+  eventLogs: [
+    {
+      name: 'ClaimRemoved',
+      events: [Array],
+      address: '0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0'
+    }
+  ]
 }</code></pre>
 </doc-codeblock></div>
 <hr />
@@ -395,7 +506,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.getCredential(didAddress, claimId);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getCredential(identity, claimId);</code></pre>
 </doc-codeblock></div>
 <p>Get claim detail of DID by claim id</p>
 <doc-anchor-target id="parameters-3">
@@ -461,14 +572,15 @@
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaim(&quot;0xece7519c282274542231d213A5919337c3F66686&quot;, &quot;0x09d15692eec35970279cea4f6b0897861ee2cd6677411cc9f69348a19041edde&quot;);
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaim(&quot;0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0&quot;, &quot;0x68ab8d5ae723515a5b77cb01cddf832ce9c6acfca1ab7bfaf8b912eab7b1667a&quot;);
 &gt; {
-    claimType: 1,
-    scheme: 1,
-    issuer: &quot;0xece7519c282274542231d213a5919337c3f66686&quot;,
-    signature: &quot;0x00&quot;,
-    data: &quot;0x00&quot;,
-    uri: &quot;&quot;
+  ...
+  claimType: '1',
+  scheme: '1',
+  issuer: '0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c',
+  signature: '0xeed89b65dbd61e0c83165b1c9aaefe9c43dc624da5164864bad669c5f73b25a81aa24ea1bd29f1c4b857bf021a81f2805543a57a58ffd8d26df0c0535a980e881b',
+  data: '0x50415449454e54205645524946494544',
+  uri: ''
 }
 </code></pre>
 </doc-codeblock></div>
@@ -480,7 +592,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaimIdsByType(didAddress, claimType);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaimIdsByType(identity, claimType);</code></pre>
 </doc-codeblock></div>
 <p>Get claim ids of DID by claim type</p>
 <doc-anchor-target id="parameters-4">
@@ -528,9 +640,9 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.addKey(privateKey, didAddress, publicKey, purpose, keyType);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.addKey(purpose, keyType, privateKeyAdd, privateKeyAdd);</code></pre>
 </doc-codeblock></div>
-<p>Add key to DID contract</p>
+<p>Add key to Claim holder (only access for Management side)</p>
 <doc-anchor-target id="parameters-5">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-5">#</doc-anchor-trigger>
@@ -539,30 +651,25 @@
 </doc-anchor-target>
 <ol>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>purpose</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>KeyPurposes</span>
+</span>: The key purpose (check <a href="../../introduction/#key-purpose">Key purpose</a>)</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>keyType</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>Schemes</span>
+</span>: The key type (check <a href="../../introduction/#schemes">Schemes</a>)</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>privateKeyAdd</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: The private key of account to add as key</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>privateKey</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span>: Private key of account that has permission to interact with DID</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>didAddress</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span>: DID contract address</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>publicKey</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span>: The public key, a <code v-pre>keccak256</code> hash of the address of account we want to add to DID</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>purpose</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>number</span>
-</span>: The purpose of key (check <a href="../../introduction/#key-purpose">Key purpose</a>)</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>keyType</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>number</span>
-</span>: The type of key (check <a href="../../introduction/#schemes">Schemes</a>)</li>
 </ol>
 <doc-anchor-target id="returns-5">
     <h4>
@@ -572,15 +679,20 @@
 </doc-anchor-target>
 <ol>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>txHash</span>
+    <span>receipt</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>String</span>
-</span>: The transaction hash.</li>
+    <span>object</span>
+</span>: A transaction receipt object, or null if no receipt was found. (check <a href="../../../wallet/api-reference/helper/#signAndSendTransaction">receipt</a>)</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>status</span>
+    <span>eventLogs</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>String</span>
-</span>: Success or fail.</li>
+    <span>object</span>
+</span>: Event logs of transaction</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>keyAdded</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Added key of DID contract</li>
 </ol>
 <doc-anchor-target id="example-5">
     <h4>
@@ -590,15 +702,118 @@
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript">dids.addKey(
-  &quot;24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb&quot;,
-  &quot;0xece7519c282274542231d213A5919337c3F66686&quot;,
-  &quot;0xf2791dd4aae12b2e3964c26ffbc5c5c1e33c3500acdf9d5ae89cb95a08c0a7b5&quot;,
-  3,
-  1
+  KeyPurposes.CLAIM_SIGNER,
+  Schemes.ECDSA,
+  &quot;28d90c06971d80358c9d33dd755408f84ba67deb0dc2eab41036c5ad8ae245a4&quot;,
+  &quot;24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb&quot;
 );
 &gt; {
-  txHash: &quot;0x80142f0adb52a5778d591ceabda92bac030dfefb0d68e82c714b3440ce19d92e&quot;;
-  status: &quot;true&quot;;
+  receipt: {
+    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 114351,
+    logsBloom: '0x00000000000000000000000040000000000000000000000000000000000000000000040000000000000000200000000000000000020000000000000000040000000000000000000000000100000000000000000000040000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000000000000800000000000000000400000000000000000000000000000000000000000000000000000200000000040000000000000000000000000000000001000000000000000000000000000000000',
+    logs: [ [Object] ],
+    status: true,
+    transactionHash: '0x74c1766cd63881811471ec0c0813e13c4afdd4f14fd9a28da2215d8b8f4a0ebd',
+    transactionIndex: 0,
+    blockHash: '0x2b707c46ce44a615f04e13f8483779d1d958f4683eab849860865a2cdb59a5e0',
+    blockNumber: 1395192,
+    gasUsed: 114351,
+    contractAddress: null,
+    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+    to: '0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c'
+  },
+  eventLogs: [
+    {
+      name: 'KeyAdded',
+      events: [Array],
+      address: '0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c'
+    }
+  ],
+  keyAdded: '0xa8275bd2f2fe9045d2cf8ac51b458741f1fda57c81e8a87c336194cb2b03a296'
+}</code></pre>
+</doc-codeblock></div>
+<hr />
+<doc-anchor-target id="removekey">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#removekey">#</doc-anchor-trigger>
+        <span>removeKey</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.removeKey(keyRemove, privateKey);</code></pre>
+</doc-codeblock></div>
+<p>Get owner of DID contract</p>
+<doc-anchor-target id="parameters-6">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-6">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>keyRemove</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: The key to remove</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>privateKey</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Private key of account that has permission to interact with DID</li>
+</ol>
+<doc-anchor-target id="returns-6">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-6">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>receipt</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>object</span>
+</span>: A transaction receipt object, or null if no receipt was found. (check <a href="../../../wallet/api-reference/helper/#signAndSendTransaction">receipt</a>)</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>eventLogs</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>object</span>
+</span>: Event logs of transaction</li>
+</ol>
+<doc-anchor-target id="example-6">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-6">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">const removekeyTx = await dids.removeKey(
+    &quot;0xa8275bd2f2fe9045d2cf8ac51b458741f1fda57c81e8a87c336194cb2b03a296&quot;,
+    &quot;24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb&quot;
+  );
+&gt; {
+  receipt: {
+    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 21405,
+    logsBloom: '0x00000000000000000000000040000000000000000000000000000000000000000000000000000000000000200000000000000000020000000000000000040000000000000000000000000000000000000000000000040000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000800000000000000000400000000000000000000000000000000000000000000000000000200000040040000000000000002000000000000000001000000000000000000040000000000000',
+    logs: [ [Object] ],
+    status: true,
+    transactionHash: '0xde3d640e5755597840f984af03d929fae35813210ee029878dcae30b27bf8e0b',
+    transactionIndex: 0,
+    blockHash: '0x9892a0015e6fd321799ce7f44abcff03c9203017cd32552e9de4a2600b0f5756',
+    blockNumber: 1397121,
+    gasUsed: 21405,
+    contractAddress: null,
+    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+    to: '0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c'
+  },
+  eventLogs: [
+    {
+      name: 'KeyRemoved',
+      events: [Array],
+      address: '0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c'
+    }
+  ]
 }</code></pre>
 </doc-codeblock></div>
 <hr />
@@ -609,78 +824,45 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.verifyCredential(didClaimHolder, didAddress, claimType);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.verifyCredential(identity, claimType);</code></pre>
 </doc-codeblock></div>
-<p>Check if DID has a claim of specific type</p>
-<doc-anchor-target id="parameters-6">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-6">#</doc-anchor-trigger>
-        <span>Parameters</span>
-    </h4>
-</doc-anchor-target>
-<ol>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>didClaimHolder</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span>: Claim holder (server-side DID) address</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>didAddress</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span>: DID contract address</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>claimType</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>number</span>
-</span>: The claim type</li>
-</ol>
-<doc-anchor-target id="returns-6">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-6">#</doc-anchor-trigger>
-        <span>Returns</span>
-    </h4>
-</doc-anchor-target>
-<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>boolean</span>
-</span>: True if DID has a claim of specific type, false otherwise</p>
-<doc-anchor-target id="example-6">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-6">#</doc-anchor-trigger>
-        <span>Example</span>
-    </h4>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.checkClaim(&quot;0xece7519c282274542231d213a5919337c3f66686&quot;, &quot;0xece7519c282274542231d213A5919337c3F66686&quot;, 1);
-&gt; true</code></pre>
-</doc-codeblock></div>
-<hr />
-<doc-anchor-target id="getowner">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#getowner">#</doc-anchor-trigger>
-        <span>getOwner</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.getOwner(didAddress);</code></pre>
-</doc-codeblock></div>
-<p>Get owner of DID contract</p>
+<p>Check if DID has a claim of specific type (remember that our Claim Holder is static on server side)</p>
 <doc-anchor-target id="parameters-7">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-7">#</doc-anchor-trigger>
         <span>Parameters</span>
     </h4>
 </doc-anchor-target>
-<p>none</p>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>identity</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: DID contract address</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>claimType</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>ClaimTypes</span>
+</span>: The claim type</li>
+</ol>
 <doc-anchor-target id="returns-7">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#returns-7">#</doc-anchor-trigger>
         <span>Returns</span>
     </h4>
 </doc-anchor-target>
-<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>Object</span>
-</span>: The generated wallet.</p>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>receipt</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>object</span>
+</span>: A transaction receipt object, or null if no receipt was found. (check <a href="../../../wallet/api-reference/helper/#signAndSendTransaction">receipt</a>)</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>eventLogs</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>object</span>
+</span>: Event logs of transaction</li>
+</ol>
 <doc-anchor-target id="example-7">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#example-7">#</doc-anchor-trigger>
@@ -688,7 +870,8 @@
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript"></code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.checkClaim(&quot;0xece7519c282274542231d213A5919337c3F66686&quot;, 1);
+&gt; true</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="utils">
     <h2>
