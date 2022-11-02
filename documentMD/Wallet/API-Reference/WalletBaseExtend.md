@@ -414,13 +414,13 @@ wallet.decryptWallet("secret");
 
 ---
 
-### transfer
+### transfer (Depricated, use transferToken only)
 
 ```ts
 wallet.transfer(accountId, to, value);
 ```
 
-Transfer from an account in wallet to an address
+Transfer native token (ETH) from an account in wallet to an address
 
 #### Parameters
 
@@ -452,7 +452,7 @@ Transfer from an account in wallet to an address
 wallet.transfer(accountId, to, value);
 ```
 
-Transfer token from an account in wallet to an address
+Transfer ERC20 token from an account in wallet to an address
 
 #### Parameters
 
@@ -751,7 +751,7 @@ wallet.getBalance("0x51C4B0487e16186da402daebE06C4cD71b5015c8");
 wallet.getBalanceToken(address);
 ```
 
-Get balance (native token) of wallet
+Get balance (ERC20 token) of wallet
 
 #### Parameters
 
@@ -759,7 +759,7 @@ Get balance (native token) of wallet
 
 #### Returns
 
-[!badge variant="danger" text="number"] (wei): Balance of account
+[!badge variant="danger" text="number"]: Token balance of account
 
 #### Example
 
