@@ -1,5 +1,6 @@
 ---
 icon: dot
+order: 1
 ---
 
 # Helper function
@@ -11,7 +12,7 @@ Helper function for Wallet
 ### signAndSendTransaction
 
 ```ts
-wallet.signAndSendTransaction(
+signAndSendTransaction(
   connection,
   data,
   to,

@@ -13,7 +13,7 @@ DID manager SDK for manage DIDs
 ### createDID
 
 ```ts
-dids.createDID(claimType, data, privateSig, privateKey);
+dids.createDID(claimType, data, privateKeySigner, privateKey);
 ```
 
 Create DID contract.
@@ -214,7 +214,7 @@ Get claim detail of DID by claim id
 
 #### Parameters
 
-1. [!badge variant="warning" text="didAddress"] - [!badge variant="warning" text="string"]: DID contract address
+1. [!badge variant="warning" text="identity"] - [!badge variant="warning" text="string"]: DID contract address
 2. [!badge variant="warning" text="claimId"] - [!badge variant="warning" text="string"]: The claim id
 
 #### Returns
