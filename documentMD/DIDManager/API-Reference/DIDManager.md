@@ -273,7 +273,7 @@ dids.getClaimIdsByType("0xece7519c282274542231d213a5919337c3f66686", 1);
 ### addKey
 
 ```ts
-dids.addKey(purpose, keyType, privateKeyAdd, privateKeyAdd);
+dids.addKey(purpose, keyType, privateKeyAdd, privateKey);
 ```
 
 Add key to Claim holder (only access for Management side)

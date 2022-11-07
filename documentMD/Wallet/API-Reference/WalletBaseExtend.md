@@ -30,63 +30,68 @@ none
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.createWallet("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
-  mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
+  mnemonic: 'enable paddle grant picnic common air square vital talk pulp catch child',
+  defaultAccount: 0,
   wallet: <ref *1> Wallet {
-    '0': {...},
-    ...
-    '0x32eB821d88F2E650d4732C4CE974A30Bb4296949': {...},
-    '0x32eb821d88f2e650d4732c4ce974a30bb4296949': {...}
-  },
-  walletImported: [],
-  defaultAccount: 0
-}
-wallet.addAccountFromPrivateKey("0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318");
-> WalletBase {
-  ...
-  mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
-  wallet: <ref *1> Wallet {
-    '0': {...},
-    '1': {...},
-    ...
-    length: 2,
-    ...
-    '0x32eB821d88F2E650d4732C4CE974A30Bb4296949': {...},
-    '0x32eb821d88f2e650d4732c4ce974a30bb4296949': {...},
-    '0x2c7536E3605D9C16a7a3D7b1898e529396a65c23': {...},
-    '0x2c7536e3605d9c16a7a3d7b1898e529396a65c23': {...}
-  },
-  walletImported: [ 1 ],
-  defaultAccount: 0
-}
-wallet.removeAccount(1);
-> WalletBase {
-  ...
-  mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
-  wallet: <ref *1> Wallet {
-    '0': {...},
-    ...
+    '0': {
+      address: '0x8a21b7f0Ac7D39081fFF9a2a5cA4C9877fAAcDF4',
+      privateKey: '0x1926b483be5519eabac5a654a1a63362d57fc2ecb4710e6ef5f45b8fae227f1e',
+      signTransaction: [Function: signTransaction],
+      sign: [Function: sign],
+      encrypt: [Function: encrypt],
+      index: 0
+    },
+    _accounts: Accounts {
+      currentProvider: [Getter/Setter],
+      _requestManager: [RequestManager],
+      givenProvider: null,
+      providers: [Object],
+      _provider: [HttpProvider],
+      setProvider: [Function (anonymous)],
+      setRequestManager: [Function (anonymous)],
+      _ethereumCall: [Object],
+      wallet: [Circular *1]
+    },
     length: 1,
-    ...
-    '0x32eB821d88F2E650d4732C4CE974A30Bb4296949': {...},
-    '0x32eb821d88f2e650d4732c4ce974a30bb4296949': {...}
+    defaultKeyName: 'web3js_wallet',
+    '0x8a21b7f0Ac7D39081fFF9a2a5cA4C9877fAAcDF4': {
+      address: '0x8a21b7f0Ac7D39081fFF9a2a5cA4C9877fAAcDF4',
+      privateKey: '0x1926b483be5519eabac5a654a1a63362d57fc2ecb4710e6ef5f45b8fae227f1e',
+      signTransaction: [Function: signTransaction],
+      sign: [Function: sign],
+      encrypt: [Function: encrypt],
+      index: 0
+    },
+    '0x8a21b7f0ac7d39081fff9a2a5ca4c9877faacdf4': {
+      address: '0x8a21b7f0Ac7D39081fFF9a2a5cA4C9877fAAcDF4',
+      privateKey: '0x1926b483be5519eabac5a654a1a63362d57fc2ecb4710e6ef5f45b8fae227f1e',
+      signTransaction: [Function: signTransaction],
+      sign: [Function: sign],
+      encrypt: [Function: encrypt],
+      index: 0
+    }
   },
   walletImported: [],
-  defaultAccount: 0
+  walletUtils: WalletUtils {
+    getChainId: [AsyncFunction (anonymous)],
+    getGasPrice: [AsyncFunction (anonymous)],
+    connection: Connection { web3: [Web3] }
+  }
 }
 ```
 
 ---
 
-### createWalletFromMnemonic
+### recoverWalletFromMnemonic
 
 ```ts
-wallet.createWalletFromMnemonic(mnemonic);
+wallet.recoverWalletFromMnemonic(mnemonic);
 ```
 
-Generates the wallet with one account from mnemonic. If wallets already exist they will not be overridden.
+Recover
 
 #### Parameters
 
@@ -99,8 +104,8 @@ Generates the wallet with one account from mnemonic. If wallets already exist th
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.recoverWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -135,8 +140,8 @@ Add account from private key to wallet
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.recoverWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -152,7 +157,7 @@ wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle
   defaultAccount: 0
 }
 wallet.addAccountFromPrivateKey("0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318");
-> WalletBase {
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -193,8 +198,8 @@ none
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.recoverWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -207,7 +212,7 @@ wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle
   defaultAccount: 0
 }
 wallet.addAccountFromPrivateKey("0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318");
-> WalletBase {
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -247,8 +252,8 @@ Remove an imported account from wallet
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.recoverWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -261,7 +266,7 @@ wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle
   defaultAccount: 0
 }
 wallet.addAccountFromPrivateKey("0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318");
-> WalletBase {
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -279,7 +284,7 @@ wallet.addAccountFromPrivateKey("0x4c0883a69102937d6231471b5dbb6204fe51296170827
   defaultAccount: 0
 }
 wallet.removeAccount(1);
-> WalletBase {
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -316,8 +321,8 @@ Encrypt wallet with password
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.recoverWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -329,7 +334,7 @@ wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle
   ...
 }
 wallet.encryptWallet("secret");
-> WalletBase {
+> WalletBaseExtend {
   ...
   mnemonic: 'U2FsdGVkX181NBnOd5Mvv9NH2Meo+S2nnDpnwODoJ4FRm7aXebkRsQn88RccfZ/iZ+8OcPRKwRGFi9IT0OAgsVuThT9T1f5MbPnU/uiwcsP4kIWWHHYnNOGBMbPAdCGk',
   wallet: [
@@ -365,8 +370,8 @@ Decrypt wallet with password
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.recoverWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
   wallet: <ref *1> Wallet {
     '0': {...},
@@ -377,7 +382,7 @@ wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle
   ...
 }
 wallet.encryptWallet("secret");
-> WalletBase {
+> WalletBaseExtend {
   ...
   mnemonic: 'U2FsdGVkX181NBnOd5Mvv9NH2Meo+S2nnDpnwODoJ4FRm7aXebkRsQn88RccfZ/iZ+8OcPRKwRGFi9IT0OAgsVuThT9T1f5MbPnU/uiwcsP4kIWWHHYnNOGBMbPAdCGk',
   wallet: [
@@ -391,7 +396,7 @@ wallet.encryptWallet("secret");
   ...
 }
 wallet.decryptWallet("secret");
-> WalletBase {
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -467,6 +472,7 @@ wallet.transfer(1, "0xBC4238FbE2CC00C4a093907bCdb4694FEC00882c", 23);
   }
 }
 ```
+
 ---
 
 ### transferToken
@@ -502,8 +508,8 @@ Transfer ERC20 token from an account in wallet to an address
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.recoverWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
   wallet: <ref *1> Wallet {
     '0': {...},
@@ -559,8 +565,8 @@ Get list of account address in wallet
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.recoverWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -576,7 +582,7 @@ wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle
   defaultAccount: 0
 }
 wallet.addAccountFromPrivateKey("0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318");
-> WalletBase {
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -621,8 +627,8 @@ none
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.recoverWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -658,8 +664,8 @@ none
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.recoverWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -702,8 +708,8 @@ none
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.recoverWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -719,7 +725,7 @@ wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle
   defaultAccount: 0
 }
 wallet.addAccountFromPrivateKey("0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318");
-> WalletBase {
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -813,8 +819,8 @@ Get account from wallet by index
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.recoverWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -857,8 +863,8 @@ none
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.recoverWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -930,8 +936,8 @@ Set default account of wallet to interact like Metamask
 #### Example
 
 ```ts
-wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
-> WalletBase {
+wallet.recoverWalletFromMnemonic("use share wealth depth leader mind check circle heavy cake dragon trap");
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -947,7 +953,7 @@ wallet.createWalletFromMnemonic("use share wealth depth leader mind check circle
   defaultAccount: 0
 }
 wallet.addAccountFromPrivateKey("0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318");
-> WalletBase {
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
@@ -965,7 +971,7 @@ wallet.addAccountFromPrivateKey("0x4c0883a69102937d6231471b5dbb6204fe51296170827
   defaultAccount: 0
 }
 wallet.setDefaultAccount(1);
-> WalletBase {
+> WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: <ref *1> Wallet {
