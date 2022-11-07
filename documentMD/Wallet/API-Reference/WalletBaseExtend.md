@@ -91,7 +91,7 @@ wallet.createWallet("use share wealth depth leader mind check circle heavy cake 
 wallet.recoverWalletFromMnemonic(mnemonic);
 ```
 
-Recover
+Recover wallet from mnemonic.
 
 #### Parameters
 
