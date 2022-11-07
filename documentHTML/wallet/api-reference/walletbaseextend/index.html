@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.720706450271">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.721152823271">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=2.4.0.720706450271" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.721152823271" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.720706450271" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.721152823271" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.720706450271" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.720706450271" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.721152823271" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.721152823271" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -52,7 +52,7 @@
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">HPA3 - BLC - Documentation</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.1.0</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -200,64 +200,69 @@
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWallet(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
-  mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
+  mnemonic: 'enable paddle grant picnic common air square vital talk pulp catch child',
+  defaultAccount: 0,
   wallet: &lt;ref *1&gt; Wallet {
-    '0': {...},
-    ...
-    '0x32eB821d88F2E650d4732C4CE974A30Bb4296949': {...},
-    '0x32eb821d88f2e650d4732c4ce974a30bb4296949': {...}
-  },
-  walletImported: [],
-  defaultAccount: 0
-}
-wallet.addAccountFromPrivateKey(&quot;0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318&quot;);
-&gt; WalletBase {
-  ...
-  mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
-  wallet: &lt;ref *1&gt; Wallet {
-    '0': {...},
-    '1': {...},
-    ...
-    length: 2,
-    ...
-    '0x32eB821d88F2E650d4732C4CE974A30Bb4296949': {...},
-    '0x32eb821d88f2e650d4732c4ce974a30bb4296949': {...},
-    '0x2c7536E3605D9C16a7a3D7b1898e529396a65c23': {...},
-    '0x2c7536e3605d9c16a7a3d7b1898e529396a65c23': {...}
-  },
-  walletImported: [ 1 ],
-  defaultAccount: 0
-}
-wallet.removeAccount(1);
-&gt; WalletBase {
-  ...
-  mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
-  wallet: &lt;ref *1&gt; Wallet {
-    '0': {...},
-    ...
+    '0': {
+      address: '0x8a21b7f0Ac7D39081fFF9a2a5cA4C9877fAAcDF4',
+      privateKey: '0x1926b483be5519eabac5a654a1a63362d57fc2ecb4710e6ef5f45b8fae227f1e',
+      signTransaction: [Function: signTransaction],
+      sign: [Function: sign],
+      encrypt: [Function: encrypt],
+      index: 0
+    },
+    _accounts: Accounts {
+      currentProvider: [Getter/Setter],
+      _requestManager: [RequestManager],
+      givenProvider: null,
+      providers: [Object],
+      _provider: [HttpProvider],
+      setProvider: [Function (anonymous)],
+      setRequestManager: [Function (anonymous)],
+      _ethereumCall: [Object],
+      wallet: [Circular *1]
+    },
     length: 1,
-    ...
-    '0x32eB821d88F2E650d4732C4CE974A30Bb4296949': {...},
-    '0x32eb821d88f2e650d4732c4ce974a30bb4296949': {...}
+    defaultKeyName: 'web3js_wallet',
+    '0x8a21b7f0Ac7D39081fFF9a2a5cA4C9877fAAcDF4': {
+      address: '0x8a21b7f0Ac7D39081fFF9a2a5cA4C9877fAAcDF4',
+      privateKey: '0x1926b483be5519eabac5a654a1a63362d57fc2ecb4710e6ef5f45b8fae227f1e',
+      signTransaction: [Function: signTransaction],
+      sign: [Function: sign],
+      encrypt: [Function: encrypt],
+      index: 0
+    },
+    '0x8a21b7f0ac7d39081fff9a2a5ca4c9877faacdf4': {
+      address: '0x8a21b7f0Ac7D39081fFF9a2a5cA4C9877fAAcDF4',
+      privateKey: '0x1926b483be5519eabac5a654a1a63362d57fc2ecb4710e6ef5f45b8fae227f1e',
+      signTransaction: [Function: signTransaction],
+      sign: [Function: sign],
+      encrypt: [Function: encrypt],
+      index: 0
+    }
   },
   walletImported: [],
-  defaultAccount: 0
+  walletUtils: WalletUtils {
+    getChainId: [AsyncFunction (anonymous)],
+    getGasPrice: [AsyncFunction (anonymous)],
+    connection: Connection { web3: [Web3] }
+  }
 }</code></pre>
 </doc-codeblock></div>
 <hr />
-<doc-anchor-target id="createwalletfrommnemonic">
+<doc-anchor-target id="recoverwalletfrommnemonic">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#createwalletfrommnemonic">#</doc-anchor-trigger>
-        <span>createWalletFromMnemonic</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#recoverwalletfrommnemonic">#</doc-anchor-trigger>
+        <span>recoverWalletFromMnemonic</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(mnemonic);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(mnemonic);</code></pre>
 </doc-codeblock></div>
-<p>Generates the wallet with one account from mnemonic. If wallets already exist they will not be overridden.</p>
+<p>Recover</p>
 <doc-anchor-target id="parameters-1">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-1">#</doc-anchor-trigger>
@@ -285,8 +290,8 @@ wallet.removeAccount(1);
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -337,8 +342,8 @@ wallet.removeAccount(1);
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -354,7 +359,7 @@ wallet.removeAccount(1);
   defaultAccount: 0
 }
 wallet.addAccountFromPrivateKey(&quot;0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318&quot;);
-&gt; WalletBase {
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -407,8 +412,8 @@ wallet.addAccountFromPrivateKey(&quot;0x4c0883a69102937d6231471b5dbb6204fe512961
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -421,7 +426,7 @@ wallet.addAccountFromPrivateKey(&quot;0x4c0883a69102937d6231471b5dbb6204fe512961
   defaultAccount: 0
 }
 wallet.addAccountFromPrivateKey(&quot;0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318&quot;);
-&gt; WalletBase {
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -477,8 +482,8 @@ wallet.addAccountFromPrivateKey(&quot;0x4c0883a69102937d6231471b5dbb6204fe512961
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -491,7 +496,7 @@ wallet.addAccountFromPrivateKey(&quot;0x4c0883a69102937d6231471b5dbb6204fe512961
   defaultAccount: 0
 }
 wallet.addAccountFromPrivateKey(&quot;0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318&quot;);
-&gt; WalletBase {
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -509,7 +514,7 @@ wallet.addAccountFromPrivateKey(&quot;0x4c0883a69102937d6231471b5dbb6204fe512961
   defaultAccount: 0
 }
 wallet.removeAccount(1);
-&gt; WalletBase {
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -562,8 +567,8 @@ wallet.removeAccount(1);
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -575,7 +580,7 @@ wallet.removeAccount(1);
   ...
 }
 wallet.encryptWallet(&quot;secret&quot;);
-&gt; WalletBase {
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'U2FsdGVkX181NBnOd5Mvv9NH2Meo+S2nnDpnwODoJ4FRm7aXebkRsQn88RccfZ/iZ+8OcPRKwRGFi9IT0OAgsVuThT9T1f5MbPnU/uiwcsP4kIWWHHYnNOGBMbPAdCGk',
   wallet: [
@@ -627,8 +632,8 @@ wallet.encryptWallet(&quot;secret&quot;);
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
   wallet: &lt;ref *1&gt; Wallet {
     '0': {...},
@@ -639,7 +644,7 @@ wallet.encryptWallet(&quot;secret&quot;);
   ...
 }
 wallet.encryptWallet(&quot;secret&quot;);
-&gt; WalletBase {
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'U2FsdGVkX181NBnOd5Mvv9NH2Meo+S2nnDpnwODoJ4FRm7aXebkRsQn88RccfZ/iZ+8OcPRKwRGFi9IT0OAgsVuThT9T1f5MbPnU/uiwcsP4kIWWHHYnNOGBMbPAdCGk',
   wallet: [
@@ -653,7 +658,7 @@ wallet.encryptWallet(&quot;secret&quot;);
   ...
 }
 wallet.decryptWallet(&quot;secret&quot;);
-&gt; WalletBase {
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -739,6 +744,33 @@ wallet.decryptWallet(&quot;secret&quot;);
 </ul>
 </li>
 </ol>
+<doc-anchor-target id="example-7">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-7">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.transfer(1, &quot;0xBC4238FbE2CC00C4a093907bCdb4694FEC00882c&quot;, 23);
+&gt; {
+  nonce: 696,
+  receipt: {
+    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 21000,
+    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+    logs: [],
+    status: true,
+    transactionHash: '0x8ca9b6e94cafaafc53f1db222dc01ab9257d9d51f4cef3bf86bf16290530feab',
+    transactionIndex: 0,
+    blockHash: '0x5022a4b7a5596a07047367b1d2f5886733cb9aba957879910bf6950aa3eb54b7',
+    blockNumber: 1422176,
+    gasUsed: 21000,
+    contractAddress: null,
+    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+    to: '0xBC4238FbE2CC00C4a093907bCdb4694FEC00882c'
+  }
+}</code></pre>
+</doc-codeblock></div>
 <hr />
 <doc-anchor-target id="transfertoken">
     <h3>
@@ -805,15 +837,15 @@ wallet.decryptWallet(&quot;secret&quot;);
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="example-7">
+<doc-anchor-target id="example-8">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-7">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-8">#</doc-anchor-trigger>
         <span>Example</span>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
   wallet: &lt;ref *1&gt; Wallet {
     '0': {...},
@@ -879,15 +911,15 @@ wallet.transfer(0, &quot;0xd627E4CFAEd1026077aBe9Fd43Aa750be925a077&quot;, 5);
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>Array&lt;String&gt;</span>
 </span>: List of account address in wallet.</p>
-<doc-anchor-target id="example-8">
+<doc-anchor-target id="example-9">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-8">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-9">#</doc-anchor-trigger>
         <span>Example</span>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -903,7 +935,7 @@ wallet.transfer(0, &quot;0xd627E4CFAEd1026077aBe9Fd43Aa750be925a077&quot;, 5);
   defaultAccount: 0
 }
 wallet.addAccountFromPrivateKey(&quot;0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318&quot;);
-&gt; WalletBase {
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -953,15 +985,15 @@ wallet.getListAccount();
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>String</span>
 </span>: A string of 12 valid mnemonic word of wallet.</p>
-<doc-anchor-target id="example-9">
+<doc-anchor-target id="example-10">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-9">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-10">#</doc-anchor-trigger>
         <span>Example</span>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -1002,15 +1034,15 @@ wallet.getMnemonic();
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>Object</span>
 </span>: A <code v-pre>WalletBase</code> object in web3-core</p>
-<doc-anchor-target id="example-10">
+<doc-anchor-target id="example-11">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-10">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-11">#</doc-anchor-trigger>
         <span>Example</span>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -1058,15 +1090,15 @@ wallet.getWalletBase();
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>Array<number></span>
 </span>: A list of index of account imported by private key</p>
-<doc-anchor-target id="example-11">
+<doc-anchor-target id="example-12">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-11">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-12">#</doc-anchor-trigger>
         <span>Example</span>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -1082,7 +1114,7 @@ wallet.getWalletBase();
   defaultAccount: 0
 }
 wallet.addAccountFromPrivateKey(&quot;0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318&quot;);
-&gt; WalletBase {
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -1133,9 +1165,9 @@ wallet.getWalletImported();
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>number</span>
 </span> (wei): Balance of account</p>
-<doc-anchor-target id="example-12">
+<doc-anchor-target id="example-13">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-12">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-13">#</doc-anchor-trigger>
         <span>Example</span>
     </h4>
 </doc-anchor-target>
@@ -1175,9 +1207,9 @@ wallet.getWalletImported();
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>number</span>
 </span>: Token balance of account</p>
-<doc-anchor-target id="example-13">
+<doc-anchor-target id="example-14">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-13">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-14">#</doc-anchor-trigger>
         <span>Example</span>
     </h4>
 </doc-anchor-target>
@@ -1217,15 +1249,15 @@ wallet.getWalletImported();
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>Object</span>
 </span>: The account object base from web3-core</p>
-<doc-anchor-target id="example-14">
+<doc-anchor-target id="example-15">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-14">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-15">#</doc-anchor-trigger>
         <span>Example</span>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -1273,15 +1305,15 @@ wallet.getAccount(0);
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>Object</span>
 </span>: The account object base from web3-core</p>
-<doc-anchor-target id="example-15">
+<doc-anchor-target id="example-16">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-15">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-16">#</doc-anchor-trigger>
         <span>Example</span>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -1333,9 +1365,9 @@ wallet.getAccount(0);
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>number</span>
 </span>: The nonce of account</p>
-<doc-anchor-target id="example-16">
+<doc-anchor-target id="example-17">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-16">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-17">#</doc-anchor-trigger>
         <span>Example</span>
     </h4>
 </doc-anchor-target>
@@ -1381,15 +1413,15 @@ wallet.getAccount(0);
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>Object</span>
 </span>: The wallet.</p>
-<doc-anchor-target id="example-17">
+<doc-anchor-target id="example-18">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-17">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-18">#</doc-anchor-trigger>
         <span>Example</span>
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.createWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBase {
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -1405,7 +1437,7 @@ wallet.getAccount(0);
   defaultAccount: 0
 }
 wallet.addAccountFromPrivateKey(&quot;0x4c0883a69102937d6231471b5dbb6204fe5129617082792ae468d01a3f362318&quot;);
-&gt; WalletBase {
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
@@ -1423,7 +1455,7 @@ wallet.addAccountFromPrivateKey(&quot;0x4c0883a69102937d6231471b5dbb6204fe512961
   defaultAccount: 0
 }
 wallet.setDefaultAccount(1);
-&gt; WalletBase {
+&gt; WalletBaseExtend {
   ...
   mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
   wallet: &lt;ref *1&gt; Wallet {
