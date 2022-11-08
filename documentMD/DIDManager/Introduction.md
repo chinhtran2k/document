@@ -74,11 +74,13 @@ Base on project requirement, we defined 2 claim type for DID type
 
 - [!badge variant="primary" text="1"] - [!badge variant="primary" text="PATIENT"] : Patient DID
 - [!badge variant="primary" text="2"] - [!badge variant="primary" text="PHARMACY"]: Pharmacy DID
+- [!badge variant="primary" text="2"] - [!badge variant="primary" text="CLINIC"]: Clinic/Hospital DID
 
 ```ts
 enum ClaimType {
   PATIENT = 1,
   PHARMACY = 2,
+  CLINIC = 3,
 }
 ```
 
@@ -106,13 +108,13 @@ enum KeyPurpose {
 
 ### Schemes
 
-
 Base on [ERC734](https://github.com/ethereum/EIPs/issues/734) and [ERC725](https://github.com/ethereum/EIPs/issues/725), we define 4 schemes for sign data and contract call
 
 - [!badge variant="primary" text="1"] - [!badge variant="primary" text="ECDSA"]: ECDSA scheme. We will use this scheme for signed signature, all needed function will use this scheme.
 - [!badge variant="primary" text="2"] - [!badge variant="primary" text="RSA"]: RSA scheme. This is an option base on ERC734, we don't need to use this.
 - [!badge variant="primary" text="3"] - [!badge variant="primary" text="CONTRACT_CALL"]: Contract call scheme.
 - [!badge variant="primary" text="4"] - [!badge variant="primary" text="SELF_CLAIM"]: Self claim scheme.
+
 ```ts
 enum Schemes {
   ECDSA = 1,
