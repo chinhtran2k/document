@@ -397,8 +397,7 @@ Check if DID has a claim of specific type (remember that our Claim Holder is sta
 
 #### Returns
 
-1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check [receipt](../../Wallet/API-Reference/Helper#signAndSendTransaction))
-2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]: Event logs of transaction
+[!badge variant="danger" text="boolean"]: True if DID has a valid claim of specific type
 
 #### Example
 
