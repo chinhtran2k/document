@@ -299,7 +299,8 @@ dids.addKey(
   KeyPurposes.CLAIM_SIGNER,
   Schemes.ECDSA,
   "28d90c06971d80358c9d33dd755408f84ba67deb0dc2eab41036c5ad8ae245a4",
-  "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
+  "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb",
+  "0x235390558202F869D23191a2Ad48246679E619a8"
 );
 > {
   receipt: {
@@ -354,7 +355,8 @@ Get owner of DID contract
 ```ts
 const removekeyTx = await dids.removeKey(
     "0xa8275bd2f2fe9045d2cf8ac51b458741f1fda57c81e8a87c336194cb2b03a296",
-    "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
+    "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb",
+    "0x235390558202F869D23191a2Ad48246679E619a8"
   );
 > {
   receipt: {
