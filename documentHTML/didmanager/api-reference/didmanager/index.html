@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.721216823883">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.721972109534">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=2.4.0.721216823883" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.721972109534" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.721216823883" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.721972109534" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.721216823883" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.721216823883" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.721972109534" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.721972109534" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -499,14 +499,14 @@
 }</code></pre>
 </doc-codeblock></div>
 <hr />
-<doc-anchor-target id="getcredential">
+<doc-anchor-target id="getclaim">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#getcredential">#</doc-anchor-trigger>
-        <span>getCredential</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getclaim">#</doc-anchor-trigger>
+        <span>getClaim</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.getCredential(identity, claimId);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaim(identity, claimId);</code></pre>
 </doc-codeblock></div>
 <p>Get claim detail of DID by claim id</p>
 <doc-anchor-target id="parameters-3">
@@ -640,7 +640,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.addKey(purpose, keyType, privateKeyAdd, privateKey);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.addKey(purpose, keyType, privateKeyAdd, privateKey, targeIdentity);</code></pre>
 </doc-codeblock></div>
 <p>Add key to Claim holder (only access for Management side)</p>
 <doc-anchor-target id="parameters-5">
@@ -670,6 +670,11 @@
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span>: Private key of account that has permission to interact with DID</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>targeIdentity</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Target DID contract address</li>
 </ol>
 <doc-anchor-target id="returns-5">
     <h4>
@@ -741,7 +746,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.removeKey(keyRemove, privateKey);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.removeKey(keyRemove, privateKey, targeIdentity);</code></pre>
 </doc-codeblock></div>
 <p>Get owner of DID contract</p>
 <doc-anchor-target id="parameters-6">
@@ -761,6 +766,11 @@
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span>: Private key of account that has permission to interact with DID</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>targeIdentity</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Target DID contract address</li>
 </ol>
 <doc-anchor-target id="returns-6">
     <h4>
@@ -824,7 +834,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.verifyCredential(identity, claimType);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.verifyClaim(identity, claimType);</code></pre>
 </doc-codeblock></div>
 <p>Check if DID has a claim of specific type (remember that our Claim Holder is static on server side)</p>
 <doc-anchor-target id="parameters-7">
@@ -861,7 +871,7 @@
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.checkClaim(&quot;0xece7519c282274542231d213A5919337c3F66686&quot;, 1);
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.verifyClaim(&quot;0xece7519c282274542231d213A5919337c3F66686&quot;, 1);
 &gt; true</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="utils">

@@ -204,10 +204,10 @@ dids.removeClaim("0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c", 2, "0x7Aaf39BBD7D
 
 ---
 
-### getCredential
+### getClaim
 
 ```ts
-dids.getCredential(identity, claimId);
+dids.getClaim(identity, claimId);
 ```
 
 Get claim detail of DID by claim id
@@ -273,7 +273,7 @@ dids.getClaimIdsByType("0xece7519c282274542231d213a5919337c3f66686", 1);
 ### addKey
 
 ```ts
-dids.addKey(purpose, keyType, privateKeyAdd, privateKey);
+dids.addKey(purpose, keyType, privateKeyAdd, privateKey, targeIdentity);
 ```
 
 Add key to Claim holder (only access for Management side)
@@ -284,6 +284,7 @@ Add key to Claim holder (only access for Management side)
 2. [!badge variant="warning" text="keyType"] - [!badge variant="warning" text="Schemes"]: The key type (check [Schemes](../Introduction.md/#schemes))
 3. [!badge variant="warning" text="privateKeyAdd"] - [!badge variant="warning" text="string"]: The private key of account to add as key
 4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
+5. [!badge variant="warning" text="targeIdentity"] - [!badge variant="warning" text="string"]: Target DID contract address
 
 #### Returns
 
@@ -332,7 +333,7 @@ dids.addKey(
 ### removeKey
 
 ```ts
-dids.removeKey(keyRemove, privateKey);
+dids.removeKey(keyRemove, privateKey, targeIdentity);
 ```
 
 Get owner of DID contract
@@ -341,6 +342,7 @@ Get owner of DID contract
 
 1. [!badge variant="warning" text="keyRemove"] - [!badge variant="warning" text="string"]: The key to remove
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
+3. [!badge variant="warning" text="targeIdentity"] - [!badge variant="warning" text="string"]: Target DID contract address
 
 #### Returns
 
@@ -385,7 +387,7 @@ const removekeyTx = await dids.removeKey(
 ### verifyCredential
 
 ```ts
-dids.verifyCredential(identity, claimType);
+dids.verifyClaim(identity, claimType);
 ```
 
 Check if DID has a claim of specific type (remember that our Claim Holder is static on server side)
@@ -402,7 +404,7 @@ Check if DID has a claim of specific type (remember that our Claim Holder is sta
 #### Example
 
 ```ts
-dids.checkClaim("0xece7519c282274542231d213A5919337c3F66686", 1);
+dids.verifyClaim("0xece7519c282274542231d213A5919337c3F66686", 1);
 > true
 ```
 
