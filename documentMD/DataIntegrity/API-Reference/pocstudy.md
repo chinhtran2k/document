@@ -2,7 +2,7 @@
 icon: dot
 ---
 
-# DATAINTEGRITY
+# POCSTUDY
 
 Data Integrity SDK for manage ERC721
 
@@ -10,18 +10,20 @@ Data Integrity SDK for manage ERC721
 
 ---
 
-### checkIntegritySingleDDR
+### mintPOCStudy
 
 ```ts
-dataintegrity.checkIntegritySingleDDR(ddrId, hashedData);
+ddr.mintPOCStudy(uri, message, privateKey);
 ```
 
-check the integrity of single ddr
+Create POC
 
 #### Parameters
 
-1. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: Id of DDR
-2. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data was hashed by keccak256 
+1. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri
+2. [!badge variant="warning" text="message"] - [!badge variant="warning" text="string"]: The message was sent from Pharumo
+3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+
 
 
 #### Returns
@@ -98,5 +100,28 @@ Get Root Hash Value
  > 0xac25ffa90fbec2aa0a500be3e3f0643323c9c9c2c62aa5d685b7a50011d80c78
 ```
 
+---
 
+### getRootNodeIdPOCPatient
+
+```ts
+pocStudy.getRootNodeIdPOCPatient();
+```
+
+Get Hash Value of Root Node Patient
+
+#### Parameters
+
+
+
+#### Returns
+
+[!badge variant="danger" text="String"]: Hash Value of Root Node Patient
+ 
+#### Example
+
+```ts
+pocStudy.getRootNodeIdPOCPatient().then(console.log)
+> 0xc9c0421f4fc69e49a6f8d43cade8d3768bb9968fc0b6c831170a4984933edf1e
+```
 
