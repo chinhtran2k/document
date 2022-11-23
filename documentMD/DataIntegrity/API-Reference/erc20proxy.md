@@ -2,7 +2,7 @@
 icon: dot
 ---
 
-# ERC20PROXY
+# ERC20Proxy
 
 Data Integrity SDK for manage ERC721
 
@@ -23,41 +23,46 @@ Set the value of award
 1. [!badge variant="warning" text="value"] - [!badge variant="warning" text="string"]: The value of award
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
 
-
 #### Returns
-1.[!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check receipt).
 
-2.[!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]:Event logs of transactions.
+1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check receipt).
+2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]:Event logs of transactions.
 
- 
 #### Example
 
 ```ts
-erc20Proxy.setAwardValue(10, "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb").then(console.log)
-> {
+erc20Proxy.setAwardValue(
+    10,
+    "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
+  )
+  .then(console.log);
+>{
   receipt: {
-    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    root: "0x0000000000000000000000000000000000000000000000000000000000000000",
     cumulativeGasUsed: 24549,
-    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000004000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000002000000000000000',
-    logs: [ [Object] ],
+    logsBloom:
+      "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000004000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000002000000000000000",
+    logs: [[Object]],
     status: true,
-    transactionHash: '0x5df0588c37ed7009cea6374665656e87a8625900bfdbb59db4c44f26aeb6c49d',
+    transactionHash:
+      "0x5df0588c37ed7009cea6374665656e87a8625900bfdbb59db4c44f26aeb6c49d",
     transactionIndex: 0,
-    blockHash: '0x1fb4316f86a01ee35e3edd954a6cefbba35e945eb0549a42f04f836c91ce1365',
+    blockHash:
+      "0x1fb4316f86a01ee35e3edd954a6cefbba35e945eb0549a42f04f836c91ce1365",
     blockNumber: 1655954,
     gasUsed: 24549,
     contractAddress: null,
-    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
-    to: '0x75857E84F32D99925E7f404eBBFa04c88c589Ede'
+    from: "0x51C4B0487e16186da402daebE06C4cD71b5015c8",
+    to: "0x75857E84F32D99925E7f404eBBFa04c88c589Ede",
   },
   eventLogs: [
     {
-      name: 'ChangedAwardValue',
+      name: "ChangedAwardValue",
       events: [Array],
-      address: '0x75857E84F32D99925E7f404eBBFa04c88c589Ede'
-    }
-  ]
-}
+      address: "0x75857E84F32D99925E7f404eBBFa04c88c589Ede",
+    },
+  ],
+};
 ```
 
 ---
@@ -73,20 +78,18 @@ Set owner for token
 #### Parameters
 
 1. [!badge variant="warning" text="tokenOwner"] - [!badge variant="warning" text="number"]: Address of owner
-3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
-
+2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
 
 #### Returns
 
-1.[!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check receipt).
+1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check receipt).
+2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]: Event logs of transactions.
 
-2.[!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]:Event logs of transactions.
- 
 #### Example
 
 ```ts
 erc20Proxy.setTokenOwner(
-    "0x6A5078326AC0694Ed1059f5e96e9D5531b319cfE", 
+    "0x6A5078326AC0694Ed1059f5e96e9D5531b319cfE",
     "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
     ).then(console.log);
 > {
@@ -128,15 +131,13 @@ Set owner for token
 #### Parameters
 
 1. [!badge variant="warning" text="pcoAddress"] - [!badge variant="warning" text="number"]: Address of pco
-3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
-
+2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
 
 #### Returns
 
-1.[!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check receipt).
+1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check receipt).
+2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]:Event logs of transactions.
 
-2.[!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]:Event logs of transactions.
- 
 #### Example
 
 ```ts
@@ -170,6 +171,7 @@ erc20Proxy.setPCOToken(
 }
 
 ```
+
 ---
 
 ### awardToken
@@ -185,41 +187,47 @@ Set the value of award
 1. [!badge variant="warning" text="to"] - [!badge variant="warning" text="string"]: The value of address want to receive token
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
 
-
 #### Returns
-1.[!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check receipt).
 
-2.[!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]:Event logs of transactions.
+1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check receipt).
+2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]:Event logs of transactions.
 
- 
 #### Example
 
 ```ts
-erc20Proxy.setAwardValue(10, "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb").then(console.log)
+erc20Proxy
+  .setAwardValue(
+    10,
+    "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
+  )
+  .then(console.log);
 > {
   receipt: {
-    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    root: "0x0000000000000000000000000000000000000000000000000000000000000000",
     cumulativeGasUsed: 29803,
-    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000200000100000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000',
-    logs: [ [Object] ],
+    logsBloom:
+      "0x00000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000200000100000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000",
+    logs: [[Object]],
     status: true,
-    transactionHash: '0x3c3c739a17c2ff51acffbd4bdd572201acf0baee71d2935b332b6636bf8e8407',
+    transactionHash:
+      "0x3c3c739a17c2ff51acffbd4bdd572201acf0baee71d2935b332b6636bf8e8407",
     transactionIndex: 0,
-    blockHash: '0xfe692395854df4dd6f5a092dbe42ac472c6be4ff00f69a6ecb1668e9ed71258a',
+    blockHash:
+      "0xfe692395854df4dd6f5a092dbe42ac472c6be4ff00f69a6ecb1668e9ed71258a",
     blockNumber: 1656077,
     gasUsed: 29803,
     contractAddress: null,
-    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
-    to: '0x75857E84F32D99925E7f404eBBFa04c88c589Ede'
+    from: "0x51C4B0487e16186da402daebE06C4cD71b5015c8",
+    to: "0x75857E84F32D99925E7f404eBBFa04c88c589Ede",
   },
   eventLogs: [
     {
-      name: 'AwardedToken',
+      name: "AwardedToken",
       events: [Array],
-      address: '0x75857E84F32D99925E7f404eBBFa04c88c589Ede'
-    }
-  ]
-}
+      address: "0x75857E84F32D99925E7f404eBBFa04c88c589Ede",
+    },
+  ],
+};
 ```
 
 ---
@@ -231,48 +239,50 @@ erc20Proxy.setDDRContract(ddrAddress, privateKey);
 ```
 
 Set address for ddr contract
+
 #### Parameters
 
 1. [!badge variant="warning" text="ddrAddress"] - [!badge variant="warning" text="string"]: The address of ddr
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
 
-
 #### Returns
-1.[!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check receipt).
 
-2.[!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]:Event logs of transactions.
+1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check receipt).
+2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]: Event logs of transactions.
 
- 
 #### Example
 
 ```ts
 erc20Proxy.setDDRContract(
-  "0x51C4B0487e16186da402daebE06C4cD71b5015c8", 
-  "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb")
-  .then(console.log)
-
+    "0x51C4B0487e16186da402daebE06C4cD71b5015c8",
+    "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
+  )
+  .then(console.log);
 > {
   receipt: {
-    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    root: "0x0000000000000000000000000000000000000000000000000000000000000000",
     cumulativeGasUsed: 29884,
-    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000040000000000000000000000008000000',
-    logs: [ [Object] ],
+    logsBloom:
+      "0x00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000040000000000000000000000008000000",
+    logs: [[Object]],
     status: true,
-    transactionHash: '0xaaa36701dfd601fcc53bcc10fbe5b2eb906c8b81cab05866b9ffbfe85fc44544',
+    transactionHash:
+      "0xaaa36701dfd601fcc53bcc10fbe5b2eb906c8b81cab05866b9ffbfe85fc44544",
     transactionIndex: 0,
-    blockHash: '0x621b490d0eec0ef118c965b9d7aa62b7ae0760c17b5710a536e51c559458534a',
+    blockHash:
+      "0x621b490d0eec0ef118c965b9d7aa62b7ae0760c17b5710a536e51c559458534a",
     blockNumber: 1656010,
     gasUsed: 29884,
     contractAddress: null,
-    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
-    to: '0x75857E84F32D99925E7f404eBBFa04c88c589Ede'
+    from: "0x51C4B0487e16186da402daebE06C4cD71b5015c8",
+    to: "0x75857E84F32D99925E7f404eBBFa04c88c589Ede",
   },
   eventLogs: [
     {
-      name: 'ChangedDDR',
+      name: "ChangedDDR",
       events: [Array],
-      address: '0x75857E84F32D99925E7f404eBBFa04c88c589Ede'
-    }
-  ]
-}
+      address: "0x75857E84F32D99925E7f404eBBFa04c88c589Ede",
+    },
+  ],
+};
 ```

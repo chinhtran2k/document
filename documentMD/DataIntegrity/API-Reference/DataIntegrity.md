@@ -2,9 +2,9 @@
 icon: dot
 ---
 
-# DATAINTEGRITY
+# DataIntegrity
 
-Data Integrity SDK for manage ERC721
+Data Integrity SDK
 
 ## Main function
 
@@ -21,82 +21,55 @@ check the integrity of single ddr
 #### Parameters
 
 1. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: Id of DDR
-2. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data was hashed by keccak256 
-
+2. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data was hashed by keccak256
 
 #### Returns
 
-1.[!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check receipt).
+1. [!badge variant="danger" text="boolean"]: true if the data is valid, false if the data is invalid
 
-2.[!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]:Event logs of transactions.
-
-3.[!badge variant="danger" text="tokenId"]: tokenId was generated.
-
-
- 
 #### Example
 
 ```ts
-pocStudy.mintPOCStudy('ggwp', 
-        "i am dev blockchain", 
-        "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb")
-        .then(console.log);
-> {
-  receipt: {
-    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
-    cumulativeGasUsed: 1080775,
-    logsBloom: '0x00000000000000000080000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000008008000000000000004000040000001000000000000000000000820000000000000000000800200000000000000000000010000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000070000000000000000000000000000000000000000000000000000000000000000000',
-    logs: [ [Object], [Object] ],
-    status: true,
-    transactionHash: '0x9d50cdc5d13ccbc951b8a419596a4d6f79f6b3153e79a94c2166f614059a7562',
-    transactionIndex: 0,
-    blockHash: '0x3f9b3a03baea8868dcff1b229abac5d250058d380c69a055b750e8f6c782c5d2',
-    blockNumber: 1654583,
-    gasUsed: 1080775,
-    contractAddress: null,
-    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
-    to: '0xE8918359122d7C4ab91186689D49FfbE55566E07'
-  },
-  eventLogs: [
-    {
-      name: 'Transfer',
-      events: [Array],
-      address: '0xE8918359122d7C4ab91186689D49FfbE55566E07'
-    },
-    {
-      name: 'LockedPOCPatient',
-      events: [Array],
-      address: '0xE8918359122d7C4ab91186689D49FfbE55566E07'
-    }
-  ],
-  tokenId: '1'
-}
+pocStudy.checkIntegritySingleDDR(
+    "0001",
+    "0xf00814e2e916628483aef34d34f1f63cee0d8b67a2c7fbea160d2b5d188534c9")
+    .then(console.log);
+
+> true
 ```
 
 ---
 
-### getRootHashPOCPatient
+### checkIntegritySinglePatient
 
 ```ts
-pocStudy.getRootHashPOCPatient();
+pocStudy.checkIntegritySinglePatient(patientDID, ddrsRawId, ddrsHashedData);
 ```
 
-Get Root Hash Value
+Check the integrity of single patient
 
 #### Parameters
 
-
+1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: DID of patient
+2. [!badge variant="warning" text="ddrsRawId"] - [!badge variant="warning" text="Array\<string>"]: Array of raw id of DDRs
+3. [!badge variant="warning" text="ddrsHashedData"] - [!badge variant="warning" text="Array\<string>"]: Array of hashed data of DDRs
 
 #### Returns
 
-[!badge variant="danger" text="String"]: Hash Value of Root Patient .
- 
+[!badge variant="danger" text="boolean"]: true if the data is valid, false if the data is invalid
+
 #### Example
 
 ```ts
- pocStudy.getRootHashPOCPatient().then(console.log)
- > 0xac25ffa90fbec2aa0a500be3e3f0643323c9c9c2c62aa5d685b7a50011d80c78
+pocStudy.checkIntegritySinglePatient(
+    "0x3b3FFD45DCD98E843938967B352e22673007fb19",
+    Array.from(["1", "2", "3"]),
+    Array.from([
+      "0xf00814e2e916628483aef34d34f1f63cee0d8b67a2c7fbea160d2b5d188534c9",
+      "0x46f910e6fdee1489ecdcb31fd30eb4b8a2b0c6ddac7e252d1ef3c59d02f09c5e",
+      "0xd81a12bbbd8e1ada2e7ea6a82ec3b9b54464675977ed8af94b15320c698cac6d",
+    ])
+).then(console.log);
+
+> true
 ```
-
-
-
