@@ -13,7 +13,15 @@ Data Integrity SDK for manage ERC721
 ### mintDDR
 
 ```ts
-ddr.mintDDR(hashedData, ddrRawId, ddrPatientRawId, uri, patientDID, privateKey, nonce);
+ddr.mintDDR(
+  hashedData,
+  ddrRawId,
+  ddrPatientRawId,
+  uri,
+  patientDID,
+  privateKey,
+  nonce
+);
 ```
 
 Create DDR for Patients
@@ -321,10 +329,10 @@ ddr.sharedDDR(
 
 ---
 
-### disclosureConsentDDRFromProvider
+### disclosureConsentDDR
 
 ```ts
-ddr.disclosureConsentDDRFromProvider(ddrTokenIds, providerDID, privateKey, nonce);
+ddr.disclosureConsentDDR(ddrTokenIds, providerDID, privateKey, nonce);
 ```
 
 Allow list ids of ddr to provider
@@ -345,7 +353,7 @@ Allow list ids of ddr to provider
 #### Example
 
 ```ts
-ddr.disclosureConsentDDRFromProvider(
+ddr.disclosureConsentDDR(
     [0, 1],
     "0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0",
     "0x37C819C94EdfE048968A28215C73C4D1B8ceAb15",
