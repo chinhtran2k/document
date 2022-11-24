@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.722592613443">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.722594944482">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=2.4.0.722592613443" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.722594944482" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.722592613443" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.722594944482" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.722592613443" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.722592613443" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.722594944482" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.722594944482" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -52,7 +52,7 @@
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">HPA3 - BLC - Documentation</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.1.4</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.1.5</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -174,7 +174,15 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">ddr.mintDDR(hashedData, ddrRawId, ddrPatientRawId, uri, patientDID, privateKey, nonce);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">ddr.mintDDR(
+  hashedData,
+  ddrRawId,
+  ddrPatientRawId,
+  uri,
+  patientDID,
+  privateKey,
+  nonce
+);</code></pre>
 </doc-codeblock></div>
 <p>Create DDR for Patients</p>
 <doc-anchor-target id="parameters">
@@ -620,14 +628,14 @@
 };</code></pre>
 </doc-codeblock></div>
 <hr />
-<doc-anchor-target id="disclosureconsentddrfromprovider">
+<doc-anchor-target id="disclosureconsentddr">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disclosureconsentddrfromprovider">#</doc-anchor-trigger>
-        <span>disclosureConsentDDRFromProvider</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disclosureconsentddr">#</doc-anchor-trigger>
+        <span>disclosureConsentDDR</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">ddr.disclosureConsentDDRFromProvider(ddrTokenIds, providerDID, privateKey, nonce);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">ddr.disclosureConsentDDR(ddrTokenIds, providerDID, privateKey, nonce);</code></pre>
 </doc-codeblock></div>
 <p>Allow list ids of ddr to provider</p>
 <doc-anchor-target id="parameters-3">
@@ -640,8 +648,8 @@
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>ddrTokenIds</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>number</span>
-</span>: list ids token of ddr</li>
+    <span>Array&lt;number&gt;</span>
+</span>: List ids token of ddr</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>patientDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
@@ -688,7 +696,7 @@
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">ddr.disclosureConsentDDRFromProvider(
+<pre class="language-typescript"><code v-pre class="language-typescript">ddr.disclosureConsentDDR(
     [0, 1],
     &quot;0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0&quot;,
     &quot;0x37C819C94EdfE048968A28215C73C4D1B8ceAb15&quot;,
@@ -780,10 +788,10 @@
     <span>string</span>
 </span>: The address of patient</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>ddrTokenIds</span>
+    <span>ddrTokenId</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>Array&lt;Number&gt;</span>
-</span>: Array of id token of ddr</li>
+    <span>number</span>
+</span>: Id token of ddr</li>
 </ol>
 <doc-anchor-target id="returns-4">
     <h4>
