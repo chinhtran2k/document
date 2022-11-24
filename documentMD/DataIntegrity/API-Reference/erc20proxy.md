@@ -13,7 +13,7 @@ Data Integrity SDK for manage ERC721
 ### setAwardValue
 
 ```ts
-erc20Proxy.setAwardValue(number, privateKey);
+erc20Proxy.setAwardValue(number, privateKey, nonce);
 ```
 
 Set the value of award
@@ -22,6 +22,7 @@ Set the value of award
 
 1. [!badge variant="warning" text="value"] - [!badge variant="warning" text="string"]: The value of award
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+3. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 
@@ -70,7 +71,7 @@ erc20Proxy.setAwardValue(
 ### setTokenOwner
 
 ```ts
-erc20Proxy.setTokenOwner(tokenOwner, privateKey);
+erc20Proxy.setTokenOwner(tokenOwner, privateKey, nonce);
 ```
 
 Set owner for token
@@ -79,6 +80,7 @@ Set owner for token
 
 1. [!badge variant="warning" text="tokenOwner"] - [!badge variant="warning" text="number"]: Address of owner
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+3. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 
@@ -123,7 +125,7 @@ erc20Proxy.setTokenOwner(
 ### setPCOToken
 
 ```ts
-ddr.setPCOToken(pcoAddress, privateKey);
+ddr.setPCOToken(pcoAddress, privateKey, nonce);
 ```
 
 Set owner for token
@@ -132,6 +134,7 @@ Set owner for token
 
 1. [!badge variant="warning" text="pcoAddress"] - [!badge variant="warning" text="number"]: Address of pco
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 
@@ -177,7 +180,7 @@ erc20Proxy.setPCOToken(
 ### awardToken
 
 ```ts
-erc20Proxy.awardToken(to, privateKey);
+erc20Proxy.awardToken(to, privateKey, nonce);
 ```
 
 Set the value of award
@@ -186,6 +189,7 @@ Set the value of award
 
 1. [!badge variant="warning" text="to"] - [!badge variant="warning" text="string"]: The value of address want to receive token
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+3. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 
@@ -235,7 +239,7 @@ erc20Proxy
 ### setDDRContract
 
 ```ts
-erc20Proxy.setDDRContract(ddrAddress, privateKey);
+erc20Proxy.setDDRContract(ddrAddress, privateKey, nonce);
 ```
 
 Set address for ddr contract
@@ -244,6 +248,7 @@ Set address for ddr contract
 
 1. [!badge variant="warning" text="ddrAddress"] - [!badge variant="warning" text="string"]: The address of ddr
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+3. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 

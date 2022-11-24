@@ -13,7 +13,7 @@ Data Integrity SDK for manage ERC721
 ### mintDDR
 
 ```ts
-ddr.mintDDR(hashedData, ddrRawId, ddrPatientRawId, uri, patientDID, privateKey);
+ddr.mintDDR(hashedData, ddrRawId, ddrPatientRawId, uri, patientDID, privateKey, nonce);
 ```
 
 Create DDR for Patients
@@ -26,6 +26,7 @@ Create DDR for Patients
 4. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of ddr
 5. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
 6. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+7. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 
@@ -119,7 +120,8 @@ ddr.mintBatchDDR(
   ddrPatientRawIds,
   uris,
   patientDID,
-  privateKey
+  privateKey,
+  nonce
 );
 ```
 
@@ -132,6 +134,7 @@ Create many DDRs for Patients
 3. [!badge variant="warning" text="uris"] - [!badge variant="warning" text="Array\<String>"]: List of uris of ddr
 4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
 5. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+6. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 
@@ -227,7 +230,7 @@ ddr.mintBatchDDR(
 ### sharedDDR
 
 ```ts
-ddr.sharedDDR(ddrTokenIds, patientDID, privateKey);
+ddr.sharedDDR(ddrTokenIds, patientDID, privateKey, nonce);
 ```
 
 Allow address of patient to access id of ddr
@@ -237,6 +240,7 @@ Allow address of patient to access id of ddr
 1. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array\<number>"]: Array of id token of ddr
 2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
 3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 
@@ -320,7 +324,7 @@ ddr.sharedDDR(
 ### disclosureConsentDDRFromProvider
 
 ```ts
-ddr.disclosureConsentDDRFromProvider(ddrTokenIds, providerDID, privateKey);
+ddr.disclosureConsentDDRFromProvider(ddrTokenIds, providerDID, privateKey, nonce);
 ```
 
 Allow list ids of ddr to provider
@@ -331,6 +335,7 @@ Allow list ids of ddr to provider
 2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
 3. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]: The address of provider
 4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 
