@@ -461,7 +461,7 @@ Check if this address of provideris allowed to watch ddr
 #### Parameters
 
 1. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]: The address of provider
-2. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array\<Number>"]: Array of id token of ddr
+2. [!badge variant="warning" text="ddrTokenId"] - [!badge variant="warning" text="number"]: Id token of ddr
 
 #### Returns
 

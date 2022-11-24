@@ -187,7 +187,7 @@ Set the value of award
 
 #### Parameters
 
-1. [!badge variant="warning" text="to"] - [!badge variant="warning" text="string"]: The value of address want to receive token
+1. [!badge variant="warning" text="to"] - [!badge variant="warning" text="string"]: The address want to receive token
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
 3. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
