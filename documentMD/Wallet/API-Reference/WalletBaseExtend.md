@@ -26,6 +26,10 @@ none
 #### Returns
 
 [!badge variant="danger" text="Object"]: The generated wallet.
+- `mnemonic` - `string` - The mnemonic of the wallet.
+- `wallet` - `object` - The wallet base object.
+- `walletImported` - `array` - The array of wallet imported.
+- `defaultAccount` - `number` - The default account index.
 
 #### Example
 
@@ -99,7 +103,7 @@ Recover wallet from mnemonic.
 
 #### Returns
 
-[!badge variant="danger" text="Object"]: The generated wallet.
+[!badge variant="danger" text="Object"]: The generated wallet. See [createWallet](#createWallet) for more details.
 
 #### Example
 
@@ -135,7 +139,7 @@ Add account from private key to wallet
 
 #### Returns
 
-[!badge variant="danger" text="Object"]: The wallet.
+[!badge variant="danger" text="Object"]: The wallet. See [createWallet](#createWallet) for more details.
 
 #### Example
 
@@ -193,7 +197,7 @@ none
 
 #### Returns
 
-[!badge variant="danger" text="Object"]: The wallet.
+[!badge variant="danger" text="Object"]: The wallet. See [createWallet](#createWallet) for more details.
 
 #### Example
 
@@ -247,7 +251,7 @@ Remove an imported account from wallet
 
 #### Returns
 
-[!badge variant="danger" text="Object"]: The wallet.
+[!badge variant="danger" text="Object"]: The wallet. See [createWallet](#createWallet) for more details.
 
 #### Example
 
@@ -317,6 +321,8 @@ Encrypt wallet with password
 #### Returns
 
 [!badge variant="danger" text="Object"]: The added wallet with core wallet encrypted.
+- `mnemonic` - `string` - The encrypted mnemonic of the wallet.
+- `wallet` - `object` - The encrypted wallet base object.
 
 #### Example
 
@@ -365,7 +371,7 @@ Decrypt wallet with password
 
 #### Returns
 
-[!badge variant="danger" text="Object"]: The added wallet with core wallet decrypted.
+[!badge variant="danger" text="Object"]: The added wallet with core wallet decrypted. See [createWallet](#createWallet) for more details.
 
 #### Example
 
@@ -931,7 +937,7 @@ Set default account of wallet to interact like Metamask
 
 #### Returns
 
-[!badge variant="danger" text="Object"]: The wallet.
+[!badge variant="danger" text="Object"]: The wallet. See [createWallet](#createWallet) for more details.
 
 #### Example
 

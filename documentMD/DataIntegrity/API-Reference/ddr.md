@@ -41,7 +41,7 @@ ddr
     "0x94f5115f6287e66e3fc9bbd6e4f621f7657efd488e304c810ce7d381b654f59f",
     "007",
     "13",
-    "ggwp",
+    "Fill this text with necessary information",
     "0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0",
     "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
   )
@@ -113,7 +113,14 @@ ddr
 ### mintBatchDDR
 
 ```ts
-ddr.mintBatchDDR(hashValues, ddrRawIds, uris, patientDID, privateKey);
+ddr.mintBatchDDR(
+  hashValues,
+  ddrRawIds,
+  ddrPatientRawIds,
+  uris,
+  patientDID,
+  privateKey
+);
 ```
 
 Create many DDRs for Patients
@@ -142,7 +149,7 @@ ddr.mintBatchDDR(
     ],
     ["09", "08"],
     ["55", "66"],
-    ["xxx", "yyy"],
+    ["uri1", "uri2"],
     "0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0",
     "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
   )
@@ -217,10 +224,10 @@ ddr.mintBatchDDR(
 
 ---
 
-### SharedDDR
+### sharedDDR
 
 ```ts
-ddr.SharedDDR(ddrTokenIds, patientDID, privateKey);
+ddr.sharedDDR(ddrTokenIds, patientDID, privateKey);
 ```
 
 Allow address of patient to access id of ddr
@@ -441,7 +448,7 @@ Check if this address of provideris allowed to watch ddr
 #### Parameters
 
 1. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]: The address of provider
-2. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array<Number>"]: Array of id token of ddr
+2. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array\<Number>"]: Array of id token of ddr
 
 #### Returns
 
