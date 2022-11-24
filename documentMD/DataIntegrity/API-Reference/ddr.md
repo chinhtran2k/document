@@ -331,7 +331,7 @@ Allow list ids of ddr to provider
 
 #### Parameters
 
-1. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="number"]: list ids token of ddr
+1. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array\<number>"]: List ids token of ddr
 2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
 3. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]: The address of provider
 4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
@@ -427,7 +427,7 @@ Check if this address of patient is allowed to contact DDR
 #### Parameters
 
 1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
-2. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array\<Number>"]: Array of id token of ddr
+2. [!badge variant="warning" text="ddrTokenId"] - [!badge variant="warning" text="number"]: Id token of ddr
 
 #### Returns
 

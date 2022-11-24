@@ -13,14 +13,14 @@ Data Integrity SDK for manage ERC721
 ### setAwardValue
 
 ```ts
-erc20Proxy.setAwardValue(number, privateKey, nonce);
+erc20Proxy.setAwardValue(value, privateKey, nonce);
 ```
 
 Set the value of award
 
 #### Parameters
 
-1. [!badge variant="warning" text="value"] - [!badge variant="warning" text="string"]: The value of award
+1. [!badge variant="warning" text="value"] - [!badge variant="warning" text="number"]: The value of award
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
 3. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
@@ -78,7 +78,7 @@ Set owner for token
 
 #### Parameters
 
-1. [!badge variant="warning" text="tokenOwner"] - [!badge variant="warning" text="number"]: Address of owner
+1. [!badge variant="warning" text="tokenOwner"] - [!badge variant="warning" text="string"]: Address of owner
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
 3. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
@@ -132,7 +132,7 @@ Set owner for token
 
 #### Parameters
 
-1. [!badge variant="warning" text="pcoAddress"] - [!badge variant="warning" text="number"]: Address of pco
+1. [!badge variant="warning" text="pcoAddress"] - [!badge variant="warning" text="string"]: Address of pco
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
 5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
@@ -200,8 +200,8 @@ Set the value of award
 
 ```ts
 erc20Proxy
-  .setAwardValue(
-    10,
+  .awardToken(
+    "0x6A5078326AC0694Ed1059f5e96e9D5531b319cfE",
     "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
   )
   .then(console.log);
