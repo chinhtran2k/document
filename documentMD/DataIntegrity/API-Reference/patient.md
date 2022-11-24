@@ -16,7 +16,7 @@ Data Integrity SDK for manage ERC721
 patient.mintPatient(patientDID, uri, privateKey, nonce);
 ```
 
-... Patients
+Mint and lock Patient
 
 #### Parameters
 
