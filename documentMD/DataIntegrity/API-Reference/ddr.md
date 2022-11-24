@@ -427,7 +427,7 @@ Check if this address of patient is allowed to contact DDR
 #### Parameters
 
 1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
-2. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array<Number>"]: Array of id token of ddr
+2. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array\<Number>"]: Array of id token of ddr
 
 #### Returns
 

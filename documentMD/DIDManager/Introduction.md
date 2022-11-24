@@ -73,7 +73,7 @@ Pre-defined value
 Base on project requirement, we defined 2 claim type for DID type
 
 - [!badge variant="primary" text="1"] - [!badge variant="primary" text="PATIENT"] : Patient DID
-- [!badge variant="primary" text="3"] - [!badge variant="primary" text="PROVIDER"]: Provider (Clinic/Hospital) DID
+- [!badge variant="primary" text="2"] - [!badge variant="primary" text="PROVIDER"]: Provider (Clinic/Hospital) DID
 
 ```ts
 enum ClaimType {
