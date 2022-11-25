@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.722594944482">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.722658745629">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=2.4.0.722594944482" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.722658745629" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.722594944482" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.722658745629" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.722594944482" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.722594944482" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.722658745629" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.722658745629" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -160,6 +160,23 @@
     </h1>
 </doc-anchor-target>
 <p>Extend Wallet like metamask base on WalletBase in web3-core</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Warning</h5>
+<p>Some function return number, but real result is string, please parse it to number by yourself.</p>
+        </div>
+    </div>
+</div>
 <hr />
 <doc-anchor-target id="main-functions">
     <h2>
@@ -1187,48 +1204,6 @@ wallet.getWalletImported();
 </code></pre>
 </doc-codeblock></div>
 <hr />
-<doc-anchor-target id="getbalancetoken">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#getbalancetoken">#</doc-anchor-trigger>
-        <span>getBalanceToken</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.getBalanceToken(address);</code></pre>
-</doc-codeblock></div>
-<p>Get balance (ERC20 token) of wallet</p>
-<doc-anchor-target id="parameters-14">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-14">#</doc-anchor-trigger>
-        <span>Parameters</span>
-    </h4>
-</doc-anchor-target>
-<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>address</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span>: Address of account</p>
-<doc-anchor-target id="returns-14">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-14">#</doc-anchor-trigger>
-        <span>Returns</span>
-    </h4>
-</doc-anchor-target>
-<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>number</span>
-</span>: Token balance of account</p>
-<doc-anchor-target id="example-14">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-14">#</doc-anchor-trigger>
-        <span>Example</span>
-    </h4>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.getBalanceToken(&quot;0x51C4B0487e16186da402daebE06C4cD71b5015c8&quot;);
-&gt; 9999999999999876999989999992605005
-</code></pre>
-</doc-codeblock></div>
-<hr />
 <doc-anchor-target id="getaccount">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#getaccount">#</doc-anchor-trigger>
@@ -1239,9 +1214,9 @@ wallet.getWalletImported();
 <pre class="language-typescript"><code v-pre class="language-typescript">wallet.getAccount(accountIndex);</code></pre>
 </doc-codeblock></div>
 <p>Get account from wallet by index</p>
-<doc-anchor-target id="parameters-15">
+<doc-anchor-target id="parameters-14">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-15">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-14">#</doc-anchor-trigger>
         <span>Parameters</span>
     </h4>
 </doc-anchor-target>
@@ -1250,6 +1225,62 @@ wallet.getWalletImported();
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>number</span>
 </span>: Index of account in wallet</p>
+<doc-anchor-target id="returns-14">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-14">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>Object</span>
+</span>: The account object base from web3-core</p>
+<doc-anchor-target id="example-14">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-14">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
+&gt; WalletBaseExtend {
+  ...
+  mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
+  wallet: &lt;ref *1&gt; Wallet {
+    '0': {...},
+    ...
+    '0x32eB821d88F2E650d4732C4CE974A30Bb4296949': {...},
+    '0x32eb821d88f2e650d4732c4ce974a30bb4296949': {...}
+  },
+  ...
+}
+wallet.getAccount(0);
+&gt; {
+  address: '0x32eB821d88F2E650d4732C4CE974A30Bb4296949',
+  privateKey: '0x5e5b09bc7fba7bb4029847ecb15ffc62ab7364ef9233297d27735971817eef2b',
+  signTransaction: [Function: signTransaction],
+  sign: [Function: sign],
+  encrypt: [Function: encrypt],
+  index: 0
+}</code></pre>
+</doc-codeblock></div>
+<hr />
+<doc-anchor-target id="getdefaultaccount">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getdefaultaccount">#</doc-anchor-trigger>
+        <span>getDefaultAccount</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.getDefaultAccount();</code></pre>
+</doc-codeblock></div>
+<p>Get default account of wallet</p>
+<doc-anchor-target id="parameters-15">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-15">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<p>none</p>
 <doc-anchor-target id="returns-15">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#returns-15">#</doc-anchor-trigger>
@@ -1289,62 +1320,6 @@ wallet.getAccount(0);
 }</code></pre>
 </doc-codeblock></div>
 <hr />
-<doc-anchor-target id="getdefaultaccount">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#getdefaultaccount">#</doc-anchor-trigger>
-        <span>getDefaultAccount</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.getDefaultAccount();</code></pre>
-</doc-codeblock></div>
-<p>Get default account of wallet</p>
-<doc-anchor-target id="parameters-16">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-16">#</doc-anchor-trigger>
-        <span>Parameters</span>
-    </h4>
-</doc-anchor-target>
-<p>none</p>
-<doc-anchor-target id="returns-16">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-16">#</doc-anchor-trigger>
-        <span>Returns</span>
-    </h4>
-</doc-anchor-target>
-<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>Object</span>
-</span>: The account object base from web3-core</p>
-<doc-anchor-target id="example-16">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-16">#</doc-anchor-trigger>
-        <span>Example</span>
-    </h4>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">wallet.recoverWalletFromMnemonic(&quot;use share wealth depth leader mind check circle heavy cake dragon trap&quot;);
-&gt; WalletBaseExtend {
-  ...
-  mnemonic: 'use share wealth depth leader mind check circle heavy cake dragon trap',
-  wallet: &lt;ref *1&gt; Wallet {
-    '0': {...},
-    ...
-    '0x32eB821d88F2E650d4732C4CE974A30Bb4296949': {...},
-    '0x32eb821d88f2e650d4732c4ce974a30bb4296949': {...}
-  },
-  ...
-}
-wallet.getAccount(0);
-&gt; {
-  address: '0x32eB821d88F2E650d4732C4CE974A30Bb4296949',
-  privateKey: '0x5e5b09bc7fba7bb4029847ecb15ffc62ab7364ef9233297d27735971817eef2b',
-  signTransaction: [Function: signTransaction],
-  sign: [Function: sign],
-  encrypt: [Function: encrypt],
-  index: 0
-}</code></pre>
-</doc-codeblock></div>
-<hr />
 <doc-anchor-target id="getnonce">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#getnonce">#</doc-anchor-trigger>
@@ -1355,9 +1330,9 @@ wallet.getAccount(0);
 <pre class="language-typescript"><code v-pre class="language-typescript">wallet.getNonce(address);</code></pre>
 </doc-codeblock></div>
 <p>Get nonce of an address</p>
-<doc-anchor-target id="parameters-17">
+<doc-anchor-target id="parameters-16">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-17">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-16">#</doc-anchor-trigger>
         <span>Parameters</span>
     </h4>
 </doc-anchor-target>
@@ -1366,18 +1341,18 @@ wallet.getAccount(0);
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span>: Address of account</p>
-<doc-anchor-target id="returns-17">
+<doc-anchor-target id="returns-16">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-17">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-16">#</doc-anchor-trigger>
         <span>Returns</span>
     </h4>
 </doc-anchor-target>
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>number</span>
 </span>: The nonce of account</p>
-<doc-anchor-target id="example-17">
+<doc-anchor-target id="example-16">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-17">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-16">#</doc-anchor-trigger>
         <span>Example</span>
     </h4>
 </doc-anchor-target>
@@ -1403,9 +1378,9 @@ wallet.getAccount(0);
 <pre class="language-typescript"><code v-pre class="language-typescript">wallet.setDefaultAccount(accountIndex);</code></pre>
 </doc-codeblock></div>
 <p>Set default account of wallet to interact like Metamask</p>
-<doc-anchor-target id="parameters-18">
+<doc-anchor-target id="parameters-17">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-18">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-17">#</doc-anchor-trigger>
         <span>Parameters</span>
     </h4>
 </doc-anchor-target>
@@ -1414,18 +1389,18 @@ wallet.getAccount(0);
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>number</span>
 </span>: index of account need to set</p>
-<doc-anchor-target id="returns-18">
+<doc-anchor-target id="returns-17">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-18">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-17">#</doc-anchor-trigger>
         <span>Returns</span>
     </h4>
 </doc-anchor-target>
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>Object</span>
 </span>: The wallet. See <doc-anchor-trigger to="#createWallet">createWallet</doc-anchor-trigger> for more details.</p>
-<doc-anchor-target id="example-18">
+<doc-anchor-target id="example-17">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-18">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-17">#</doc-anchor-trigger>
         <span>Example</span>
     </h4>
 </doc-anchor-target>
@@ -1482,6 +1457,138 @@ wallet.setDefaultAccount(1);
   walletImported: [ 1 ],
   defaultAccount: 1
 }</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="token-management">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#token-management">#</doc-anchor-trigger>
+        <span>Token management</span>
+    </h2>
+</doc-anchor-target>
+<hr />
+<doc-anchor-target id="getbalancetoken">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getbalancetoken">#</doc-anchor-trigger>
+        <span>getBalanceToken</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.getBalanceToken(address);</code></pre>
+</doc-codeblock></div>
+<p>Get balance (ERC20 token) of wallet</p>
+<doc-anchor-target id="parameters-18">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-18">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>address</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Address of account</p>
+<doc-anchor-target id="returns-18">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-18">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>number</span>
+</span>: Token balance of account</p>
+<doc-anchor-target id="example-18">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-18">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.getBalanceToken(&quot;0x51C4B0487e16186da402daebE06C4cD71b5015c8&quot;);
+&gt; 9999999999999876999989999992605005
+</code></pre>
+</doc-codeblock></div>
+<hr />
+<doc-anchor-target id="getowner">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getowner">#</doc-anchor-trigger>
+        <span>getOwner</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.getOwner(tokenId);</code></pre>
+</doc-codeblock></div>
+<p>Get owner (ERC721 token) of token id</p>
+<doc-anchor-target id="parameters-19">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-19">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>tokenId</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>number</span>
+</span>: Token id</p>
+<doc-anchor-target id="returns-19">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-19">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Address of owner</p>
+<doc-anchor-target id="example-19">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-19">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.getOwner(1);
+&gt; &quot;0x51C4B0487e16186da402daebE06C4cD71b5015c8&quot;
+</code></pre>
+</doc-codeblock></div>
+<hr />
+<doc-anchor-target id="getbalancenft">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getbalancenft">#</doc-anchor-trigger>
+        <span>getBalanceNFT</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.getBalanceNFT(address);</code></pre>
+</doc-codeblock></div>
+<p>Get balance (ERC721 token) of address</p>
+<doc-anchor-target id="parameters-20">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-20">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>address</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Address of account</p>
+<doc-anchor-target id="returns-20">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-20">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>Array&lt;number&gt;</span>
+</span>: List token id of account</p>
+<doc-anchor-target id="example-20">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-20">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">wallet.getBalanceNFT(&quot;0x51C4B0487e16186da402daebE06C4cD71b5015c8&quot;);
+&gt; [1,2,3]
+</code></pre>
 </doc-codeblock></div>
 
                                 

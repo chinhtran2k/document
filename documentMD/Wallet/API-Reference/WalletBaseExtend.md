@@ -7,6 +7,12 @@ order: 100
 
 Extend Wallet like metamask base on WalletBase in web3-core
 
+!!!warning Warning
+
+Some function return number, but real result is string, please parse it to number by yourself.
+
+!!!
+
 ---
 
 ## Main functions
@@ -26,6 +32,7 @@ none
 #### Returns
 
 [!badge variant="danger" text="Object"]: The generated wallet.
+
 - `mnemonic` - `string` - The mnemonic of the wallet.
 - `wallet` - `object` - The wallet base object.
 - `walletImported` - `array` - The array of wallet imported.
@@ -321,6 +328,7 @@ Encrypt wallet with password
 #### Returns
 
 [!badge variant="danger" text="Object"]: The added wallet with core wallet encrypted.
+
 - `mnemonic` - `string` - The encrypted mnemonic of the wallet.
 - `wallet` - `object` - The encrypted wallet base object.
 
@@ -780,32 +788,6 @@ wallet.getBalance("0x51C4B0487e16186da402daebE06C4cD71b5015c8");
 
 ---
 
-### getBalanceToken
-
-```ts
-wallet.getBalanceToken(address);
-```
-
-Get balance (ERC20 token) of wallet
-
-#### Parameters
-
-[!badge variant="warning" text="address"] - [!badge variant="warning" text="string"]: Address of account
-
-#### Returns
-
-[!badge variant="danger" text="number"]: Token balance of account
-
-#### Example
-
-```ts
-wallet.getBalanceToken("0x51C4B0487e16186da402daebE06C4cD71b5015c8");
-> 9999999999999876999989999992605005
-
-```
-
----
-
 ### getAccount
 
 ```ts
@@ -994,4 +976,84 @@ wallet.setDefaultAccount(1);
   walletImported: [ 1 ],
   defaultAccount: 1
 }
+```
+
+## Token management
+
+---
+
+### getBalanceToken
+
+```ts
+wallet.getBalanceToken(address);
+```
+
+Get balance (ERC20 token) of wallet
+
+#### Parameters
+
+[!badge variant="warning" text="address"] - [!badge variant="warning" text="string"]: Address of account
+
+#### Returns
+
+[!badge variant="danger" text="number"]: Token balance of account
+
+#### Example
+
+```ts
+wallet.getBalanceToken("0x51C4B0487e16186da402daebE06C4cD71b5015c8");
+> 9999999999999876999989999992605005
+
+```
+
+---
+
+### getOwner
+
+```ts
+wallet.getOwner(tokenId);
+```
+
+Get owner (ERC721 token) of token id
+
+#### Parameters
+
+[!badge variant="warning" text="tokenId"] - [!badge variant="warning" text="number"]: Token id
+
+#### Returns
+
+[!badge variant="danger" text="string"]: Address of owner
+
+#### Example
+
+```ts
+wallet.getOwner(1);
+> "0x51C4B0487e16186da402daebE06C4cD71b5015c8"
+
+```
+
+---
+
+### getBalanceNFT
+
+```ts
+wallet.getBalanceNFT(address);
+```
+
+Get balance (ERC721 token) of address
+
+#### Parameters
+
+[!badge variant="warning" text="address"] - [!badge variant="warning" text="string"]: Address of account
+
+#### Returns
+
+[!badge variant="danger" text="Array\<number>"]: List token id of account
+
+#### Example
+
+```ts
+wallet.getBalanceNFT("0x51C4B0487e16186da402daebE06C4cD71b5015c8");
+> [1,2,3]
+
 ```
