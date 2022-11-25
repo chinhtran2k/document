@@ -29,7 +29,7 @@ Mint and lock Patient
 
 1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check receipt).
 2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]: Event logs of transactions.
-3. [!badge variant="danger" text="tokenId"]: tokenId was generated.
+3. [!badge variant="danger" text="tokenId"] - [!badge variant="danger" text="string"]: Id of Patient token.
 
 #### Example
 
