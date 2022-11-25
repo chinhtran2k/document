@@ -482,7 +482,7 @@ ddr.getConsentedDDR("0x37C819C94EdfE048968A28215C73C4D1B8ceAb15", 1).then(consol
 ddr.getLockedDDR(ddrTokenId);
 ```
 
-Check if this address is allowed to contact DDR
+Check if this DDR is locked or not
 
 #### Parameters
 
@@ -490,7 +490,7 @@ Check if this address is allowed to contact DDR
 
 #### Returns
 
-[!badge variant="danger" text="Boolean"] : Check if address is allowed or not
+[!badge variant="danger" text="Boolean"] : True is locked and false is unlocked
 
 #### Example
 
