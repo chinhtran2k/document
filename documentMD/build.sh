@@ -1,1 +1,1 @@
-retype build --output "../documentHTML"
+retype build --output "./documentHTML"
