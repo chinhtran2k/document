@@ -22,7 +22,7 @@ Create POC
 
 1. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri
 2. [!badge variant="warning" text="message"] - [!badge variant="warning" text="string"]: The message was sent from Pharumo
-3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"] : Private key of owner
 4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns

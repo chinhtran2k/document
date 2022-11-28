@@ -22,7 +22,7 @@ Mint and lock Patient
 
 1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
 2. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of patient
-3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"] : Private key of contract creator - owner of identity contract which will be created
+3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"] : Private key of owner
 4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns

@@ -342,7 +342,7 @@ Allow list ids of ddr to provider
 1. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array\<number>"]: List ids token of ddr
 2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
 3. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]: The address of provider
-4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of Patient
 5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
@@ -498,5 +498,84 @@ Check if this DDR is locked or not
 ddr.getLockedDDR(1).then(console.log);
 > true;
 ```
+
+---
+### setERC20Proxy
+
+```ts
+ddr.setERC20Proxy(addressErc20Proxy, privateKey, nonce);
+```
+
+Allow address of patient to access id of ddr
+
+#### Parameters
+
+1. [!badge variant="warning" text="addressErc20Proxy"] - [!badge variant="warning" text="string"]: Address of ERC20Proxy
+2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of owner
+4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
+
+#### Returns
+[!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="array"]: An array of event logs of transactions.
+
+#### Example
+
+```ts
+ddr.setERC20Proxy(
+    "0x0aFd617eDf6b1309fF492450Ea7E45e0AaB6Af3A",
+    "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
+  )
+  .then(console.log);
+
+> root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+  cumulativeGasUsed: 165564,
+  logsBloom: '0x04000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000010000000000000001000000000000000000800000000000000000000000000000000001000000020000100000000000000000000000020040000000000008000800000000001040000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000800000000100000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000008000000000000000000000',
+  logs: [
+    {
+      address: '0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba',
+      topics: [Array],
+      data: '0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000245004a4b70000000000000000000000000afd617edf6b1309ff492450ea7e45e0aab6af3a00000000000000000000000000000000000000000000000000000000',
+      blockNumber: 154115,
+      transactionHash: '0x0fa6b903732a580ce6bafcf9b866e3ab36669ace1c55f916a9dffa71bc6d3de2',
+      transactionIndex: 0,
+      blockHash: '0xa291832878833290b8f885046e1d7d4aac7aea83fd815e78740b0a67eb80376e',
+      logIndex: 0,
+      removed: false,
+      id: 'log_bd040a19'
+    },
+    {
+      address: '0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba',
+      topics: [Array],
+      data: '0x0000000000000000000000000000000000000000000000000000000000000001',
+      blockNumber: 154115,
+      transactionHash: '0x0fa6b903732a580ce6bafcf9b866e3ab36669ace1c55f916a9dffa71bc6d3de2',
+      transactionIndex: 1,
+      blockHash: '0xa291832878833290b8f885046e1d7d4aac7aea83fd815e78740b0a67eb80376e',
+      logIndex: 1,
+      removed: false,
+      id: 'log_89665ab4'
+    },
+    {
+      address: '0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba',
+      topics: [Array],
+      data: '0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000245004a4b70000000000000000000000000afd617edf6b1309ff492450ea7e45e0aab6af3a00000000000000000000000000000000000000000000000000000000',
+      blockNumber: 154115,
+      transactionHash: '0x0fa6b903732a580ce6bafcf9b866e3ab36669ace1c55f916a9dffa71bc6d3de2',
+      transactionIndex: 2,
+      blockHash: '0xa291832878833290b8f885046e1d7d4aac7aea83fd815e78740b0a67eb80376e',
+      logIndex: 2,
+      removed: false,
+      id: 'log_c8803e2c'
+    }
+  ],
+  status: true,
+  transactionHash: '0x0fa6b903732a580ce6bafcf9b866e3ab36669ace1c55f916a9dffa71bc6d3de2',
+  transactionIndex: 0,
+  blockHash: '0xa291832878833290b8f885046e1d7d4aac7aea83fd815e78740b0a67eb80376e',
+  blockNumber: 154115,
+  gasUsed: 165564,
+  contractAddress: null,
+  from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+  to: '0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba'
+}
 
 ---

@@ -13,7 +13,7 @@ DID manager SDK for manage DIDs
 ### createDID
 
 ```ts
-dids.createDID(claimType, data, privateKeySigner, privateKey);
+dids.createDID(claimType, data, privateKeySigner, privateKey, nonce);
 ```
 
 Create DID contract.
@@ -24,6 +24,7 @@ Create DID contract.
 2. [!badge variant="warning" text="data"] - [!badge variant="warning" text="string"]: Init data for different claim, please use user id of off-chain side or use random number as id
 3. [!badge variant="warning" text="privateKeySigner"] - [!badge variant="warning" text="string"]: Private key of signer of claimHolder, get this from server side
 4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 
@@ -88,7 +89,8 @@ dids.addClaim(
   scheme,
   issuer,
   data,
-  [uri]
+  [uri],
+  nonce
 );
 ```
 
@@ -104,6 +106,7 @@ Add claim to DID contract
 6. [!badge variant="warning" text="issuer"] - [!badge variant="warning" text="string"]: The issuer address of claim
 7. [!badge variant="warning" text="data"] - [!badge variant="warning" text="string"]: The raw data of claim
 8. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"] (optional): The uri of claim
+9. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 
@@ -155,7 +158,7 @@ dids.addClaim(
 ### removeClaim
 
 ```ts
-dids.removeClaim(issuer, claimType, targetIdentity, privateKey);
+dids.removeClaim(issuer, claimType, targetIdentity, privateKey, nonce);
 ```
 
 Remove claim from DID contract
@@ -166,6 +169,7 @@ Remove claim from DID contract
 2. [!badge variant="warning" text="claimType"] - [!badge variant="warning" text="ClaimTypes"]: The type of claim
 3. [!badge variant="warning" text="targetIdentity"] - [!badge variant="warning" text="string"]: DID contract address
 4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission (check [Key purpose](../Introduction.md/#key-purpose)) to interact with DID
+5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 
@@ -273,7 +277,7 @@ dids.getClaimIdsByType("0xece7519c282274542231d213a5919337c3f66686", 1);
 ### addKey
 
 ```ts
-dids.addKey(purpose, keyType, privateKeyAdd, privateKey, targeIdentity);
+dids.addKey(purpose, keyType, privateKeyAdd, privateKey, targeIdentity, nonce);
 ```
 
 Add key to Claim holder (only access for Management side)
@@ -285,6 +289,7 @@ Add key to Claim holder (only access for Management side)
 3. [!badge variant="warning" text="privateKeyAdd"] - [!badge variant="warning" text="string"]: The private key of account to add as key
 4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
 5. [!badge variant="warning" text="targeIdentity"] - [!badge variant="warning" text="string"]: Target DID contract address
+6. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 
@@ -334,7 +339,7 @@ dids.addKey(
 ### removeKey
 
 ```ts
-dids.removeKey(keyRemove, privateKey, targeIdentity);
+dids.removeKey(keyRemove, privateKey, targeIdentity, nonce);
 ```
 
 Get owner of DID contract
@@ -344,6 +349,7 @@ Get owner of DID contract
 1. [!badge variant="warning" text="keyRemove"] - [!badge variant="warning" text="string"]: The key to remove
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
 3. [!badge variant="warning" text="targeIdentity"] - [!badge variant="warning" text="string"]: Target DID contract address
+4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 
@@ -389,7 +395,7 @@ const removekeyTx = await dids.removeKey(
 ### verifyCredential
 
 ```ts
-dids.verifyClaim(identity, claimType);
+dids.verifyClaim(identity, claimType, nonce);
 ```
 
 Check if DID has a claim of specific type (remember that our Claim Holder is static on server side)
