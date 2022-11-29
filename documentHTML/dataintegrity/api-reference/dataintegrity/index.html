@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723006775071">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723007823703">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=2.4.0.723006775071" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.723007823703" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.723006775071" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.723007823703" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.723006775071" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.723006775071" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.723007823703" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.723007823703" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -52,7 +52,7 @@
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">HPA3 - BLC - Documentation</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.1.5</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.1.6</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -174,9 +174,9 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dataintegrity.checkIntegritySingleDDR(ddrId, hashedData);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySingleDDR(patientDID, ddrId, hashedData);</code></pre>
 </doc-codeblock></div>
-<p>check the integrity of single ddr</p>
+<p>Check the integrity of single ddr</p>
 <doc-anchor-target id="parameters">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#parameters">#</doc-anchor-trigger>
@@ -184,6 +184,11 @@
     </h4>
 </doc-anchor-target>
 <ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>patientDID</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: DID Address of Patient</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>ddrId</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
@@ -201,11 +206,9 @@
         <span>Returns</span>
     </h4>
 </doc-anchor-target>
-<ol>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>boolean</span>
-</span>: true if the data is valid, false if the data is invalid</li>
-</ol>
+</span>: true if the data is valid, false if the data is invalid</p>
 <doc-anchor-target id="example">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#example">#</doc-anchor-trigger>
@@ -213,7 +216,8 @@
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">pocStudy.checkIntegritySingleDDR(
+<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySingleDDR(
+    &quot;0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba&quot;,
     &quot;0001&quot;,
     &quot;0xf00814e2e916628483aef34d34f1f63cee0d8b67a2c7fbea160d2b5d188534c9&quot;)
     .then(console.log);
@@ -228,7 +232,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">pocStudy.checkIntegritySinglePatient(patientDID, ddrsRawId, ddrsHashedData);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySinglePatient(patientDID, ddrsRawId, ddrsHashedData);</code></pre>
 </doc-codeblock></div>
 <p>Check the integrity of single patient</p>
 <doc-anchor-target id="parameters-1">
@@ -270,7 +274,7 @@
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">pocStudy.checkIntegritySinglePatient(
+<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySinglePatient(
     &quot;0x3b3FFD45DCD98E843938967B352e22673007fb19&quot;,
     Array.from([&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]),
     Array.from([

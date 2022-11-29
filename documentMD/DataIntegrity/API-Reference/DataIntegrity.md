@@ -13,10 +13,10 @@ Data Integrity SDK
 ### checkIntegritySingleDDR
 
 ```ts
-dataintegrity.checkIntegritySingleDDR(patientDID, ddrId, hashedData);
+dataIntegrity.checkIntegritySingleDDR(patientDID, ddrId, hashedData);
 ```
 
-check the integrity of single ddr
+Check the integrity of single ddr
 
 #### Parameters
 
@@ -26,12 +26,12 @@ check the integrity of single ddr
 
 #### Returns
 
-1. [!badge variant="danger" text="boolean"]: true if the data is valid, false if the data is invalid
+[!badge variant="danger" text="boolean"]: true if the data is valid, false if the data is invalid
 
 #### Example
 
 ```ts
-pocStudy.checkIntegritySingleDDR(
+dataIntegrity.checkIntegritySingleDDR(
     "0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba",
     "0001",
     "0xf00814e2e916628483aef34d34f1f63cee0d8b67a2c7fbea160d2b5d188534c9")
@@ -45,7 +45,7 @@ pocStudy.checkIntegritySingleDDR(
 ### checkIntegritySinglePatient
 
 ```ts
-pocStudy.checkIntegritySinglePatient(patientDID, ddrsRawId, ddrsHashedData);
+dataIntegrity.checkIntegritySinglePatient(patientDID, ddrsRawId, ddrsHashedData);
 ```
 
 Check the integrity of single patient
@@ -63,7 +63,7 @@ Check the integrity of single patient
 #### Example
 
 ```ts
-pocStudy.checkIntegritySinglePatient(
+dataIntegrity.checkIntegritySinglePatient(
     "0x3b3FFD45DCD98E843938967B352e22673007fb19",
     Array.from(["1", "2", "3"]),
     Array.from([
