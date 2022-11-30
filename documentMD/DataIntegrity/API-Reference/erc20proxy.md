@@ -21,7 +21,7 @@ Set the value of award
 #### Parameters
 
 1. [!badge variant="warning" text="value"] - [!badge variant="warning" text="number"]: The value of award
-2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of owner
+2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator(admin)
 3. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
@@ -79,7 +79,7 @@ Set owner for token
 #### Parameters
 
 1. [!badge variant="warning" text="tokenOwner"] - [!badge variant="warning" text="string"]: Address of owner
-2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of owner
+2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator(admin)
 3. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
@@ -133,7 +133,7 @@ Set owner for token
 #### Parameters
 
 1. [!badge variant="warning" text="pcoAddress"] - [!badge variant="warning" text="string"]: Address of pco
-2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of owner
+2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator(admin)
 5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
@@ -188,7 +188,7 @@ Set the value of award
 #### Parameters
 
 1. [!badge variant="warning" text="to"] - [!badge variant="warning" text="string"]: The address want to receive token
-2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of owner
+2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator(admin)
 3. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
@@ -247,7 +247,7 @@ Set address for ddr contract
 #### Parameters
 
 1. [!badge variant="warning" text="ddrAddress"] - [!badge variant="warning" text="string"]: The address of ddr
-2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of owner
+2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator(admin)
 3. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns

@@ -16,7 +16,6 @@ Data Integrity SDK for manage ERC721
 ddr.mintDDR(
   hashedData,
   ddrRawId,
-  ddrPatientRawId,
   uri,
   patientDID,
   privateKey,
@@ -30,11 +29,10 @@ Create DDR for Patients
 
 1. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: Data was hashed by the keccak256
 2. [!badge variant="warning" text="ddrRawId"] - [!badge variant="warning" text="string"]: Id off-chain was sent from Pharumo
-3. [!badge variant="warning" text="ddrPatientRawId"] - [!badge variant="warning" text="string"]: Id of Patient was sent from Pharumo
-4. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of ddr
-5. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
-6. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
-7. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
+3. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of ddr
+4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
+5. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+6. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
 
@@ -49,7 +47,6 @@ ddr
   .mintDDR(
     "0x94f5115f6287e66e3fc9bbd6e4f621f7657efd488e304c810ce7d381b654f59f",
     "007",
-    "13",
     "Fill this text with necessary information",
     "0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0",
     "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
@@ -125,7 +122,6 @@ ddr
 ddr.mintBatchDDR(
   hashValues,
   ddrRawIds,
-  ddrPatientRawIds,
   uris,
   patientDID,
   privateKey,
@@ -159,7 +155,6 @@ ddr.mintBatchDDR(
       "0x7b4402c4fb2ba988bbaec633d4c68eca466f96ba75ff358006e264168524890d",
     ],
     ["09", "08"],
-    ["55", "66"],
     ["uri1", "uri2"],
     "0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0",
     "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
@@ -511,7 +506,7 @@ Allow address of patient to access id of ddr
 #### Parameters
 
 1. [!badge variant="warning" text="addressErc20Proxy"] - [!badge variant="warning" text="string"]: Address of ERC20Proxy
-2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of owner
+2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator(admin)
 4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
