@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723007823703">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723197296405">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=2.4.0.723007823703" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.723197296405" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.723007823703" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.723197296405" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.723007823703" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.723007823703" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.723197296405" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.723197296405" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -177,7 +177,6 @@
 <pre class="language-typescript"><code v-pre class="language-typescript">ddr.mintDDR(
   hashedData,
   ddrRawId,
-  ddrPatientRawId,
   uri,
   patientDID,
   privateKey,
@@ -203,20 +202,15 @@
     <span>string</span>
 </span>: Id off-chain was sent from Pharumo</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>ddrPatientRawId</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span>: Id of Patient was sent from Pharumo</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>uri</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: The uri of ddr</li>
+</span>: The uri of DDR</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>patientDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: The address of patient</li>
+</span>: Address of Patient was created from DID</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>privateKey</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
@@ -262,7 +256,6 @@
   .mintDDR(
     &quot;0x94f5115f6287e66e3fc9bbd6e4f621f7657efd488e304c810ce7d381b654f59f&quot;,
     &quot;007&quot;,
-    &quot;13&quot;,
     &quot;Fill this text with necessary information&quot;,
     &quot;0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0&quot;,
     &quot;24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb&quot;
@@ -338,9 +331,8 @@
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript">ddr.mintBatchDDR(
-  hashValues,
+  hashedDatas,
   ddrRawIds,
-  ddrPatientRawIds,
   uris,
   patientDID,
   privateKey,
@@ -356,7 +348,7 @@
 </doc-anchor-target>
 <ol>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>hashedData</span>
+    <span>hashedDatas</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>Array&lt;String&gt;</span>
 </span>: List of datas were hashed by the keccak256</li>
@@ -369,12 +361,12 @@
     <span>uris</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>Array&lt;String&gt;</span>
-</span>: List of uris of ddr</li>
+</span>: List of uris of DDR</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>patientDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: The address of patient</li>
+</span>: Address of Patient was created from DID</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>privateKey</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
@@ -422,7 +414,6 @@
       &quot;0x7b4402c4fb2ba988bbaec633d4c68eca466f96ba75ff358006e264168524890d&quot;,
     ],
     [&quot;09&quot;, &quot;08&quot;],
-    [&quot;55&quot;, &quot;66&quot;],
     [&quot;uri1&quot;, &quot;uri2&quot;],
     &quot;0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0&quot;,
     &quot;24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb&quot;
@@ -522,7 +513,7 @@
     <span>patientDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: The address of patient</li>
+</span>: Address of Patient was created from DID</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>privateKey</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
@@ -654,12 +645,12 @@
     <span>patientDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: The address of patient</li>
+</span>: Address of Patient was created from DID</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>providerDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: The address of provider</li>
+</span>: The address of provider was created from DID</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>privateKey</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
@@ -786,12 +777,12 @@
     <span>patientDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: The address of patient</li>
+</span>: Address of Patient was created from DID</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>ddrTokenId</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>number</span>
-</span>: Id token of ddr</li>
+</span>: Id token of DDR</li>
 </ol>
 <doc-anchor-target id="returns-4">
     <h4>
@@ -911,7 +902,7 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript">ddr.setERC20Proxy(addressErc20Proxy, privateKey, nonce);</code></pre>
 </doc-codeblock></div>
-<p>Allow address of patient to access id of ddr</p>
+<p>Call contract ERC20Proxy to DDR</p>
 <doc-anchor-target id="parameters-7">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-7">#</doc-anchor-trigger>
@@ -923,12 +914,12 @@
     <span>addressErc20Proxy</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: Address of ERC20Proxy</li>
+</span>: Address of contract ERC20Proxy</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>privateKey</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: Private key of owner</li>
+</span>: Private key of contract creator(admin)</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>nonce</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
