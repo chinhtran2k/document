@@ -78,7 +78,7 @@ Set owner for token
 
 #### Parameters
 
-1. [!badge variant="warning" text="tokenOwner"] - [!badge variant="warning" text="string"]: Address of owner
+1. [!badge variant="warning" text="tokenOwner"] - [!badge variant="warning" text="string"]: Address of admin who keep money
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator(admin)
 3. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
@@ -132,7 +132,7 @@ Set owner for token
 
 #### Parameters
 
-1. [!badge variant="warning" text="pcoAddress"] - [!badge variant="warning" text="string"]: Address of pco
+1. [!badge variant="warning" text="pcoAddress"] - [!badge variant="warning" text="string"]: Address of PCO
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator(admin)
 5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
@@ -242,11 +242,11 @@ erc20Proxy
 erc20Proxy.setDDRContract(ddrAddress, privateKey, nonce);
 ```
 
-Set address for ddr contract
+Set address for DDR
 
 #### Parameters
 
-1. [!badge variant="warning" text="ddrAddress"] - [!badge variant="warning" text="string"]: The address of ddr
+1. [!badge variant="warning" text="ddrAddress"] - [!badge variant="warning" text="string"]: The address of DDR
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator(admin)
 3. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 

@@ -20,7 +20,7 @@ Mint and lock Patient
 
 #### Parameters
 
-1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
+1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
 2. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of patient
 3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"] : Private key of contract creator(admin)
 4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
@@ -87,7 +87,7 @@ Get The Hash Value Of Patient
 
 #### Parameters
 
-1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: the address of patient
+1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
 
 #### Returns
 

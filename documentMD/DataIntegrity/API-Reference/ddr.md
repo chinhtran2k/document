@@ -29,8 +29,8 @@ Create DDR for Patients
 
 1. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: Data was hashed by the keccak256
 2. [!badge variant="warning" text="ddrRawId"] - [!badge variant="warning" text="string"]: Id off-chain was sent from Pharumo
-3. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of ddr
-4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
+3. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of DDR
+4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
 5. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
 6. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
@@ -120,7 +120,7 @@ ddr
 
 ```ts
 ddr.mintBatchDDR(
-  hashValues,
+  hashedDatas,
   ddrRawIds,
   uris,
   patientDID,
@@ -133,10 +133,10 @@ Create many DDRs for Patients
 
 #### Parameters
 
-1. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="Array\<String>"]: List of datas were hashed by the keccak256
+1. [!badge variant="warning" text="hashedDatas"] - [!badge variant="warning" text="Array\<String>"]: List of datas were hashed by the keccak256
 2. [!badge variant="warning" text="ddrRawIds"] - [!badge variant="warning" text="Array\<String>"]: List of ids offline was sent from Pharumo
-3. [!badge variant="warning" text="uris"] - [!badge variant="warning" text="Array\<String>"]: List of uris of ddr
-4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
+3. [!badge variant="warning" text="uris"] - [!badge variant="warning" text="Array\<String>"]: List of uris of DDR
+4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
 5. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
 6. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
@@ -241,7 +241,7 @@ Allow address of patient to access id of ddr
 #### Parameters
 
 1. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array\<number>"]: Array of id token of ddr
-2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
+2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
 3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
 4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
@@ -335,8 +335,8 @@ Allow list ids of ddr to provider
 #### Parameters
 
 1. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array\<number>"]: List ids token of ddr
-2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
-3. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]: The address of provider
+2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
+3. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]: The address of provider was created from DID
 4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of Patient
 5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
@@ -429,8 +429,8 @@ Check if this address of patient is allowed to contact DDR
 
 #### Parameters
 
-1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The address of patient
-2. [!badge variant="warning" text="ddrTokenId"] - [!badge variant="warning" text="number"]: Id token of ddr
+1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
+2. [!badge variant="warning" text="ddrTokenId"] - [!badge variant="warning" text="number"]: Id token of DDR
 
 #### Returns
 
@@ -501,11 +501,11 @@ ddr.getLockedDDR(1).then(console.log);
 ddr.setERC20Proxy(addressErc20Proxy, privateKey, nonce);
 ```
 
-Allow address of patient to access id of ddr
+Call contract ERC20Proxy to DDR
 
 #### Parameters
 
-1. [!badge variant="warning" text="addressErc20Proxy"] - [!badge variant="warning" text="string"]: Address of ERC20Proxy
+1. [!badge variant="warning" text="addressErc20Proxy"] - [!badge variant="warning" text="string"]: Address of contract ERC20Proxy
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator(admin)
 4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 

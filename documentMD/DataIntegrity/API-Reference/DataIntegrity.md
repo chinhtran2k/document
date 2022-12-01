@@ -20,8 +20,8 @@ Check the integrity of single ddr
 
 #### Parameters
 
-1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: DID Address of Patient
-2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: Id of DDR
+1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
+2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: Id off-chain was sent from Pharumo 
 3. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data was hashed by keccak256
 
 #### Returns
@@ -52,7 +52,7 @@ Check the integrity of single patient
 
 #### Parameters
 
-1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: DID of patient
+1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
 2. [!badge variant="warning" text="ddrsRawId"] - [!badge variant="warning" text="Array\<string>"]: Array of raw id of DDRs
 3. [!badge variant="warning" text="ddrsHashedData"] - [!badge variant="warning" text="Array\<string>"]: Array of hashed data of DDRs
 
@@ -75,3 +75,39 @@ dataIntegrity.checkIntegritySinglePatient(
 
 > true
 ```
+### checkIntegrityStudy
+
+```ts
+dataIntegrity.checkIntegrityStudy(rootHashValues);
+```
+
+Check the integrity study
+
+#### Parameters
+
+[!badge variant="warning" text="rootHashValues"] - [!badge variant="warning" text="Array\<string>"]: Array of root hash values 
+
+#### Returns
+
+[!badge variant="danger" text="boolean"]: true if the data is valid, false if the data is invalid
+
+#### Example
+
+```ts
+dataIntegrity.checkIntegrityStudy(
+  ["0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
+  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
+  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
+  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
+  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
+  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
+  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
+  "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae",
+  "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae",
+  ])
+  .then(console.log);
+
+> true
+```
+
+---
