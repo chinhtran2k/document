@@ -70,15 +70,27 @@ Pre-defined value
 
 ### DID type
 
-Base on project requirement, we defined 2 claim type for DID type
+Base on project requirement, we defined 8 claim keys for DID key
 
 - [!badge variant="primary" text="1"] - [!badge variant="primary" text="PATIENT"] : Patient DID
 - [!badge variant="primary" text="2"] - [!badge variant="primary" text="PROVIDER"]: Provider (Clinic/Hospital) DID
+- [!badge variant="primary" text="3"] - [!badge variant="primary" text="NAME"]: Name DID
+- [!badge variant="primary" text="4"] - [!badge variant="primary" text="ADDRESS"]: Address DID
+- [!badge variant="primary" text="5"] - [!badge variant="primary" text="TELEPHONE"]: Telephone DID
+- [!badge variant="primary" text="6"] - [!badge variant="primary" text="EMAIL"]: Email DID
+- [!badge variant="primary" text="7"] - [!badge variant="primary" text="DISEASE"]: Disease DID
+- [!badge variant="primary" text="8"] - [!badge variant="primary" text="COMPANY"]: Company DID 
 
 ```ts
-enum ClaimType {
+enum ClaimKeys {
   PATIENT = 1,
   PROVIDER = 2,
+  NAME = 3,
+  ADDRESS = 4,
+  TELEPHONE = 5,
+  EMAIL = 6,
+  DISEASE = 7,
+  COMPANY = 8,
 }
 ```
 
@@ -86,19 +98,17 @@ enum ClaimType {
 
 ### Key Purpose
 
-Base on [ERC734](https://github.com/ethereum/EIPs/issues/734) and [ERC725](https://github.com/ethereum/EIPs/issues/725), we defined 4 key purpose
+Base on [ERC734](https://github.com/ethereum/EIPs/issues/734) and [ERC725](https://github.com/ethereum/EIPs/issues/725), we defined 3 key purpose
 
 - [!badge variant="primary" text="1"] - [!badge variant="primary" text="MANAGEMENT"]: Management key. Full permissions to all function of DID.
-- [!badge variant="primary" text="2"] - [!badge variant="primary" text="ACTION"]: Action key. Only can execute action function of DID.
-- [!badge variant="primary" text="3"] - [!badge variant="primary" text="CLAIM"]: Claim key. Only can add claim to DID. We will use `privateKey` of this key to sign signature
-- [!badge variant="primary" text="4"] - [!badge variant="primary" text="ENCRYPTION"]: Encryption key. We will use `publicKey` of this key to encrypt data.
+- [!badge variant="primary" text="2"] - [!badge variant="primary" text="DELEGATE_KEY"]: Delegate key. Only can execute action function of DID.
+- [!badge variant="primary" text="3"] - [!badge variant="primary" text=" CLAIM_SIGNER"]: Claim key. Only can add claim to DID. We will use `privateKey` of this key to sign signature
 
 ```ts
-enum KeyPurpose {
+enum KeyPurposes {
   MANAGEMENT = 1,
-  ACTION = 2,
-  CLAIM = 3,
-  ENCRYPTION = 4,
+  DELEGATE_KEY = 2,
+  CLAIM_SIGNER = 3,
 }
 ```
 
@@ -108,16 +118,10 @@ enum KeyPurpose {
 
 Base on [ERC734](https://github.com/ethereum/EIPs/issues/734) and [ERC725](https://github.com/ethereum/EIPs/issues/725), we define 4 schemes for sign data and contract call
 
-- [!badge variant="primary" text="1"] - [!badge variant="primary" text="ECDSA"]: ECDSA scheme. We will use this scheme for signed signature, all needed function will use this scheme.
-- [!badge variant="primary" text="2"] - [!badge variant="primary" text="RSA"]: RSA scheme. This is an option base on ERC734, we don't need to use this.
-- [!badge variant="primary" text="3"] - [!badge variant="primary" text="CONTRACT_CALL"]: Contract call scheme.
-- [!badge variant="primary" text="4"] - [!badge variant="primary" text="SELF_CLAIM"]: Self claim scheme.
+- [!badge variant="primary" text="ECDSA"]: ECDSA scheme. We will use this scheme for signed signature, all needed function will use this scheme.
 
 ```ts
 enum Schemes {
   ECDSA = 1,
-  RSA = 2,
-  CONTRACT_CALL = 3,
-  SELF_CLAIM = 4,
 }
 ```
