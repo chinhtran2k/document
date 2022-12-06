@@ -18,7 +18,7 @@ ddr.mintDDR(
   ddrRawId,
   uri,
   patientDID,
-  privateKey,
+  delegateKey,
   nonce
 );
 ```
@@ -31,7 +31,7 @@ Create DDR for Patients
 2. [!badge variant="warning" text="ddrRawId"] - [!badge variant="warning" text="string"]: Id off-chain was sent from Pharumo
 3. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of DDR
 4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
-5. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+5. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey
 6. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
@@ -124,7 +124,7 @@ ddr.mintBatchDDR(
   ddrRawIds,
   uris,
   patientDID,
-  privateKey,
+  delegateKey,
   nonce
 );
 ```
@@ -137,7 +137,7 @@ Create many DDRs for Patients
 2. [!badge variant="warning" text="ddrRawIds"] - [!badge variant="warning" text="Array\<String>"]: List of ids offline was sent from Pharumo
 3. [!badge variant="warning" text="uris"] - [!badge variant="warning" text="Array\<String>"]: List of uris of DDR
 4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
-5. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+5. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey
 6. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
@@ -233,7 +233,7 @@ ddr.mintBatchDDR(
 ### sharedDDR
 
 ```ts
-ddr.sharedDDR(ddrTokenIds, patientDID, privateKey, nonce);
+ddr.sharedDDR(ddrTokenIds, patientDID, delegateKey, nonce);
 ```
 
 Allow address of patient to access id of ddr
@@ -242,7 +242,7 @@ Allow address of patient to access id of ddr
 
 1. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array\<number>"]: Array of id token of ddr
 2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
-3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
+3. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey
 4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
@@ -327,7 +327,7 @@ ddr.sharedDDR(
 ### disclosureConsentDDR
 
 ```ts
-ddr.disclosureConsentDDR(ddrTokenIds, providerDID, privateKey, nonce);
+ddr.disclosureConsentDDR(ddrTokenIds, providerDID, delegateKey, nonce);
 ```
 
 Allow list ids of ddr to provider
@@ -337,7 +337,7 @@ Allow list ids of ddr to provider
 1. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array\<number>"]: List ids token of ddr
 2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
 3. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]: The address of provider was created from DID
-4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of Patient
+4. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey belongs to Patient
 5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
