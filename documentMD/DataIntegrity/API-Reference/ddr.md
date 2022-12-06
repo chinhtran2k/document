@@ -29,7 +29,7 @@ Create DDR for Patients
 
 1. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: Data was hashed by the keccak256
 2. [!badge variant="warning" text="ddrRawId"] - [!badge variant="warning" text="string"]: Id off-chain was sent from Pharumo
-3. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of DDR
+3. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"] (optional): The uri of DDR
 4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
 5. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey
 6. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account

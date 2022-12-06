@@ -13,14 +13,14 @@ DID manager SDK for manage DIDs
 ### createDID
 
 ```ts
-dids.createDID(claimKeys, data, privateKeySigner, privateKey, nonce);
+dids.createDID(claimKey, data, privateKeySigner, privateKey, nonce);
 ```
 
 Create DID contract.
 
 #### Parameters
 
-1. [!badge variant="warning" text="claimKeys"] - [!badge variant="warning" text="claimKeys"]: DID type, default is `claimKeys.PATIENT` (check [DID type](../Introduction.md/#did-type))
+1. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="claimKey"]: DID type, default is `claimKey.PATIENT` (check [DID type](../Introduction.md/#did-type))
 2. [!badge variant="warning" text="data"] - [!badge variant="warning" text="string"]: Init data for different claim, please use user id of off-chain side or use random number as id
 3. [!badge variant="warning" text="privateKeySigner"] - [!badge variant="warning" text="string"]: Private key of signer of claimHolder, get this from server side
 4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator - owner of identity contract which will be created
@@ -101,7 +101,7 @@ Add claim to DID contract
 1. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey
 2. [!badge variant="warning" text="privateKeySigner"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
 3. [!badge variant="warning" text="targetIdentity"] - [!badge variant="warning" text="string"]: DID contract address
-4. [!badge variant="warning" text="claimKeys"] - [!badge variant="warning" text="claimKeys"]: The type of claim
+4. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="claimKey"]: The key of claim
 5. [!badge variant="warning" text="scheme"] - [!badge variant="warning" text="number"]: The scheme of claim
 6. [!badge variant="warning" text="issuer"] - [!badge variant="warning" text="string"]: The issuer address of claim
 7. [!badge variant="warning" text="data"] - [!badge variant="warning" text="string"]: The raw data of claim
@@ -158,7 +158,7 @@ dids.addClaim(
 ### removeClaim
 
 ```ts
-dids.removeClaim(issuer, claimKeys, targetIdentity, delegateKey, nonce);
+dids.removeClaim(issuer, claimKey, targetIdentity, delegateKey, nonce);
 ```
 
 Remove claim from DID contract
@@ -166,7 +166,7 @@ Remove claim from DID contract
 #### Parameters
 
 1. [!badge variant="warning" text="issuer"] - [!badge variant="warning" text="string"]: Issuer (ClaimHolder) contract address
-2. [!badge variant="warning" text="claimKeys"] - [!badge variant="warning" text="claimKeys"]: The type of claim
+2. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="claimKey"]: The key of claim
 3. [!badge variant="warning" text="targetIdentity"] - [!badge variant="warning" text="string"]: DID contract address
 4. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey
 5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
@@ -223,7 +223,7 @@ Get claim detail of DID by claim id
 
 #### Returns
 
-1. [!badge variant="danger" text="claimKeys"] - [!badge variant="danger" text="number"]: The claim type
+1. [!badge variant="danger" text="claimKeys"] - [!badge variant="danger" text="number"]: The claim key
 2. [!badge variant="danger" text="scheme"] - [!badge variant="danger" text="Object"]: The claim scheme
 3. [!badge variant="danger" text="issuer"] - [!badge variant="danger" text="Object"]: The claim issuer
 4. [!badge variant="danger" text="signature"] - [!badge variant="danger" text="Object"]: A hex string of the signature
@@ -251,15 +251,15 @@ dids.getClaim("0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0", "0x68ab8d5ae723515a5
 ### getClaimIdsByType
 
 ```ts
-dids.getClaimIdsByType(identity, claimKeys);
+dids.getClaimIdsByType(identity, claimKey);
 ```
 
-Get claim ids of DID by claim type
+Get claim ids of DID by claim key
 
 #### Parameters
 
 1. [!badge variant="warning" text="didAddress"] - [!badge variant="warning" text="string"]: DID contract address
-2. [!badge variant="warning" text="claimKeys"] - [!badge variant="warning" text="number"]: The claim type
+2. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="number"]: The key of claim
 
 #### Returns
 
@@ -395,19 +395,19 @@ const removekeyTx = await dids.removeKey(
 ### verifyCredential
 
 ```ts
-dids.verifyClaim(identity, claimKeys, nonce);
+dids.verifyClaim(identity, claimKey, nonce);
 ```
 
-Check if DID has a claim of specific type (remember that our Claim Holder is static on server side)
+Check if DID has a claim of specific key (remember that our Claim Holder is static on server side)
 
 #### Parameters
 
 1. [!badge variant="warning" text="identity"] - [!badge variant="warning" text="string"]: DID contract address
-2. [!badge variant="warning" text="claimKeys"] - [!badge variant="warning" text="claimKeys"]: The claim type
+2. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="claimKey"]: The claim key
 
 #### Returns
 
-[!badge variant="danger" text="boolean"]: True if DID has a valid claim of specific type
+[!badge variant="danger" text="boolean"]: True if DID has a valid claim of specific key
 
 #### Example
 
