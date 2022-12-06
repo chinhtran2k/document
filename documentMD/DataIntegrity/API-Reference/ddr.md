@@ -4,7 +4,7 @@ icon: dot
 
 # DDR
 
-Data Integrity SDK for manage ERC721
+This module use to mint/share/consent/lock DDR
 
 ## Main function
 

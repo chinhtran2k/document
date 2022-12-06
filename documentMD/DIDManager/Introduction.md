@@ -68,29 +68,17 @@ Pre-defined value
 
 ---
 
-### DID type
+### DID type - PreDefinedClaimKeys
 
-Base on project requirement, we defined 8 claim keys for DID key
+Base on project requirement, the `claimKey` is very dynamic, we defined here only 2 `claimKeys` for base authenticator in blockchain. We follow the idea that `claimKey` is a `string`, and `key` in `claimKey` mean `key`:`value`. If you want to use other `claimKey`, just use whatever string you want.
 
-- [!badge variant="primary" text="1"] - [!badge variant="primary" text="PATIENT"] : Patient DID
-- [!badge variant="primary" text="2"] - [!badge variant="primary" text="PROVIDER"]: Provider (Clinic/Hospital) DID
-- [!badge variant="primary" text="3"] - [!badge variant="primary" text="NAME"]: Name DID
-- [!badge variant="primary" text="4"] - [!badge variant="primary" text="ADDRESS"]: Address DID
-- [!badge variant="primary" text="5"] - [!badge variant="primary" text="TELEPHONE"]: Telephone DID
-- [!badge variant="primary" text="6"] - [!badge variant="primary" text="EMAIL"]: Email DID
-- [!badge variant="primary" text="7"] - [!badge variant="primary" text="DISEASE"]: Disease DID
-- [!badge variant="primary" text="8"] - [!badge variant="primary" text="COMPANY"]: Company DID 
+- [!badge variant="primary" text="PATIENT"] - [!badge variant="primary" text="PATIENT"] : Patient DID
+- [!badge variant="primary" text="PROVIDER"] - [!badge variant="primary" text="PROVIDER"]: Provider (Clinic/Hospital) DID
 
 ```ts
-enum ClaimKeys {
-  PATIENT = 1,
-  PROVIDER = 2,
-  NAME = 3,
-  ADDRESS = 4,
-  TELEPHONE = 5,
-  EMAIL = 6,
-  DISEASE = 7,
-  COMPANY = 8,
+enum PreDefinedClaimKeys {
+  PATIENT = "PATIENT",
+  PROVIDER = "PROVIDER",
 }
 ```
 
@@ -101,8 +89,8 @@ enum ClaimKeys {
 Base on [ERC734](https://github.com/ethereum/EIPs/issues/734) and [ERC725](https://github.com/ethereum/EIPs/issues/725), we defined 3 key purpose
 
 - [!badge variant="primary" text="1"] - [!badge variant="primary" text="MANAGEMENT"]: Management key. Full permissions to all function of DID.
-- [!badge variant="primary" text="2"] - [!badge variant="primary" text="DELEGATE_KEY"]: Delegate key. Only can execute action function of DID.
-- [!badge variant="primary" text="3"] - [!badge variant="primary" text=" CLAIM_SIGNER"]: Claim key. Only can add claim to DID. We will use `privateKey` of this key to sign signature
+- [!badge variant="primary" text="2"] - [!badge variant="primary" text="DELEGATE_KEY"]: Delegate key. Use to call `execute` function of DID.
+- [!badge variant="primary" text="3"] - [!badge variant="primary" text=" CLAIM_SIGNER"]: Claim signer key. Use to sign a signature for claim. We will use `privateKey` of this key to sign signature
 
 ```ts
 enum KeyPurposes {

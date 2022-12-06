@@ -4,7 +4,7 @@ icon: dot
 
 # ERC20Proxy
 
-Data Integrity SDK for manage ERC721
+This is a proxy to main PCO contract, we cannot change original PCO, so we create a proxy to represent as awarder.
 
 ## Main function
 

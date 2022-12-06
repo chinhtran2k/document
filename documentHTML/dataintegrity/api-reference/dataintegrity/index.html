@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723638691917">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723672043875">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>DataIntegrity</title>
     <meta name="title" content="DataIntegrity">
-    <meta name="description" content="Data Integrity SDK" />
+    <meta name="description" content="This module use for check integrity of data" />
 
     <!-- Canonical -->
     <link rel="canonical" href="/dataintegrity/api-reference/dataintegrity/" />
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="/dataintegrity/api-reference/dataintegrity/">
     <meta property="og:title" content="DataIntegrity">
-    <meta property="og:description" content="Data Integrity SDK">
+    <meta property="og:description" content="This module use for check integrity of data">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/dataintegrity/api-reference/dataintegrity/">
     <meta property="twitter:title" content="DataIntegrity">
-    <meta property="twitter:description" content="Data Integrity SDK">
+    <meta property="twitter:description" content="This module use for check integrity of data">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=2.4.0.723638691917" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.723672043875" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.723638691917" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.723672043875" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.723638691917" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.723638691917" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.723672043875" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.723672043875" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -52,7 +52,7 @@
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">HPA3 - BLC - Documentation</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.1.7</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.1.8</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -159,7 +159,7 @@
         <span>DataIntegrity</span>
     </h1>
 </doc-anchor-target>
-<p>Data Integrity SDK</p>
+<p>This module use for check integrity of data</p>
 <doc-anchor-target id="main-function">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#main-function">#</doc-anchor-trigger>
@@ -188,17 +188,17 @@
     <span>patientDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: Address of Patient was created from DID</li>
+</span>: DID Address of Patient was created which has owner owns the DDR</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>ddrId</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: Id off-chain was sent from Pharumo</li>
+</span>: DDR ID off-chain was sent from Pharumo</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>hashedData</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: The data was hashed by keccak256</li>
+</span>: The data of DDR that was hashed by keccak256</li>
 </ol>
 <doc-anchor-target id="returns">
     <h4>
@@ -232,7 +232,11 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySinglePatient(patientDID, ddrsRawId, ddrsHashedData);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySinglePatient(
+  patientDID,
+  ddrsRawId,
+  ddrsHashedData
+);</code></pre>
 </doc-codeblock></div>
 <p>Check the integrity of single patient</p>
 <doc-anchor-target id="parameters-1">
@@ -246,17 +250,17 @@
     <span>patientDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: Address of Patient was created from DID</li>
+</span>: DID Address of Patient which owner owns all the DDRs</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>ddrsRawId</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>Array&lt;string&gt;</span>
-</span>: Array of raw id of DDRs</li>
+</span>: Array of raw DDR ID of DDRs belong to the patient</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>ddrsHashedData</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>Array&lt;string&gt;</span>
-</span>: Array of hashed data of DDRs</li>
+</span>: Array of hashed data of DDRs belong to the patient</li>
 </ol>
 <doc-anchor-target id="returns-1">
     <h4>
@@ -306,7 +310,7 @@
     <span>rootHashValues</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>Array&lt;string&gt;</span>
-</span>: Array of root hash values</p>
+</span>: Array of root hash values of all patients</p>
 <doc-anchor-target id="returns-2">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#returns-2">#</doc-anchor-trigger>
@@ -324,7 +328,7 @@
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegrityStudy(
-  [&quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,
+  [&quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,  // This is just example, data can be alike
   &quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,
   &quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,
   &quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,

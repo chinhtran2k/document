@@ -4,7 +4,7 @@ icon: dot
 
 # DataIntegrity
 
-Data Integrity SDK
+This module use for check integrity of data
 
 ## Main function
 
@@ -20,9 +20,9 @@ Check the integrity of single ddr
 
 #### Parameters
 
-1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
-2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: Id off-chain was sent from Pharumo 
-3. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data was hashed by keccak256
+1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: DID Address of Patient was created which has owner owns the DDR
+2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: DDR ID off-chain was sent from Pharumo
+3. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data of DDR that was hashed by keccak256
 
 #### Returns
 
@@ -45,16 +45,20 @@ dataIntegrity.checkIntegritySingleDDR(
 ### checkIntegritySinglePatient
 
 ```ts
-dataIntegrity.checkIntegritySinglePatient(patientDID, ddrsRawId, ddrsHashedData);
+dataIntegrity.checkIntegritySinglePatient(
+  patientDID,
+  ddrsRawId,
+  ddrsHashedData
+);
 ```
 
 Check the integrity of single patient
 
 #### Parameters
 
-1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
-2. [!badge variant="warning" text="ddrsRawId"] - [!badge variant="warning" text="Array\<string>"]: Array of raw id of DDRs
-3. [!badge variant="warning" text="ddrsHashedData"] - [!badge variant="warning" text="Array\<string>"]: Array of hashed data of DDRs
+1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: DID Address of Patient which owner owns all the DDRs
+2. [!badge variant="warning" text="ddrsRawId"] - [!badge variant="warning" text="Array\<string>"]: Array of raw DDR ID of DDRs belong to the patient
+3. [!badge variant="warning" text="ddrsHashedData"] - [!badge variant="warning" text="Array\<string>"]: Array of hashed data of DDRs belong to the patient
 
 #### Returns
 
@@ -75,6 +79,7 @@ dataIntegrity.checkIntegritySinglePatient(
 
 > true
 ```
+
 ### checkIntegrityStudy
 
 ```ts
@@ -85,7 +90,7 @@ Check the integrity study
 
 #### Parameters
 
-[!badge variant="warning" text="rootHashValues"] - [!badge variant="warning" text="Array\<string>"]: Array of root hash values 
+[!badge variant="warning" text="rootHashValues"] - [!badge variant="warning" text="Array\<string>"]: Array of root hash values of all patients
 
 #### Returns
 
@@ -95,7 +100,7 @@ Check the integrity study
 
 ```ts
 dataIntegrity.checkIntegrityStudy(
-  ["0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
+  ["0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",  // This is just example, data can be alike
   "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
   "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
   "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",

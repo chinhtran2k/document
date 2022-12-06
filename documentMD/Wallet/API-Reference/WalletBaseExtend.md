@@ -7,12 +7,6 @@ order: 100
 
 Extend Wallet like metamask base on WalletBase in web3-core
 
-!!!warning Warning
-
-Some function return number, but real result is string, please parse it to number by yourself.
-
-!!!
-
 ---
 
 ## Main functions
@@ -433,7 +427,7 @@ wallet.decryptWallet("secret");
 
 ---
 
-### transfer (Depricated, use transferToken only)
+### transfer (Only transfer native token - ETH, use transferToken to transfer PCO)
 
 ```ts
 wallet.transfer(accountId, to, value);
@@ -988,7 +982,7 @@ wallet.setDefaultAccount(1);
 wallet.getBalanceToken(address);
 ```
 
-Get balance (ERC20 token) of wallet
+Get balance (PCO - ERC20 token) of wallet
 
 #### Parameters
 
@@ -1014,7 +1008,7 @@ wallet.getBalanceToken("0x51C4B0487e16186da402daebE06C4cD71b5015c8");
 wallet.getOwner(tokenId);
 ```
 
-Get owner (ERC721 token) of token id
+Get owner (DDR - ERC721 token) of token id
 
 #### Parameters
 
@@ -1040,7 +1034,7 @@ wallet.getOwner(1);
 wallet.getBalanceNFT(address);
 ```
 
-Get balance (ERC721 token) of address
+Get balance (DDR - ERC721 token) of address
 
 #### Parameters
 

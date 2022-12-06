@@ -4,7 +4,7 @@ icon: dot
 
 # POCStudy
 
-Data Integrity SDK for manage ERC721
+This module for POCStudy lock level
 
 ## Main function
 
