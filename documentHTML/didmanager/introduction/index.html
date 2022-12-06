@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723197296405">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723608752883">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -32,12 +32,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.723197296405" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.723608752883" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.723197296405" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.723608752883" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.723197296405" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.723197296405" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.723608752883" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.723608752883" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -54,7 +54,7 @@
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">HPA3 - BLC - Documentation</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.1.6</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.1.7</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -248,7 +248,7 @@
         <span>DID type</span>
     </h3>
 </doc-anchor-target>
-<p>Base on project requirement, we defined 2 claim type for DID type</p>
+<p>Base on project requirement, we defined 8 claim keys for DID key</p>
 <ul>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
     <span>1</span>
@@ -260,11 +260,47 @@
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
     <span>PROVIDER</span>
 </span>: Provider (Clinic/Hospital) DID</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span>3</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span>NAME</span>
+</span>: Name DID</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span>4</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span>ADDRESS</span>
+</span>: Address DID</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span>5</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span>TELEPHONE</span>
+</span>: Telephone DID</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span>6</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span>EMAIL</span>
+</span>: Email DID</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span>7</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span>DISEASE</span>
+</span>: Disease DID</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span>8</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
+    <span>COMPANY</span>
+</span>: Company DID</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">enum ClaimType {
+<pre class="language-typescript"><code v-pre class="language-typescript">enum ClaimKeys {
   PATIENT = 1,
   PROVIDER = 2,
+  NAME = 3,
+  ADDRESS = 4,
+  TELEPHONE = 5,
+  EMAIL = 6,
+  DISEASE = 7,
+  COMPANY = 8,
 }</code></pre>
 </doc-codeblock></div>
 <hr />
@@ -274,7 +310,7 @@
         <span>Key Purpose</span>
     </h3>
 </doc-anchor-target>
-<p>Base on <a href="https://github.com/ethereum/EIPs/issues/734">ERC734</a> and <a href="https://github.com/ethereum/EIPs/issues/725">ERC725</a>, we defined 4 key purpose</p>
+<p>Base on <a href="https://github.com/ethereum/EIPs/issues/734">ERC734</a> and <a href="https://github.com/ethereum/EIPs/issues/725">ERC725</a>, we defined 3 key purpose</p>
 <ul>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
     <span>1</span>
@@ -284,25 +320,19 @@
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
     <span>2</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>ACTION</span>
-</span>: Action key. Only can execute action function of DID.</li>
+    <span>DELEGATE_KEY</span>
+</span>: Delegate key. Only can execute action function of DID.</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
     <span>3</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>CLAIM</span>
+    <span>CLAIM_SIGNER</span>
 </span>: Claim key. Only can add claim to DID. We will use <code v-pre>privateKey</code> of this key to sign signature</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>4</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>ENCRYPTION</span>
-</span>: Encryption key. We will use <code v-pre>publicKey</code> of this key to encrypt data.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">enum KeyPurpose {
+<pre class="language-typescript"><code v-pre class="language-typescript">enum KeyPurposes {
   MANAGEMENT = 1,
-  ACTION = 2,
-  CLAIM = 3,
-  ENCRYPTION = 4,
+  DELEGATE_KEY = 2,
+  CLAIM_SIGNER = 3,
 }</code></pre>
 </doc-codeblock></div>
 <hr />
@@ -315,32 +345,12 @@
 <p>Base on <a href="https://github.com/ethereum/EIPs/issues/734">ERC734</a> and <a href="https://github.com/ethereum/EIPs/issues/725">ERC725</a>, we define 4 schemes for sign data and contract call</p>
 <ul>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>1</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
     <span>ECDSA</span>
 </span>: ECDSA scheme. We will use this scheme for signed signature, all needed function will use this scheme.</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>2</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>RSA</span>
-</span>: RSA scheme. This is an option base on ERC734, we don&#x27;t need to use this.</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>3</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>CONTRACT_CALL</span>
-</span>: Contract call scheme.</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>4</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>SELF_CLAIM</span>
-</span>: Self claim scheme.</li>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript">enum Schemes {
   ECDSA = 1,
-  RSA = 2,
-  CONTRACT_CALL = 3,
-  SELF_CLAIM = 4,
 }</code></pre>
 </doc-codeblock></div>
 

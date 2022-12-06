@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723197296405">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723608752883">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=2.4.0.723197296405" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.723608752883" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.723197296405" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.723608752883" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.723197296405" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.723197296405" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.723608752883" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.723608752883" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -52,7 +52,7 @@
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">HPA3 - BLC - Documentation</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.1.6</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.1.7</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -174,7 +174,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.createDID(claimType, data, privateKeySigner, privateKey, nonce);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.createDID(claimKeys, data, privateKeySigner, privateKey, nonce);</code></pre>
 </doc-codeblock></div>
 <p>Create DID contract.</p>
 <doc-anchor-target id="parameters">
@@ -185,10 +185,10 @@
 </doc-anchor-target>
 <ol>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>claimType</span>
+    <span>claimKeys</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>ClaimType</span>
-</span>: DID type, default is <code v-pre>ClaimType.PATIENT</code> (check <a href="../../introduction/#did-type">DID type</a>)</li>
+    <span>claimKeys</span>
+</span>: DID type, default is <code v-pre>claimKeys.PATIENT</code> (check <a href="../../introduction/#did-type">DID type</a>)</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>data</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
@@ -240,7 +240,7 @@
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.createDID(ClaimTypes.PATIENT,
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.createDID(claimKeys.PATIENT,
     &quot;PATIENT VERIFIED&quot;,
     signerKey,
     account.privateKey
@@ -266,7 +266,7 @@
       name: 'ClaimAdded',
       events: [
         claimId: '0x68ab8d5ae723515a5b77cb01cddf832ce9c6acfca1ab7bfaf8b912eab7b1667a',
-        claimType: '1',
+        claimKeys: '1',
         scheme: '1',
         issuer: '0x6beca9eb5ce6b2ad84910b952ea83109c277e30c',
         signature: '0xeed89b65dbd61e0c83165b1c9aaefe9c43dc624da5164864bad669c5f73b25a81aa24ea1bd29f1c4b857bf021a81f2805543a57a58ffd8d26df0c0535a980e881b',
@@ -292,7 +292,7 @@
   privateKey,
   privateKeySigner,
   targetIdentity,
-  claimType,
+  claimKeys,
   scheme,
   issuer,
   data,
@@ -324,9 +324,9 @@
     <span>string</span>
 </span>: DID contract address</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>claimType</span>
+    <span>claimKeys</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>ClaimTypes</span>
+    <span>claimKeys</span>
 </span>: The type of claim</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>scheme</span>
@@ -427,7 +427,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.removeClaim(issuer, claimType, targetIdentity, privateKey, nonce);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.removeClaim(issuer, claimKeys, targetIdentity, privateKey, nonce);</code></pre>
 </doc-codeblock></div>
 <p>Remove claim from DID contract</p>
 <doc-anchor-target id="parameters-2">
@@ -443,9 +443,9 @@
     <span>string</span>
 </span>: Issuer (ClaimHolder) contract address</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>claimType</span>
+    <span>claimKeys</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>ClaimTypes</span>
+    <span>claimKeys</span>
 </span>: The type of claim</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>targetIdentity</span>
@@ -551,7 +551,7 @@
 </doc-anchor-target>
 <ol>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>claimType</span>
+    <span>claimKeys</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>number</span>
 </span>: The claim type</li>
@@ -591,7 +591,7 @@
 <pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaim(&quot;0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0&quot;, &quot;0x68ab8d5ae723515a5b77cb01cddf832ce9c6acfca1ab7bfaf8b912eab7b1667a&quot;);
 &gt; {
   ...
-  claimType: '1',
+  claimKeys: '1',
   scheme: '1',
   issuer: '0x6bECa9Eb5cE6b2Ad84910B952ea83109C277E30c',
   signature: '0xeed89b65dbd61e0c83165b1c9aaefe9c43dc624da5164864bad669c5f73b25a81aa24ea1bd29f1c4b857bf021a81f2805543a57a58ffd8d26df0c0535a980e881b',
@@ -608,7 +608,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaimIdsByType(identity, claimType);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaimIdsByType(identity, claimKeys);</code></pre>
 </doc-codeblock></div>
 <p>Get claim ids of DID by claim type</p>
 <doc-anchor-target id="parameters-4">
@@ -624,7 +624,7 @@
     <span>string</span>
 </span>: DID contract address</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>claimType</span>
+    <span>claimKeys</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>number</span>
 </span>: The claim type</li>
@@ -862,7 +862,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.verifyClaim(identity, claimType, nonce);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.verifyClaim(identity, claimKeys, nonce);</code></pre>
 </doc-codeblock></div>
 <p>Check if DID has a claim of specific type (remember that our Claim Holder is static on server side)</p>
 <doc-anchor-target id="parameters-7">
@@ -878,9 +878,9 @@
     <span>string</span>
 </span>: DID contract address</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>claimType</span>
+    <span>claimKeys</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>ClaimTypes</span>
+    <span>claimKeys</span>
 </span>: The claim type</li>
 </ol>
 <doc-anchor-target id="returns-7">
