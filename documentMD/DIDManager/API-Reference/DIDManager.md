@@ -82,7 +82,7 @@ dids.createDID(claimKeys.PATIENT,
 
 ```ts
 dids.addClaim(
-  privateKey,
+  delegateKey,
   privateKeySigner,
   targetIdentity,
   claimKeys,
@@ -98,7 +98,7 @@ Add claim to DID contract
 
 #### Parameters
 
-1. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
+1. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey
 2. [!badge variant="warning" text="privateKeySigner"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
 3. [!badge variant="warning" text="targetIdentity"] - [!badge variant="warning" text="string"]: DID contract address
 4. [!badge variant="warning" text="claimKeys"] - [!badge variant="warning" text="claimKeys"]: The type of claim
@@ -158,7 +158,7 @@ dids.addClaim(
 ### removeClaim
 
 ```ts
-dids.removeClaim(issuer, claimKeys, targetIdentity, privateKey, nonce);
+dids.removeClaim(issuer, claimKeys, targetIdentity, delegateKey, nonce);
 ```
 
 Remove claim from DID contract
@@ -168,7 +168,7 @@ Remove claim from DID contract
 1. [!badge variant="warning" text="issuer"] - [!badge variant="warning" text="string"]: Issuer (ClaimHolder) contract address
 2. [!badge variant="warning" text="claimKeys"] - [!badge variant="warning" text="claimKeys"]: The type of claim
 3. [!badge variant="warning" text="targetIdentity"] - [!badge variant="warning" text="string"]: DID contract address
-4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission (check [Key purpose](../Introduction.md/#key-purpose)) to interact with DID
+4. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey
 5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
@@ -277,7 +277,7 @@ dids.getClaimIdsByType("0xece7519c282274542231d213a5919337c3f66686", 1);
 ### addKey
 
 ```ts
-dids.addKey(purpose, keyType, privateKeyAdd, privateKey, targeIdentity, nonce);
+dids.addKey(purpose, keyType, privateKeyAdd, delegateKey, targeIdentity, nonce);
 ```
 
 Add key to Claim holder (only access for Management side)
@@ -287,7 +287,7 @@ Add key to Claim holder (only access for Management side)
 1. [!badge variant="warning" text="purpose"] - [!badge variant="warning" text="KeyPurposes"]: The key purpose (check [Key purpose](../Introduction.md/#key-purpose))
 2. [!badge variant="warning" text="keyType"] - [!badge variant="warning" text="Schemes"]: The key type (check [Schemes](../Introduction.md/#schemes))
 3. [!badge variant="warning" text="privateKeyAdd"] - [!badge variant="warning" text="string"]: The private key of account to add as key
-4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
+4. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey
 5. [!badge variant="warning" text="targeIdentity"] - [!badge variant="warning" text="string"]: Target DID contract address
 6. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
@@ -339,7 +339,7 @@ dids.addKey(
 ### removeKey
 
 ```ts
-dids.removeKey(keyRemove, privateKey, targeIdentity, nonce);
+dids.removeKey(keyRemove, delegateKey, targeIdentity, nonce);
 ```
 
 Get owner of DID contract
@@ -347,7 +347,7 @@ Get owner of DID contract
 #### Parameters
 
 1. [!badge variant="warning" text="keyRemove"] - [!badge variant="warning" text="string"]: The key to remove
-2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
+2. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey
 3. [!badge variant="warning" text="targeIdentity"] - [!badge variant="warning" text="string"]: Target DID contract address
 4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
