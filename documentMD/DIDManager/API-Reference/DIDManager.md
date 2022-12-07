@@ -69,7 +69,7 @@ dids.createDID(
   ],
   claimAdded: {
     claimId: '0xc0c63df202a84a78e7719944e1efe86f979adf5beb0cc4415438dc1da044f459',
-    claimKey: '0xe5786ee6f50ab1a5567cb3f3f6840a2f4ddbafdf4a35cb2c52d5b732b1e84a32',
+    claimKey: 'PATIENT',
     claimData: '0x50494430303030303031'
   }
 }
@@ -275,7 +275,7 @@ dids.addClaim(
   ],
   claimAdded: {
     claimId: '0xa42a10be08f648452f1d1e956b9c169331da201bd0b331860314c904ca2cce89',
-    claimKey: '0x55e49609591f684ecf6f2909c9e20c2439b990887b9c3fe108b154c9077d85cf',
+    claimKey: 'Name',
     claimData: '0x4a616d6573'
   }
 }
