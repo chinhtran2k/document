@@ -219,7 +219,7 @@ Add claim to DID contract
 
 #### Parameters
 
-1. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey
+1. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of `DELEGATE_KEY` or `MANAGEMENT` key
 2. [!badge variant="warning" text="privateKeySigner"] - [!badge variant="warning" text="string"]: Private key of account that has permission to interact with DID
 3. [!badge variant="warning" text="targetDID"] - [!badge variant="warning" text="string"]: DID contract address
 4. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="string"]: The key of claim, this can be any string
@@ -296,7 +296,7 @@ Remove claim from DID contract
 1. [!badge variant="warning" text="issuer"] - [!badge variant="warning" text="string"]: Issuer (ClaimHolder) contract address, this is fixed in our system
 2. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="string"]: The key of claim
 3. [!badge variant="warning" text="targetDID"] - [!badge variant="warning" text="string"]: Target DID contract address
-4. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of `DELEGATE_KEY`
+4. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of `DELEGATE_KEY` or `MANAGEMENT`
 5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
