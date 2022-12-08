@@ -344,14 +344,14 @@ dids.removeClaim(
 ### getClaimById
 
 ```ts
-dids.getClaimById(did, claimId);
+dids.getClaimById(accountDID, claimId);
 ```
 
-Get claim detail of DID by claim id, this will be use to get specific claim if there are 2 claims with same key but from different issuer
+Get claim detail of accountDID by claim id, this will be use to get specific claim if there are 2 claims with same key but from different issuer
 
 #### Parameters
 
-1. [!badge variant="warning" text="did"] - [!badge variant="warning" text="string"]: DID contract address
+1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address
 2. [!badge variant="warning" text="claimId"] - [!badge variant="warning" text="string"]: The claim id
 
 #### Returns
@@ -392,14 +392,14 @@ dids.getClaimById(
 ### getClaimByKey
 
 ```ts
-dids.getClaimById(did, claimKey);
+dids.getClaimById(accountDID, claimKey);
 ```
 
-Get claim detail of DID by claim id, this will be use to get specific claim, but the issuer is fixed in our system
+Get claim detail of accountDID by claim id, this will be use to get specific claim, but the issuer is fixed in our system
 
 #### Parameters
 
-1. [!badge variant="warning" text="did"] - [!badge variant="warning" text="string"]: DID contract address
+1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address
 2. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="string"]: The claim key
 
 #### Returns
@@ -442,14 +442,14 @@ dids.getClaimById(
 ### getClaimIdsByKey
 
 ```ts
-dids.getClaimIdsByKey(did, claimKey);
+dids.getClaimIdsByKey(accountDID, claimKey);
 ```
 
-Get claim ids of DID by claim key
+Get claim ids of accountDID by claim key
 
 #### Parameters
 
-1. [!badge variant="warning" text="didAddress"] - [!badge variant="warning" text="string"]: DID contract address
+1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address
 2. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="string"]: The key of claim
 
 #### Returns
@@ -471,14 +471,14 @@ dids.getClaimIdsByKey("0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724", "Name")
 ### getClaimsKeyOwned
 
 ```ts
-dids.getClaimsKeyOwned(did);
+dids.getClaimsKeyOwned(accountDID);
 ```
 
-Get list of claim keys owned by DID
+Get list of claim keys owned by accountDID
 
 #### Parameters
 
-[!badge variant="warning" text="didAddress"] - [!badge variant="warning" text="string"]: DID contract address
+[!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address
 
 #### Returns
 
@@ -497,14 +497,14 @@ dids.getClaimsKeyOwned("0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724")
 ### getAllClaimsOwned
 
 ```ts
-dids.getAllClaimsOwned(did);
+dids.getAllClaimsOwned(accountDID);
 ```
 
-Get list of all claims owned by DID
+Get list of all claims owned by accountDID
 
 #### Parameters
 
-[!badge variant="warning" text="didAddress"] - [!badge variant="warning" text="string"]: DID contract address
+[!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address
 
 #### Returns
 
@@ -551,19 +551,19 @@ dids.getAllClaimsOwned("0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724")
 ### verifyClaim
 
 ```ts
-dids.verifyClaim(did, claimKey);
+dids.verifyClaim(accountDID, claimKey);
 ```
 
-Check if DID has a valid claim key issued by our system
+Check if accountDID has a valid claim key issued by our system
 
 #### Parameters
 
-1. [!badge variant="warning" text="did"] - [!badge variant="warning" text="string"]: DID contract address
+1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address
 2. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="claimKey"]: The claim key
 
 #### Returns
 
-[!badge variant="danger" text="boolean"]: True if DID has a valid claim key, false otherwise
+[!badge variant="danger" text="boolean"]: True if accountDID has a valid claim key, false otherwise
 
 #### Example
 
