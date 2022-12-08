@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723700764114">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723801034836">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=2.4.0.723700764114" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.723801034836" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.723700764114" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.723801034836" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.723700764114" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.723700764114" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.723801034836" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.723801034836" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -787,9 +787,9 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaimById(did, claimId);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaimById(accountDID, claimId);</code></pre>
 </doc-codeblock></div>
-<p>Get claim detail of DID by claim id, this will be use to get specific claim if there are 2 claims with same key but from different issuer</p>
+<p>Get claim detail of accountDID by claim id, this will be use to get specific claim if there are 2 claims with same key but from different issuer</p>
 <doc-anchor-target id="parameters-5">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-5">#</doc-anchor-trigger>
@@ -798,7 +798,7 @@
 </doc-anchor-target>
 <ol>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>did</span>
+    <span>accountDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span>: DID contract address</li>
@@ -882,9 +882,9 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaimById(did, claimKey);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaimById(accountDID, claimKey);</code></pre>
 </doc-codeblock></div>
-<p>Get claim detail of DID by claim id, this will be use to get specific claim, but the issuer is fixed in our system</p>
+<p>Get claim detail of accountDID by claim id, this will be use to get specific claim, but the issuer is fixed in our system</p>
 <doc-anchor-target id="parameters-6">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-6">#</doc-anchor-trigger>
@@ -893,7 +893,7 @@
 </doc-anchor-target>
 <ol>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>did</span>
+    <span>accountDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span>: DID contract address</li>
@@ -978,9 +978,9 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaimIdsByKey(did, claimKey);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaimIdsByKey(accountDID, claimKey);</code></pre>
 </doc-codeblock></div>
-<p>Get claim ids of DID by claim key</p>
+<p>Get claim ids of accountDID by claim key</p>
 <doc-anchor-target id="parameters-7">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-7">#</doc-anchor-trigger>
@@ -989,7 +989,7 @@
 </doc-anchor-target>
 <ol>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>didAddress</span>
+    <span>accountDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span>: DID contract address</li>
@@ -1029,9 +1029,9 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaimsKeyOwned(did);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaimsKeyOwned(accountDID);</code></pre>
 </doc-codeblock></div>
-<p>Get list of claim keys owned by DID</p>
+<p>Get list of claim keys owned by accountDID</p>
 <doc-anchor-target id="parameters-8">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-8">#</doc-anchor-trigger>
@@ -1039,7 +1039,7 @@
     </h4>
 </doc-anchor-target>
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>didAddress</span>
+    <span>accountDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span>: DID contract address</p>
@@ -1071,9 +1071,9 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.getAllClaimsOwned(did);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getAllClaimsOwned(accountDID);</code></pre>
 </doc-codeblock></div>
-<p>Get list of all claims owned by DID</p>
+<p>Get list of all claims owned by accountDID</p>
 <doc-anchor-target id="parameters-9">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-9">#</doc-anchor-trigger>
@@ -1081,7 +1081,7 @@
     </h4>
 </doc-anchor-target>
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>didAddress</span>
+    <span>accountDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span>: DID contract address</p>
@@ -1141,9 +1141,9 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.verifyClaim(did, claimKey);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.verifyClaim(accountDID, claimKey);</code></pre>
 </doc-codeblock></div>
-<p>Check if DID has a valid claim key issued by our system</p>
+<p>Check if accountDID has a valid claim key issued by our system</p>
 <doc-anchor-target id="parameters-10">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-10">#</doc-anchor-trigger>
@@ -1152,7 +1152,7 @@
 </doc-anchor-target>
 <ol>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>did</span>
+    <span>accountDID</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span>: DID contract address</li>
@@ -1170,7 +1170,7 @@
 </doc-anchor-target>
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>boolean</span>
-</span>: True if DID has a valid claim key, false otherwise</p>
+</span>: True if accountDID has a valid claim key, false otherwise</p>
 <doc-anchor-target id="example-10">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#example-10">#</doc-anchor-trigger>
