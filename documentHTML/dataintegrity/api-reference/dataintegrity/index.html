@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723801034836">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723836622040">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=2.4.0.723801034836" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.723836622040" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.723801034836" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.723836622040" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.723801034836" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.723801034836" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.723836622040" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.723836622040" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -174,7 +174,12 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySingleDDR(patientDID, ddrId, hashedData);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySingleDDR(
+  patientDID,
+  ddrId,
+  hashedData,
+  ddrConsentedTo
+);</code></pre>
 </doc-codeblock></div>
 <p>Check the integrity of single ddr</p>
 <doc-anchor-target id="parameters">
@@ -199,6 +204,11 @@
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span>: The data of DDR that was hashed by keccak256</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>ddrConsentedTo</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>Array&lt;string&gt;</span>
+</span>: List of Provider which DDR consented to</li>
 </ol>
 <doc-anchor-target id="returns">
     <h4>
@@ -219,7 +229,8 @@
 <pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySingleDDR(
     &quot;0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba&quot;,
     &quot;0001&quot;,
-    &quot;0xf00814e2e916628483aef34d34f1f63cee0d8b67a2c7fbea160d2b5d188534c9&quot;)
+    &quot;0xf00814e2e916628483aef34d34f1f63cee0d8b67a2c7fbea160d2b5d188534c9&quot;),
+    [&quot;0xcA03F19695aee47057246615c059F94b0c2734e9&quot;]
     .then(console.log);
 
 &gt; true</code></pre>
@@ -235,7 +246,8 @@
 <pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySinglePatient(
   patientDID,
   ddrsRawId,
-  ddrsHashedData
+  ddrsHashedData,
+  ddrConsentedTo
 );</code></pre>
 </doc-codeblock></div>
 <p>Check the integrity of single patient</p>
@@ -261,6 +273,11 @@
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>Array&lt;string&gt;</span>
 </span>: Array of hashed data of DDRs belong to the patient</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>ddrConsentedTo</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>Array&lt;Array&lt;string&gt;&gt;</span>
+</span>: List of Provider which DDR consented to of each DDR</li>
 </ol>
 <doc-anchor-target id="returns-1">
     <h4>
@@ -285,6 +302,11 @@
       &quot;0xf00814e2e916628483aef34d34f1f63cee0d8b67a2c7fbea160d2b5d188534c9&quot;,
       &quot;0x46f910e6fdee1489ecdcb31fd30eb4b8a2b0c6ddac7e252d1ef3c59d02f09c5e&quot;,
       &quot;0xd81a12bbbd8e1ada2e7ea6a82ec3b9b54464675977ed8af94b15320c698cac6d&quot;,
+    ]),
+    Array.from([
+      Array.from([&quot;0xcA03F19695aee47057246615c059F94b0c2734e9&quot;]),
+      Array.from([&quot;0xcA03F19695aee47057246615c059F94b0c2734e9&quot;]),
+      Array.from([&quot;0xcA03F19695aee47057246615c059F94b0c2734e9&quot;])
     ])
 ).then(console.log);
 

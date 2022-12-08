@@ -72,8 +72,8 @@ Pre-defined value
 
 Base on project requirement, the `claimKey` is very dynamic, we defined here only 2 `claimKeys` for base authenticator in blockchain. We follow the idea that `claimKey` is a `string`, and `key` in `claimKey` mean `key`:`value`. If you want to use other `claimKey`, just use whatever string you want.
 
-- [!badge variant="primary" text="PATIENT"] - [!badge variant="primary" text="PATIENT"] : Patient DID
-- [!badge variant="primary" text="PROVIDER"] - [!badge variant="primary" text="PROVIDER"]: Provider (Clinic/Hospital) DID
+- [!badge variant="primary" text="PATIENT"] - [!badge variant="primary" text="PATIENT"] : Patient type of DID
+- [!badge variant="primary" text="PROVIDER"] - [!badge variant="primary" text="PROVIDER"]: Provider (Clinic/Hospital) type of DID
 
 ```ts
 enum PreDefinedClaimKeys {

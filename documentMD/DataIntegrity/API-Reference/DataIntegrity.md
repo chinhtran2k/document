@@ -13,7 +13,12 @@ This module use for check integrity of data
 ### checkIntegritySingleDDR
 
 ```ts
-dataIntegrity.checkIntegritySingleDDR(patientDID, ddrId, hashedData);
+dataIntegrity.checkIntegritySingleDDR(
+  patientDID,
+  ddrId,
+  hashedData,
+  ddrConsentedTo
+);
 ```
 
 Check the integrity of single ddr
@@ -23,6 +28,7 @@ Check the integrity of single ddr
 1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: DID Address of Patient was created which has owner owns the DDR
 2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: DDR ID off-chain was sent from Pharumo
 3. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data of DDR that was hashed by keccak256
+4. [!badge variant="warning" text="ddrConsentedTo"] - [!badge variant="warning" text="Array\<string>"]: List of Provider which DDR consented to
 
 #### Returns
 
@@ -34,7 +40,8 @@ Check the integrity of single ddr
 dataIntegrity.checkIntegritySingleDDR(
     "0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba",
     "0001",
-    "0xf00814e2e916628483aef34d34f1f63cee0d8b67a2c7fbea160d2b5d188534c9")
+    "0xf00814e2e916628483aef34d34f1f63cee0d8b67a2c7fbea160d2b5d188534c9"),
+    ["0xcA03F19695aee47057246615c059F94b0c2734e9"]
     .then(console.log);
 
 > true
@@ -48,7 +55,8 @@ dataIntegrity.checkIntegritySingleDDR(
 dataIntegrity.checkIntegritySinglePatient(
   patientDID,
   ddrsRawId,
-  ddrsHashedData
+  ddrsHashedData,
+  ddrConsentedTo
 );
 ```
 
@@ -59,6 +67,7 @@ Check the integrity of single patient
 1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: DID Address of Patient which owner owns all the DDRs
 2. [!badge variant="warning" text="ddrsRawId"] - [!badge variant="warning" text="Array\<string>"]: Array of raw DDR ID of DDRs belong to the patient
 3. [!badge variant="warning" text="ddrsHashedData"] - [!badge variant="warning" text="Array\<string>"]: Array of hashed data of DDRs belong to the patient
+4. [!badge variant="warning" text="ddrConsentedTo"] - [!badge variant="warning" text="Array\<Array\<string>>"]: List of Provider which DDR consented to of each DDR
 
 #### Returns
 
@@ -74,6 +83,11 @@ dataIntegrity.checkIntegritySinglePatient(
       "0xf00814e2e916628483aef34d34f1f63cee0d8b67a2c7fbea160d2b5d188534c9",
       "0x46f910e6fdee1489ecdcb31fd30eb4b8a2b0c6ddac7e252d1ef3c59d02f09c5e",
       "0xd81a12bbbd8e1ada2e7ea6a82ec3b9b54464675977ed8af94b15320c698cac6d",
+    ]),
+    Array.from([
+      Array.from(["0xcA03F19695aee47057246615c059F94b0c2734e9"]),
+      Array.from(["0xcA03F19695aee47057246615c059F94b0c2734e9"]),
+      Array.from(["0xcA03F19695aee47057246615c059F94b0c2734e9"])
     ])
 ).then(console.log);
 
