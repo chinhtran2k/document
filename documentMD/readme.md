@@ -4,7 +4,7 @@ icon: home
 
 # HPA3 - Blockchain - Documentation
 
-This library is a collection of modules that contain functionality for a etherum wallet (like Metamask).
+This library is a collection of modules that contain functionality for HPA3 project
 
 ---
 
@@ -13,7 +13,3 @@ This wallet SDK built base on web3js, web3-core
 !!!
 
 ---
-
-## Basic system flow
-
-![Basic system flow](./DIDManager/image/architechnew.png)
