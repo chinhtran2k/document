@@ -13,14 +13,7 @@ This module use to mint/share/consent/lock DDR
 ### mintDDR
 
 ```ts
-ddr.mintDDR(
-  hashedData,
-  ddrRawId,
-  uri,
-  patientDID,
-  delegateKey,
-  nonce
-);
+ddr.mintDDR(hashedData, ddrRawId, uri, patientDID, delegateKey, nonce);
 ```
 
 Create DDR for Patients
@@ -119,14 +112,7 @@ ddr
 ### mintBatchDDR
 
 ```ts
-ddr.mintBatchDDR(
-  hashedDatas,
-  ddrRawIds,
-  uris,
-  patientDID,
-  delegateKey,
-  nonce
-);
+ddr.mintBatchDDR(hashedDatas, ddrRawIds, uris, patientDID, delegateKey, nonce);
 ```
 
 Create many DDRs for Patients
@@ -233,14 +219,14 @@ ddr.mintBatchDDR(
 ### sharedDDR
 
 ```ts
-ddr.sharedDDR(ddrTokenIds, patientDID, delegateKey, nonce);
+ddr.sharedDDR(ddrIds, patientDID, delegateKey, nonce);
 ```
 
 Allow address of patient to access id of ddr
 
 #### Parameters
 
-1. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array\<number>"]: Array of id token of ddr
+1. [!badge variant="warning" text="ddrIds"] - [!badge variant="warning" text="Array\<string>"]: Array of DDR id
 2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
 3. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey
 4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
@@ -254,7 +240,7 @@ Allow address of patient to access id of ddr
 
 ```ts
 ddr.sharedDDR(
-    [1, 2],
+    ["A001", "A002"],
     "0x51C4B0487e16186da402daebE06C4cD71b5015c8",
     "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
   )
@@ -327,14 +313,14 @@ ddr.sharedDDR(
 ### disclosureConsentDDR
 
 ```ts
-ddr.disclosureConsentDDR(ddrTokenIds, providerDID, delegateKey, nonce);
+ddr.disclosureConsentDDR(ddrIds, providerDID, delegateKey, nonce);
 ```
 
 Allow list ids of ddr to provider
 
 #### Parameters
 
-1. [!badge variant="warning" text="ddrTokenIds"] - [!badge variant="warning" text="Array\<number>"]: List ids token of ddr
+1. [!badge variant="warning" text="ddrIds"] - [!badge variant="warning" text="Array\<string>"]: List of DDR id
 2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
 3. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]: The address of provider was created from DID
 4. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey belongs to Patient
@@ -349,7 +335,7 @@ Allow list ids of ddr to provider
 
 ```ts
 ddr.disclosureConsentDDR(
-    [0, 1],
+    ["A001", "A002"],
     "0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0",
     "0x37C819C94EdfE048968A28215C73C4D1B8ceAb15",
     "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb"
@@ -422,7 +408,7 @@ ddr.disclosureConsentDDR(
 ### getShareDDR
 
 ```ts
-ddr.getShareDDR(patientDID, ddrTokenId);
+ddr.getShareDDR(patientDID, ddrId);
 ```
 
 Check if this address of patient is allowed to contact DDR
@@ -430,7 +416,7 @@ Check if this address of patient is allowed to contact DDR
 #### Parameters
 
 1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
-2. [!badge variant="warning" text="ddrTokenId"] - [!badge variant="warning" text="number"]: Id token of DDR
+2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: Id of DDR
 
 #### Returns
 
@@ -439,7 +425,7 @@ Check if this address of patient is allowed to contact DDR
 #### Example
 
 ```ts
-ddr.getShareDDR("0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0", 1).then(console.log);
+ddr.getShareDDR("0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0", "A001").then(console.log);
 > true;
 ```
 
@@ -448,15 +434,16 @@ ddr.getShareDDR("0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0", 1).then(console.lo
 ### getConsentedDDR
 
 ```ts
-ddr.getConsentedDDR(providerDID, ddrTokenId);
+ddr.getConsentedDDR(providerDID, patientDID, ddrId);
 ```
 
 Check if this address of provideris allowed to watch ddr
 
 #### Parameters
 
-1. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]: The address of provider
-2. [!badge variant="warning" text="ddrTokenId"] - [!badge variant="warning" text="number"]: Id token of ddr
+1. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]: The DID address of provider
+2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The DID address of patient
+3. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="number"]: Id of ddr
 
 #### Returns
 
@@ -465,7 +452,7 @@ Check if this address of provideris allowed to watch ddr
 #### Example
 
 ```ts
-ddr.getConsentedDDR("0x37C819C94EdfE048968A28215C73C4D1B8ceAb15", 1).then(console.log);
+ddr.getConsentedDDR("0x37C819C94EdfE048968A28215C73C4D1B8ceAb15", "0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0", "A001").then(console.log);
 > true;
 ```
 
@@ -474,14 +461,15 @@ ddr.getConsentedDDR("0x37C819C94EdfE048968A28215C73C4D1B8ceAb15", 1).then(consol
 ### getLockedDDR
 
 ```ts
-ddr.getLockedDDR(ddrTokenId);
+ddr.getLockedDDR(patientDID, ddrId);
 ```
 
 Check if this DDR is locked or not
 
 #### Parameters
 
-[!badge variant="warning" text="ddrTokenId"] - [!badge variant="warning" text="Number"]: Id token of ddr
+1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: The DID address of patient
+2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: Id of ddr
 
 #### Returns
 
@@ -490,11 +478,12 @@ Check if this DDR is locked or not
 #### Example
 
 ```ts
-ddr.getLockedDDR(1).then(console.log);
+ddr.getLockedDDR("0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0", "A001").then(console.log);
 > true;
 ```
 
 ---
+
 ### setERC20Proxy
 
 ```ts
@@ -507,9 +496,10 @@ Call contract ERC20Proxy to DDR
 
 1. [!badge variant="warning" text="addressErc20Proxy"] - [!badge variant="warning" text="string"]: Address of contract ERC20Proxy
 2. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"]: Private key of contract creator(admin)
-4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
+3. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
 
 #### Returns
+
 [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="array"]: An array of event logs of transactions.
 
 #### Example
@@ -574,3 +564,4 @@ ddr.setERC20Proxy(
 }
 
 ---
+```
