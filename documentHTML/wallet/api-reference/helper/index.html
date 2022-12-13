@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.723927725045">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.724235013328">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=2.4.0.723927725045" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.724235013328" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.723927725045" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.724235013328" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.723927725045" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.723927725045" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.724235013328" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.724235013328" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -168,14 +168,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">signAndSendTransaction(
-  connection,
-  data,
-  to,
-  privateKey,
-  [nonce],
-  isEstimate
-);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">signAndSendTransaction(connection, data, to, privateKey, [nonce], isEstimate);</code></pre>
 </doc-codeblock></div>
 <p>Sign and send transaction</p>
 <doc-anchor-target id="parameters">
@@ -263,6 +256,93 @@
     status: true,
     logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
   }
+}</code></pre>
+</doc-codeblock></div>
+<hr />
+<doc-anchor-target id="sendsignedtransaction">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sendsignedtransaction">#</doc-anchor-trigger>
+        <span>sendSignedTransaction</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">sendSignedTransaction(connection, signedTx);</code></pre>
+</doc-codeblock></div>
+<p>Send signed transaction</p>
+<doc-anchor-target id="parameters-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-1">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>connection</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>Connection</span>
+</span>: Connection to interact with blockchain</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>signedTx</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>SignedTransaction</span>
+</span>: The signed transaction</li>
+</ol>
+<doc-anchor-target id="returns-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-1">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>receipt</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>object</span>
+</span>: A transaction receipt object, or null if no receipt was found.</li>
+</ol>
+<ul>
+<li><code v-pre>status</code> - <code v-pre>Boolean</code>: <code v-pre>TRUE</code> if the transaction was successful, <code v-pre>FALSE</code> if the EVM reverted the transaction.</li>
+<li><code v-pre>blockHash</code> 32 Bytes - <code v-pre>String</code>: Hash of the block where this transaction was in.</li>
+<li><code v-pre>blockNumber</code> - <code v-pre>Number</code> (or <code v-pre>hex String</code>): Block number where this transaction was in.</li>
+<li><code v-pre>transactionHash</code> 32 Bytes - <code v-pre>String</code>: Hash of the transaction.</li>
+<li><code v-pre>transactionIndex</code>- <code v-pre>Number</code> (or <code v-pre>hex String</code>): Integer of the transactions index position in the block.</li>
+<li><code v-pre>from</code> - <code v-pre>String</code>: Address of the sender.</li>
+<li><code v-pre>to</code> - <code v-pre>String</code>: Address of the receiver. null when it’s a contract creation transaction.</li>
+<li><code v-pre>contractAddress</code> - <code v-pre>String</code>: The contract address created, if the transaction was a contract creation, otherwise null.</li>
+<li><code v-pre>cumulativeGasUsed</code> - <code v-pre>Number</code> (or <code v-pre>hex String</code>): The total amount of gas used when this transaction was executed in the block.</li>
+<li><code v-pre>gasUsed</code> - <code v-pre>Number</code> (or <code v-pre>hex String</code>): The amount of gas used by this specific transaction alone.</li>
+<li><code v-pre>logs</code> - <code v-pre>Array</code>: Array of log objects, which this transaction generated.</li>
+</ul>
+<ol start="2">
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>eventLogs</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>Array&lt;any&gt;</span>
+</span>: Event logs of transaction decode base on ABI</li>
+</ol>
+<doc-anchor-target id="example-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-1">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">&gt; {
+  receipt: {
+    transactionHash: '0x123433e90341fa3e01fb443334d5ebb1e568887712074674b147c4bed8f00c66',
+    transactionIndex: 0,
+    blockHash: '0x4441967f9660339576accfe30775733199e19b69414ece1c7ec8e825622f0e95',
+    blockNumber: 1,
+    from: '0x3223821d88f2e650d4732c4ce974a30bb4296949',
+    to: '0xd627e421aed1026077abe9fd43aa750be925a077',
+    gasUsed: 21000,
+    cumulativeGasUsed: 21000,
+    contractAddress: null,
+    logs: [],
+    status: true,
+    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
+  }
+  eventLogs: []
 }</code></pre>
 </doc-codeblock></div>
 
