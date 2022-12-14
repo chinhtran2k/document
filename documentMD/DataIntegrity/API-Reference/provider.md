@@ -13,7 +13,7 @@ This module for Provider lock level
 ### mintProvider
 
 ```ts
-Provider.mintProvider(ProviderDID, uri, privateKey, nonce);
+Provider.mintProvider(ProviderDID, accountId, uri, privateKey, nonce);
 ```
 
 Mint and lock Provider
@@ -111,7 +111,7 @@ Provider.getListAddressOfProvider()
 ### getListHashValueProvider
 
 ```ts
-Provider.getListHashValueProvider();
+Provider.getListHashValueProvider(providerDID);
 ```
 
 Get List Hash Value Of Provider

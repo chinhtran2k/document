@@ -93,6 +93,38 @@ dataIntegrity.checkIntegritySinglePatient(
 
 > true
 ```
+---
+
+### checkIntegritySingleProvider
+
+```ts
+dataIntegrity.checkIntegritySingleProvider(
+  providerDID,
+  dataRootHash,
+);
+```
+
+Check the integrity of single patient
+
+#### Parameters
+
+1. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]: Address of Provider
+2. [!badge variant="warning" text="dataRootHash"] - [!badge variant="warning" text="Array\<string>"]: Hash Data lock of Provider
+
+#### Returns
+
+[!badge variant="danger" text="boolean"]: true if the data is valid, false if the data is invalid
+
+#### Example
+
+```ts
+dataIntegrity.checkIntegritySinglePatient(
+    "0x9573Cda4F4f645764767561D1EF3b4b84647aC19",
+    "0x413febeb7faf0762a3c79ac10354ff4096db8ac927d64e9a81355e5671a6d6b9")
+).then(console.log);
+
+> true
+```
 
 ### checkIntegrityStudy
 
