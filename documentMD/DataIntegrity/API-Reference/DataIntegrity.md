@@ -97,14 +97,22 @@ dataIntegrity.checkIntegritySinglePatient(
 ### checkIntegrityStudy
 
 ```ts
-dataIntegrity.checkIntegrityStudy(rootHashValues);
+dataIntegrity.checkIntegrityStudy(
+  rootHashValuesPatient,
+  rootHashValuesProvider
+);
 ```
 
 Check the integrity study
 
 #### Parameters
 
-[!badge variant="warning" text="rootHashValues"] - [!badge variant="warning" text="Array\<string>"]: Array of root hash values of all patients
+1. [!badge variant="warning" text="rootHashValuesPatient"] - [!badge variant="warning" text="Array\<string>"]: Array of root hash values of all patients
+2. [!badge variant="warning" text="rootHashValuesProvider"] - [!badge variant="warning" text="Array\<string>"]: Array of root hash values of all providers
+
+!!! Warning Warn
+`rootHashValuesPatient`, `rootHashValuesProvider` must be input by true order (which is added first, eg: `[\<PatientHash1>, \<PatientHash2>]`), or the result will be wrong
+!!!
 
 #### Returns
 
@@ -120,10 +128,9 @@ dataIntegrity.checkIntegrityStudy(
   "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
   "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
   "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae",
-  "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae",
-  ])
+  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030"]
+  ["0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae",
+  "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae",])
   .then(console.log);
 
 > true
