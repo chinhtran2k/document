@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.724235013328">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.724317532507">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=2.4.0.724235013328" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.724317532507" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.724235013328" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.724317532507" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.724235013328" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.724235013328" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.724317532507" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.724317532507" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -312,27 +312,35 @@
 
 &gt; true</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="checkintegritystudy">
+<hr />
+<doc-anchor-target id="checkintegritysingleprovider">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#checkintegritystudy">#</doc-anchor-trigger>
-        <span>checkIntegrityStudy</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#checkintegritysingleprovider">#</doc-anchor-trigger>
+        <span>checkIntegritySingleProvider</span>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegrityStudy(rootHashValues);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySingleProvider(providerDID, dataRootHash);</code></pre>
 </doc-codeblock></div>
-<p>Check the integrity study</p>
+<p>Check the integrity of single patient</p>
 <doc-anchor-target id="parameters-2">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-2">#</doc-anchor-trigger>
         <span>Parameters</span>
     </h4>
 </doc-anchor-target>
-<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>rootHashValues</span>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>providerDID</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Address of Provider</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>rootHashValue</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>Array&lt;string&gt;</span>
-</span>: Array of root hash values of all patients</p>
+</span>: Root hash value of Provider</li>
+</ol>
 <doc-anchor-target id="returns-2">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#returns-2">#</doc-anchor-trigger>
@@ -349,6 +357,77 @@
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySinglePatient(
+    &quot;0x9573Cda4F4f645764767561D1EF3b4b84647aC19&quot;,
+    &quot;0x413febeb7faf0762a3c79ac10354ff4096db8ac927d64e9a81355e5671a6d6b9&quot;)
+).then(console.log);
+
+&gt; true</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="checkintegritystudy">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#checkintegritystudy">#</doc-anchor-trigger>
+        <span>checkIntegrityStudy</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegrityStudy(
+  rootHashValuesPatient,
+  rootHashValuesProvider
+);</code></pre>
+</doc-codeblock></div>
+<p>Check the integrity study</p>
+<doc-anchor-target id="parameters-3">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-3">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>rootHashValuesPatient</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>Array&lt;string&gt;</span>
+</span>: Array of root hash values of all patients</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>rootHashValuesProvider</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>Array&lt;string&gt;</span>
+</span>: Array of root hash values of all providers</li>
+</ol>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Warn</h5>
+<p><code v-pre>rootHashValuesPatient</code>, <code v-pre>rootHashValuesProvider</code> must be input by true order (which is added first, eg: <code v-pre>[\&lt;PatientHash1&gt;, \&lt;PatientHash2&gt;]</code>), or the result will be wrong</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="returns-3">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-3">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>boolean</span>
+</span>: true if the data is valid, false if the data is invalid</p>
+<doc-anchor-target id="example-3">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-3">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegrityStudy(
   [&quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,  // This is just example, data can be alike
   &quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,
@@ -358,8 +437,9 @@
   &quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,
   &quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,
   &quot;0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae&quot;,
-  &quot;0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae&quot;,
-  ])
+  &quot;0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae&quot;],
+  [&quot;0051bd68c174759f9b23b1ab213c7901c4b97d4d519879d14a4f6133c12f80fd&quot;,
+  &quot;70a5f2406b818add7e4c6469b61194f228525080e46ddfb118388e630a9c4bda&quot;,])
   .then(console.log);
 
 &gt; true</code></pre>

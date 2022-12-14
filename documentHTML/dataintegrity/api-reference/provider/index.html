@@ -9,35 +9,33 @@
     <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Introduction</title>
-    <meta name="title" content="Introduction">
-    <meta name="description" content="Decentralized Identity (DID) smart contract base on Verifiable Credential." />
+    <title>Provider</title>
+    <meta name="title" content="Provider">
+    <meta name="description" content="This module for Provider lock level" />
 
     <!-- Canonical -->
-    <link rel="canonical" href="/didmanager/introduction/" />
+    <link rel="canonical" href="/dataintegrity/api-reference/provider/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/didmanager/introduction/">
-    <meta property="og:title" content="Introduction">
-    <meta property="og:description" content="Decentralized Identity (DID) smart contract base on Verifiable Credential.">
-    <meta property="og:image" content="/didmanager/image/architech.png">
+    <meta property="og:url" content="/dataintegrity/api-reference/provider/">
+    <meta property="og:title" content="Provider">
+    <meta property="og:description" content="This module for Provider lock level">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/didmanager/introduction/">
-    <meta property="twitter:title" content="Introduction">
-    <meta property="twitter:description" content="Decentralized Identity (DID) smart contract base on Verifiable Credential.">
-    <meta property="twitter:image" content="/didmanager/image/architech.png">
+    <meta property="twitter:url" content="/dataintegrity/api-reference/provider/">
+    <meta property="twitter:title" content="Provider">
+    <meta property="twitter:description" content="This module for Provider lock level">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.724317532507" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.724317532507" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.724317532507" data-turbo-eval="false" defer></script>
-    <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.724317532507" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../resources/js/prism.js?v=2.4.0.724317532507" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.724317532507" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.724317532507" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.724317532507" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -52,7 +50,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">HPA3 - BLC - Documentation</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.1.9</span>
                     </div>
@@ -155,156 +153,223 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="introduction" class="break-words">
+<doc-anchor-target id="provider" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#introduction">#</doc-anchor-trigger>
-        <span>Introduction</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#provider">#</doc-anchor-trigger>
+        <span>Provider</span>
     </h1>
 </doc-anchor-target>
-<p>Decentralized Identity (DID) smart contract base on Verifiable Credential.</p>
-<hr />
-<doc-anchor-target id="what-is-a-verifiable-credential">
+<p>This module for Provider lock level</p>
+<doc-anchor-target id="main-function">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-a-verifiable-credential">#</doc-anchor-trigger>
-        <span>What is a Verifiable Credential?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-function">#</doc-anchor-trigger>
+        <span>Main function</span>
     </h2>
 </doc-anchor-target>
-<p>W3C define <a href="https://www.w3.org/TR/vc-data-model/">W3C Verifiable Credential</a>.</p>
-<blockquote>
-<p>In the physical world, a credential might consist of:</p>
-<ul>
-<li>Information related to identifying the subject of the credential (for example, a photo, name, or identification number)</li>
-<li>Information related to the issuing authority (for example, a city government, national agency, or certification body)</li>
-<li>Information related to the type of credential this is (for example, a Dutch passport, an American driving license, or a health insurance card)</li>
-<li>Information related to specific attributes or properties being asserted by the issuing authority about the subject (for example, nationality, the classes of - vehicle entitled to drive, or date of birth)</li>
-<li>Evidence related to how the credential was derived</li>
-<li>Information related to constraints on the credential (for example, expiration date, or terms of use).</li>
-<li>A verifiable credential can represent all of the same information that a physical credential represents. The addition of technologies, such as digital signatures, makes verifiable credentials more tamper-evident and more trustworthy than their physical counterparts.</li>
-</ul>
-<p>Holders of verifiable credentials can generate verifiable presentations and then share these verifiable presentations with verifiers to prove they possess verifiable credentials with certain characteristics.</p>
-<p>Both verifiable credentials and verifiable presentations can be transmitted rapidly, making them more convenient than their physical counterparts when trying to establish trust at a distance.</p>
-<p>While this specification attempts to improve the ease of expressing digital credentials, it also attempts to balance this goal with a number of privacy-preserving goals. The persistence of digital information, and the ease with which disparate sources of digital data can be collected and correlated, comprise a privacy concern that the use of verifiable and easily machine-readable credentials threatens to make worse. This document outlines and attempts to address a number of these issues in Section 7. Privacy Considerations. Examples of how to use this data model using privacy-enhancing technologies, such as zero-knowledge proofs, are also provided throughout this document.</p>
-<p>The word &quot;verifiable&quot; in the terms verifiable credential and verifiable presentation refers to the characteristic of a credential or presentation as being able to be verified by a verifier, as defined in this document. Verifiability of a credential does not imply that the truth of claims encoded therein can be evaluated; however, the issuer can include values in the evidence property to help the verifier apply their business logic to determine whether the claims have sufficient veracity for their needs.</p>
-</blockquote>
-<p>We define each object in our system is a Verifiable Credential or DID.
-<figure class="content-center">
-    <img src="../image/architech.png" alt="Verifiable Credential" />
-    <figcaption class="caption">Verifiable Credential</figcaption>
-</figure>
-</p>
 <hr />
-<doc-anchor-target id="what-is-erc-725">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-erc-725">#</doc-anchor-trigger>
-        <span>What is ERC 725?</span>
-    </h2>
-</doc-anchor-target>
-<p>ERC 725 is a proposed standard for blockchain-based identity authored by Fabian Vogelsteller, creator of ERC 20 and Web3.js. ERC 725 describes proxy smart contracts that can be controlled by multiple keys and other smart contracts. ERC 735 is an associated standard to add and remove claims to an ERC 725 identity smart contract. These identity smart contracts can describe humans, groups, objects, and machines. ERC 725 lives on the Ethereum blockchain. [<a href="https://docs.ethhub.io/built-on-ethereum/identity/ERC725/">ref</a>]</p>
-<hr />
-<doc-anchor-target id="erc-735-motivation">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#erc-735-motivation">#</doc-anchor-trigger>
-        <span>ERC 735 Motivation</span>
-    </h2>
-</doc-anchor-target>
-<p><em>&quot;This standardised claim holder interface will allow Dapps and smart contracts to check the claims about a claim holder. Trust is here transfered to the issuers of claims.&quot;</em> [<a href="https://github.com/ethereum/EIPs/issues/735">ref</a>]</p>
-<hr />
-<doc-anchor-target id="did">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#did">#</doc-anchor-trigger>
-        <span>DID</span>
-    </h2>
-</doc-anchor-target>
-<p>Base on W3C define and ERC725 standard</p>
-<p><figure class="content-center">
-    <img src="../image/did.png" alt="DID smart contract structure" />
-    <figcaption class="caption">DID smart contract structure</figcaption>
-</figure>
-</p>
-<hr />
-<doc-anchor-target id="pre-defined-value">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pre-defined-value">#</doc-anchor-trigger>
-        <span>Pre-defined value</span>
-    </h2>
-</doc-anchor-target>
-<p>Pre-defined value</p>
-<hr />
-<doc-anchor-target id="did-type---predefinedclaimkeys">
+<doc-anchor-target id="mintprovider">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#did-type---predefinedclaimkeys">#</doc-anchor-trigger>
-        <span>DID type - PreDefinedClaimKeys</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mintprovider">#</doc-anchor-trigger>
+        <span>mintProvider</span>
     </h3>
 </doc-anchor-target>
-<p>Base on project requirement, the <code v-pre>claimKey</code> is very dynamic, we defined here only 2 <code v-pre>claimKeys</code> for base authenticator in blockchain. We follow the idea that <code v-pre>claimKey</code> is a <code v-pre>string</code>, and <code v-pre>key</code> in <code v-pre>claimKey</code> mean <code v-pre>key</code>:<code v-pre>value</code>. If you want to use other <code v-pre>claimKey</code>, just use whatever string you want.</p>
-<ul>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>PATIENT</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>PATIENT</span>
-</span> : Patient type of DID</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>PROVIDER</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>PROVIDER</span>
-</span>: Provider (Clinic/Hospital) type of DID</li>
-</ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">enum PreDefinedClaimKeys {
-  PATIENT = &quot;PATIENT&quot;,
-  PROVIDER = &quot;PROVIDER&quot;,
+<pre class="language-typescript"><code v-pre class="language-typescript">Provider.mintProvider(ProviderDID, accountId, uri, privateKey, nonce);</code></pre>
+</doc-codeblock></div>
+<p>Mint and lock Provider</p>
+<doc-anchor-target id="parameters">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>ProviderDID</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Address of Provider was created from DID</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>accountId</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Address Id off-chain was sent from Pharumo</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>uri</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: The uri of Provider</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>privateKey</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span> : Private key of contract creator(admin)</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>nonce</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>number</span>
+</span> (optional): The nonce of account</li>
+</ol>
+<doc-anchor-target id="returns">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>receipt</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>object</span>
+</span>: A transaction receipt object, or null if no receipt was found. (check receipt).</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>eventLogs</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>object</span>
+</span>: Event logs of transactions.</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>tokenId</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Id of Provider token.</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>hashValue</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Data lock was hashed by the keccak256</li>
+</ol>
+<doc-anchor-target id="example">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">Provider.mintProvider(
+    &quot;0x9573Cda4F4f645764767561D1EF3b4b84647aC19&quot;,
+    &quot;01&quot;,
+    &quot;uri provider&quot;,
+    &quot;24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb&quot;
+  )
+  .then(console.log);
+&gt; {
+  receipt: {
+    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 450294,
+    logsBloom: '0x00000000000000000080000400000000800000000000000008000000000000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000008000000000000000000040000000000000000000000000000020000000000000000000800000000000000000000000010008000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000002080001000000000400000000000000002000000000000000000000000004000000080000000000000000060000000000000000000000000000000000000000000000000000000000000000000',
+    logs: [ [Object], [Object], [Object] ],
+    status: true,
+    transactionHash: '0x78cc7003da6efa313971b815a6e0446264940345ba33b62f2c4f0e7e253a0d4b',
+    transactionIndex: 0,
+    blockHash: '0xb4369c3db77c6b9645058a0cab7f3296a1acd0fff9c4f668549106f320741b7c',
+    blockNumber: 1825514,
+    gasUsed: 450294,
+    contractAddress: null,
+    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+    to: '0x8AE729C3C0e8a2D9C5a95A87278eF7d6e72b5F98'
+  },
+  eventLogs: [
+    {
+      name: 'Transfer',
+      address: '0x8AE729C3C0e8a2D9C5a95A87278eF7d6e72b5F98'
+    },
+    {
+      name: 'ProviderLockTokenMinted',
+      events: [Array],
+      address: '0x8AE729C3C0e8a2D9C5a95A87278eF7d6e72b5F98'
+    },
+    {
+      name: 'ProviderTokenLocked',
+      events: [Array],
+      address: '0x8AE729C3C0e8a2D9C5a95A87278eF7d6e72b5F98'
+    }
+  ],
+  tokenId: '1',
+  hashValue: '0x413febeb7faf0762a3c79ac10354ff4096db8ac927d64e9a81355e5671a6d6b9'
 }</code></pre>
 </doc-codeblock></div>
 <hr />
-<doc-anchor-target id="key-purpose">
+<doc-anchor-target id="getlistaddressofprovider">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#key-purpose">#</doc-anchor-trigger>
-        <span>Key Purpose</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getlistaddressofprovider">#</doc-anchor-trigger>
+        <span>getListAddressOfProvider</span>
     </h3>
 </doc-anchor-target>
-<p>Base on <a href="https://github.com/ethereum/EIPs/issues/734">ERC734</a> and <a href="https://github.com/ethereum/EIPs/issues/725">ERC725</a>, we defined 3 key purpose</p>
-<ul>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>1</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>MANAGEMENT</span>
-</span>: Management key. Full permissions to all function of DID.</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>2</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>DELEGATE_KEY</span>
-</span>: Delegate key. Use to call <code v-pre>execute</code> function of DID.</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>3</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>CLAIM_SIGNER</span>
-</span>: Claim signer key. Use to sign a signature for claim. We will use <code v-pre>privateKey</code> of this key to sign signature</li>
-</ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">enum KeyPurposes {
-  MANAGEMENT = 1,
-  DELEGATE_KEY = 2,
-  CLAIM_SIGNER = 3,
-}</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">Provider.getListAddressOfProvider();</code></pre>
+</doc-codeblock></div>
+<p>Get List Address Of Provider</p>
+<doc-anchor-target id="parameters-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-1">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<p>None</p>
+<doc-anchor-target id="returns-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-1">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>String</span>
+</span>: List Address of Provider</p>
+<doc-anchor-target id="example-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-1">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">Provider.getListAddressOfProvider()
+  .then(console.log);
+&gt; [ '0x9573Cda4F4f645764767561D1EF3b4b84647aC19' ]</code></pre>
 </doc-codeblock></div>
 <hr />
-<doc-anchor-target id="schemes">
+<doc-anchor-target id="getlisthashvalueprovider">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#schemes">#</doc-anchor-trigger>
-        <span>Schemes</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getlisthashvalueprovider">#</doc-anchor-trigger>
+        <span>getListHashValueProvider</span>
     </h3>
 </doc-anchor-target>
-<p>Base on <a href="https://github.com/ethereum/EIPs/issues/734">ERC734</a> and <a href="https://github.com/ethereum/EIPs/issues/725">ERC725</a>, we define 4 schemes for sign data and contract call</p>
-<ul>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>ECDSA</span>
-</span>: ECDSA scheme. We will use this scheme for signed signature, all needed function will use this scheme.</li>
-</ul>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">enum Schemes {
-  ECDSA = 1,
-}</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">Provider.getListHashValueProvider(providerDID);</code></pre>
 </doc-codeblock></div>
+<p>Get List Hash Value Of Provider</p>
+<doc-anchor-target id="parameters-2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-2">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>providerDID</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Address of Provider was created from DID</li>
+</ol>
+<doc-anchor-target id="returns-2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-2">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>Array&lt;String&gt;</span>
+</span>: Array of Hash Value</p>
+<doc-anchor-target id="example-2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-2">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">Provider.getListHashValueProvider(&quot;0x9573Cda4F4f645764767561D1EF3b4b84647aC19&quot;).then(console.log);
+&gt; &quot;0x413febeb7faf0762a3c79ac10354ff4096db8ac927d64e9a81355e5671a6d6b9&quot;</code></pre>
+</doc-codeblock></div>
+<hr />
 
                                 
                                 <!-- Required only on API pages -->
@@ -314,23 +379,16 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../didmanager/getting-started/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../dataintegrity/api-reference/pocstudy/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Getting started</span>
+                                                <span class="block mt-1">POC​Study</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../didmanager/api-reference/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">API Reference</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -371,6 +429,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Introduction", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Provider", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>

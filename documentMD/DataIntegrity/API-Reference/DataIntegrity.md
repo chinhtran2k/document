@@ -93,15 +93,13 @@ dataIntegrity.checkIntegritySinglePatient(
 
 > true
 ```
+
 ---
 
 ### checkIntegritySingleProvider
 
 ```ts
-dataIntegrity.checkIntegritySingleProvider(
-  providerDID,
-  dataRootHash,
-);
+dataIntegrity.checkIntegritySingleProvider(providerDID, dataRootHash);
 ```
 
 Check the integrity of single patient
@@ -109,7 +107,7 @@ Check the integrity of single patient
 #### Parameters
 
 1. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]: Address of Provider
-2. [!badge variant="warning" text="dataRootHash"] - [!badge variant="warning" text="Array\<string>"]: Hash Data lock of Provider
+2. [!badge variant="warning" text="rootHashValue"] - [!badge variant="warning" text="Array\<string>"]: Root hash value of Provider
 
 #### Returns
 
@@ -160,9 +158,11 @@ dataIntegrity.checkIntegrityStudy(
   "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
   "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
   "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030"]
-  ["0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae",
-  "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae",])
+  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
+  "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae",
+  "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae"],
+  ["0051bd68c174759f9b23b1ab213c7901c4b97d4d519879d14a4f6133c12f80fd",
+  "70a5f2406b818add7e4c6469b61194f228525080e46ddfb118388e630a9c4bda",])
   .then(console.log);
 
 > true
