@@ -2,3 +2,4 @@ label: Wallet
 layout: page
 order: 99
 expanded: true
+icon: file-directory

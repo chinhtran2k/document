@@ -2,3 +2,4 @@ label: DIDManager
 layout: page
 order: 2
 expanded: true
+icon: file-directory

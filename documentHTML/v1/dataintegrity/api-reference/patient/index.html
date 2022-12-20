@@ -9,32 +9,33 @@
     <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>HPA3 - Blockchain - Documentation</title>
-    <meta name="title" content="HPA3 - Blockchain - Documentation">
-    <meta name="description" content="This library is a collection of modules that contain functionality for HPA3 project" />
+    <title>Patient</title>
+    <meta name="title" content="Patient">
+    <meta name="description" content="This module for Patient lock level" />
 
     <!-- Canonical -->
-    <link rel="canonical" href="/" />
+    <link rel="canonical" href="/v1/dataintegrity/api-reference/patient/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/">
-    <meta property="og:title" content="HPA3 - Blockchain - Documentation">
-    <meta property="og:description" content="This library is a collection of modules that contain functionality for HPA3 project">
+    <meta property="og:url" content="/v1/dataintegrity/api-reference/patient/">
+    <meta property="og:title" content="Patient">
+    <meta property="og:description" content="This module for Patient lock level">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/">
-    <meta property="twitter:title" content="HPA3 - Blockchain - Documentation">
-    <meta property="twitter:description" content="This library is a collection of modules that contain functionality for HPA3 project">
+    <meta property="twitter:url" content="/v1/dataintegrity/api-reference/patient/">
+    <meta property="twitter:title" content="Patient">
+    <meta property="twitter:description" content="This module for Patient lock level">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=2.4.0.724845049124" rel="stylesheet" />
+    <link href="../../../../resources/css/retype.css?v=2.4.0.724845049124" rel="stylesheet" />
 
-    <script type="text/javascript" src="resources/js/config.js?v=2.4.0.724845049124" data-turbo-eval="false" defer></script>
-    <script type="text/javascript" src="resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="resources/js/lunr.js?v=2.4.0.724845049124" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../../resources/js/config.js?v=2.4.0.724845049124" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../../resources/js/lunr.js?v=2.4.0.724845049124" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../../resources/js/prism.js?v=2.4.0.724845049124" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -49,7 +50,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">HPA3 - BLC - Documentation</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">v0.2.0</span>
                     </div>
@@ -152,32 +153,219 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="hpa3---blockchain---documentation" class="break-words">
+<doc-anchor-target id="patient" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#hpa3---blockchain---documentation">#</doc-anchor-trigger>
-        <span>HPA3 - Blockchain - Documentation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#patient">#</doc-anchor-trigger>
+        <span>Patient</span>
     </h1>
 </doc-anchor-target>
-<p>This library is a collection of modules that contain functionality for HPA3 project</p>
+<p>This module for Patient lock level</p>
+<doc-anchor-target id="main-function">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-function">#</doc-anchor-trigger>
+        <span>Main function</span>
+    </h2>
+</doc-anchor-target>
 <hr />
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>Note</h5>
-<p>This wallet SDK built base on web3js, web3-core</p>
-        </div>
-    </div>
-</div>
+<doc-anchor-target id="mintpatient">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mintpatient">#</doc-anchor-trigger>
+        <span>mintPatient</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">patient.mintPatient(patientDID, uri, privateKey, nonce);</code></pre>
+</doc-codeblock></div>
+<p>Mint and lock Patient</p>
+<doc-anchor-target id="parameters">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>patientDID</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Address of Patient was created from DID</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>uri</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: The uri of patient</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>privateKey</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span> : Private key of contract creator(admin)</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>nonce</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>number</span>
+</span> (optional): The nonce of account</li>
+</ol>
+<doc-anchor-target id="returns">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>receipt</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>object</span>
+</span>: A transaction receipt object, or null if no receipt was found. (check receipt).</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>eventLogs</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>object</span>
+</span>: Event logs of transactions.</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>tokenId</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Id of Patient token.</li>
+</ol>
+<doc-anchor-target id="example">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">patient.mintPatient(
+    &quot;0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0&quot;,
+    &quot;gg&quot;,
+    &quot;24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb&quot;
+  )
+  .then(console.log);
+&gt; {
+  receipt: {
+    root: &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,
+    cumulativeGasUsed: 1210878,
+    logsBloom:
+      &quot;0x00000000000000000080040400000000000000000000000000000000200000000000000000000802000000000000000000000200000080000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000020000000000000000000800000000000000000000000010000000000080000080000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000040000002000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000&quot;,
+    logs: [[Object], [Object]],
+    status: true,
+    transactionHash:
+      &quot;0x1eee8a69ab89b1206dee736b1115feccee41bbe43c8bb5fc9a6f204c66ab6bf3&quot;,
+    transactionIndex: 0,
+    blockHash:
+      &quot;0x9375085f4e86a80aed5734ce96fbf0317a77230e8dc0c476b82f93b4a949d659&quot;,
+    blockNumber: 1654534,
+    gasUsed: 1210878,
+    contractAddress: null,
+    from: &quot;0x51C4B0487e16186da402daebE06C4cD71b5015c8&quot;,
+    to: &quot;0xBC5D5AFBeb63446a2C3BF1a72213Ca8E92fEdfFc&quot;,
+  },
+  eventLogs: [
+    {
+      name: &quot;Transfer&quot;,
+      events: [Array],
+      address: &quot;0xBC5D5AFBeb63446a2C3BF1a72213Ca8E92fEdfFc&quot;,
+    },
+    {
+      name: &quot;PatientLockTokenMinted&quot;,
+      events: [Array],
+      address: &quot;0xBC5D5AFBeb63446a2C3BF1a72213Ca8E92fEdfFc&quot;,
+    },
+  ],
+  tokenId: &quot;8&quot;,
+}</code></pre>
+</doc-codeblock></div>
+<hr />
+<doc-anchor-target id="getpatientroothashvalue">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getpatientroothashvalue">#</doc-anchor-trigger>
+        <span>getPatientRootHashValue</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">patient.getPatientRootHashValue(patientDID);</code></pre>
+</doc-codeblock></div>
+<p>Get The Hash Value Of Patient</p>
+<doc-anchor-target id="parameters-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-1">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>patientDID</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Address of Patient was created from DID</li>
+</ol>
+<doc-anchor-target id="returns-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-1">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>String</span>
+</span>: Hash Value of Patient</p>
+<doc-anchor-target id="example-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-1">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">patient.getPatientRootHashValue(&quot;0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0&quot;)
+  .then(console.log);
+&gt; &quot;0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae&quot;</code></pre>
+</doc-codeblock></div>
+<hr />
+<doc-anchor-target id="getlistroothashvalue">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getlistroothashvalue">#</doc-anchor-trigger>
+        <span>getListRootHashValue</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">patient.getListRootHashValue();</code></pre>
+</doc-codeblock></div>
+<p>Get List Of Hash Value</p>
+<doc-anchor-target id="parameters-2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-2">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<p>None</p>
+<doc-anchor-target id="returns-2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-2">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>Array&lt;String&gt;</span>
+</span>: Array of Hash Value</p>
+<doc-anchor-target id="example-2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-2">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">patient.getListRootHashValue().then(console.log);
+&gt;[
+  &quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,
+  &quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,
+  &quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,
+  &quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,
+  &quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,
+  &quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,
+  &quot;0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030&quot;,
+  &quot;0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae&quot;,
+  &quot;0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae&quot;,
+]</code></pre>
+</doc-codeblock></div>
 <hr />
 
                                 
@@ -188,13 +376,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../../v1/dataintegrity/api-reference/erc20proxy/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">ERC​20​Proxy</span>
+                                            </span>
+                                        </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="v1/wallet/getting-started/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../../v1/dataintegrity/api-reference/pocstudy/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Getting started</span>
+                                                <span class="block mt-1">POC​Study</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -238,6 +433,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "HPA3 - Blockchain - Documentation", isRoot: true, level: 0, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Patient", level: 4, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
