@@ -351,9 +351,8 @@ ddr.getDDR(
   ddrHash: '0x8e227177670782cb5c403d34e5b470e8581bf058f30bb0605b2c1ed0cf3ac430',
   didConsentedOf: []
 }
-
+```
 ---
-
 ---
 
 ### getAllDDR
@@ -362,7 +361,7 @@ ddr.getDDR(
 ddr.getAllDDR(patientDID);
 ```
 
-Allow address of patient to access id of ddr
+Get all the ddr
 
 #### Parameters
 
