@@ -370,7 +370,7 @@ dids.getClaimById(
 ### getClaimByKey
 
 ```ts
-dids.getClaimById(accountDID, claimKey);
+dids.getClaimByKey(accountDID, issuer, claimKey);
 ```
 
 Get claim detail of accountDID by claim id, this will be use to get specific claim, but the issuer is fixed in our system
@@ -378,7 +378,8 @@ Get claim detail of accountDID by claim id, this will be use to get specific cla
 #### Parameters
 
 1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address
-2. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="string"]: The claim key
+2. [!badge variant="danger" text="issuer"] - [!badge variant="danger" text="string"]: The claim issuer
+3. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="string"]: The claim key
 
 #### Returns
 
@@ -392,8 +393,9 @@ Get claim detail of accountDID by claim id, this will be use to get specific cla
 #### Example
 
 ```ts
-dids.getClaimById(
+dids.getClaimByKey(
       "0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724",
+      "0xbf69608B714EEDD31199ce2DC21A64D09153A641",
       "0xa42a10be08f648452f1d1e956b9c169331da201bd0b331860314c904ca2cce89"
     )
     .then(console.log);
@@ -407,7 +409,7 @@ dids.getClaimById(
   // You can ignore above properties
   claimKey: 'Name',
   scheme: '1',
-  issuer: '0x863098D2fC21309846F7eaF3dD96002A10d43E4d',
+  issuer: '0xbf69608B714EEDD31199ce2DC21A64D09153A641',
   signature: '0x9a29a083adb1fdac15f018f717289a0cf1d6ef2ac3309382dc58f52c4766148a361748338600c3cfe971bca98ee1c00ed4e30b0f0e0080681899dc1ce29d3e901b',
   data: '0x4a616d6573',
   uri: ''
@@ -446,17 +448,18 @@ dids.getClaimIdsByKey("0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724", "Name")
 
 ---
 
-### getClaimsKeyOwned
+### getClaimsKeyOwnedByIssuer
 
 ```ts
-dids.getClaimsKeyOwned(accountDID);
+dids.getClaimsKeyOwnedByIssuer(accountDID, issuer);
 ```
 
 Get list of claim keys owned by accountDID
 
 #### Parameters
 
-[!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address
+1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address
+2. [!badge variant="danger" text="issuer"] - [!badge variant="danger" text="string"]: The claim issuer
 
 #### Returns
 
@@ -465,24 +468,29 @@ Get list of claim keys owned by accountDID
 #### Example
 
 ```ts
-dids.getClaimsKeyOwned("0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724")
-    .then(console.log);
+dids.getClaimsKeyOwnedByIssuer(
+  "0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724",
+  "0xbf69608B714EEDD31199ce2DC21A64D09153A641"
+).then(console.log);
 > [ 'PATIENT', 'Name' ]
 ```
 
 ---
 
-### getAllClaimsOwned
+### getAllClaimsOwnedByIssuer
 
 ```ts
-dids.getAllClaimsOwned(accountDID);
+dids.getAllClaimsOwnedByIssuer(accountDID, issuer, claimValue);
 ```
 
 Get list of all claims owned by accountDID
 
 #### Parameters
 
-[!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address
+1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address
+2. [!badge variant="danger" text="issuer"] - [!badge variant="danger" text="string"]: The claim issuer
+3. [!badge variant="warning" text="claimValue"] - [!badge variant="warning" text="Array\<String>"]: The claim value
+
 
 #### Returns
 
@@ -491,7 +499,7 @@ Get list of all claims owned by accountDID
 #### Example
 
 ```ts
-dids.getAllClaimsOwned("0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724")
+dids.getAllClaimsOwnedByIssuer("0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724")
     .then(console.log);
 > [
   Result {
