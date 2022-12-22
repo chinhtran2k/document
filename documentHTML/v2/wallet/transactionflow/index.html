@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.725013826588">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.725020475569">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -32,12 +32,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=2.4.0.725013826588" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=2.4.0.725020475569" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.725013826588" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=2.4.0.725020475569" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.725013826588" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.725013826588" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=2.4.0.725020475569" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../resources/js/prism.js?v=2.4.0.725020475569" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -345,6 +345,18 @@ console.log(unSendTx);</code></pre>
 }</code></pre>
 </doc-codeblock></div>
 <p>We can see that the <code v-pre>rawTransaction</code> field in this output is the same as <code v-pre>ethereumjs-tx</code>, we only need <code v-pre>rawTransaction</code> field to send transaction.</p>
+<doc-anchor-target id="final-output">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#final-output">#</doc-anchor-trigger>
+        <span>Final output</span>
+    </h2>
+</doc-anchor-target>
+<p>In final output after user signed transaction and send to us, because we only need <code v-pre>rawTransaction</code> field, we expect a format like this:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;rawTransaction&quot;: &quot;0xf902670a8083043aab944390cdbbdf5acd2c45906ff8eb3a051bb83e5dbb80b90204b61d27f6000000000000000000000000ffd5c659b4d421fc03b500d9a4e5d91dab5080ef0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000001643b88f73700000000000000000000000000000000000000000000000000000000000000400000000000000000000000008a7c5cc8f8e3c43556d959b2aafa24edaabc0c800000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000081eba0ee8d982ebb12b7bd23226b16fd2d94878c31480600445eb36d5aa471db19925ca05e70efccd55313eb8207448ecac5acdd23c12ba161f1fb6a346aa549362737cc&quot;
+}</code></pre>
+</doc-codeblock></div>
 </div>
 
                                 
