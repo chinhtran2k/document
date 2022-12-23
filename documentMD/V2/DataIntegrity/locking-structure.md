@@ -28,6 +28,10 @@ Merkle tree is a data structure that allows you to verify the integrity of a lar
 Please check this [slide](https://docs.google.com/presentation/d/1nhwMKBfn4teSlBzFysbuutz5ZrBIiifI/edit?usp=sharing&ouid=100833370354507851325&rtpof=true&sd=true) for feedback about locking structture
 !!!
 
+!!! Warning Pseudo-alert
+All this example is just pseudo code, the real hash can be different
+!!!
+
 In our locking structure, we use merkle tree to verify the integrity of the data. The data is the hash value of the data set. The hash value of the root node is the hash value of the entire data set. The hash value of the parent node is the hash value of the child node. The hash value of the leaf node is the hash value of the data set.
 
 The locking structure of all levels is as follows:
