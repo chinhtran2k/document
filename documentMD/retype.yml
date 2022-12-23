@@ -3,7 +3,7 @@ output: .retype
 url: # Add your website address here
 branding:
   title: HPA3 - BLC - Documentation
-  label: v0.2.0
+  label: v0.2.1
 links:
 editor:
   enabled: false
