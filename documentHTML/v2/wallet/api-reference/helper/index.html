@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.725094217227">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.725109061013">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=2.4.0.725094217227" rel="stylesheet" />
+    <link href="../../../../resources/css/retype.css?v=2.4.0.725109061013" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../../resources/js/config.js?v=2.4.0.725094217227" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../../resources/js/config.js?v=2.4.0.725109061013" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../../resources/js/lunr.js?v=2.4.0.725094217227" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../../resources/js/prism.js?v=2.4.0.725094217227" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../../resources/js/lunr.js?v=2.4.0.725109061013" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../../resources/js/prism.js?v=2.4.0.725109061013" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -344,6 +344,48 @@
   }
   eventLogs: []
 }</code></pre>
+</doc-codeblock></div>
+<hr />
+<doc-anchor-target id="checkiscontract">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#checkiscontract">#</doc-anchor-trigger>
+        <span>checkIsContract</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">connection.checkIsContract(address);</code></pre>
+</doc-codeblock></div>
+<p>Checks if the given address is a contract address.</p>
+<doc-anchor-target id="parameters-2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-2">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>address</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: The address to check</p>
+<doc-anchor-target id="returns-2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-2">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>boolean</span>
+</span>: <code v-pre>true</code> if the address is a contract address, <code v-pre>false</code> otherwise.</p>
+<doc-anchor-target id="example-2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-2">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">connection.checkIsContract('0x6295ee1b4f6dd65047762f924ecd367c17eabf8f').then(console.log);
+&gt; true
+</code></pre>
 </doc-codeblock></div>
 
                                 

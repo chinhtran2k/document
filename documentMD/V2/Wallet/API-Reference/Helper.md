@@ -118,3 +118,29 @@ Send signed transaction
   eventLogs: []
 }
 ```
+
+---
+
+### checkIsContract
+
+```ts
+connection.checkIsContract(address);
+```
+
+Checks if the given address is a contract address.
+
+#### Parameters
+
+[!badge variant="warning" text="address"] - [!badge variant="warning" text="string"]: The address to check
+
+#### Returns
+
+[!badge variant="danger" text="boolean"]: `true` if the address is a contract address, `false` otherwise.
+
+#### Example
+
+```ts
+connection.checkIsContract('0x6295ee1b4f6dd65047762f924ecd367c17eabf8f').then(console.log);
+> true
+
+```
