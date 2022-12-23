@@ -370,7 +370,7 @@ dids.getClaimById(
 ### getClaimByKey
 
 ```ts
-dids.getClaimByKey(accountDID, issuer, claimKey);
+dids.getClaimByKey(accountDID, claimKey);
 ```
 
 Get claim detail of accountDID by claim id, this will be use to get specific claim, but the issuer is fixed in our system
@@ -378,7 +378,6 @@ Get claim detail of accountDID by claim id, this will be use to get specific cla
 #### Parameters
 
 1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address
-2. [!badge variant="danger" text="issuer"] - [!badge variant="danger" text="string"]: The claim issuer
 3. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="string"]: The claim key
 
 #### Returns
@@ -395,7 +394,6 @@ Get claim detail of accountDID by claim id, this will be use to get specific cla
 ```ts
 dids.getClaimByKey(
       "0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724",
-      "0xbf69608B714EEDD31199ce2DC21A64D09153A641",
       "0xa42a10be08f648452f1d1e956b9c169331da201bd0b331860314c904ca2cce89"
     )
     .then(console.log);
@@ -439,7 +437,7 @@ Get claim ids of accountDID by claim key
 #### Example
 
 ```ts
-dids.getClaimIdsByKey("0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724", "Name")
+dids.getClaimIdsByKey("0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724", "ACCOUNT_TYPE")
     .then(console.log);
 > [
   '0xa42a10be08f648452f1d1e956b9c169331da201bd0b331860314c904ca2cce89'
@@ -472,7 +470,7 @@ dids.getClaimsKeyOwnedByIssuer(
   "0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724",
   "0xbf69608B714EEDD31199ce2DC21A64D09153A641"
 ).then(console.log);
-> [ 'PATIENT', 'Name' ]
+> [ 'ACCOUNT_TYPE', 'ACCOUNT_ID' ]
 ```
 
 ---
@@ -480,7 +478,7 @@ dids.getClaimsKeyOwnedByIssuer(
 ### getAllClaimsOwnedByIssuer
 
 ```ts
-dids.getAllClaimsOwnedByIssuer(accountDID, issuer, claimValue);
+dids.getAllClaimsOwnedByIssuer(accountDID, issuer);
 ```
 
 Get list of all claims owned by accountDID
@@ -489,7 +487,6 @@ Get list of all claims owned by accountDID
 
 1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address
 2. [!badge variant="danger" text="issuer"] - [!badge variant="danger" text="string"]: The claim issuer
-3. [!badge variant="warning" text="claimValue"] - [!badge variant="warning" text="Array\<String>"]: The claim value
 
 
 #### Returns
@@ -504,7 +501,7 @@ dids.getAllClaimsOwnedByIssuer("0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724")
 > [
   Result {
     ...
-    claimKey: 'PATIENT',
+    claimKey: 'ACCOUNT_TYPE',
     scheme: '1',
     issuer: '0x863098D2fC21309846F7eaF3dD96002A10d43E4d',
     signature: '0x127119341f4a63bce4ae4fb9430379aa4da7004ea9dafd592344fdfd7ddbe6fd6cc985c9ee4174a5c1c7ca90bb925952ecdeee12c8a3110b304db47c2d97d0fc1b',
@@ -513,22 +510,13 @@ dids.getAllClaimsOwnedByIssuer("0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724")
   },
   Result {
     ...
-    claimKey: 'Name',
+    claimKey: 'ACCOUNT_ID',
     scheme: '1',
     issuer: '0x863098D2fC21309846F7eaF3dD96002A10d43E4d',
     signature: '0x9a29a083adb1fdac15f018f717289a0cf1d6ef2ac3309382dc58f52c4766148a361748338600c3cfe971bca98ee1c00ed4e30b0f0e0080681899dc1ce29d3e901b',
     data: '0x4a616d6573',
     uri: ''
   },
-  Result {
-    ...
-    claimKey: 'Job',
-    scheme: '1',
-    issuer: '0x863098D2fC21309846F7eaF3dD96002A10d43E4d',
-    signature: '0x4f0fddbbb4c801bdb3971a6ad92b7ccf56b9389366f3a8d8d902e369d098dd241ed4dba851dd3a587b1b842c385ec0d85ff6b9ccced22d70660e3ea408f3dfd71b',
-    data: '0x446f63746f72',
-    uri: ''
-  }
 ]
 ```
 
