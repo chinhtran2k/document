@@ -124,7 +124,7 @@ Send signed transaction
 ### checkIsContract
 
 ```ts
-connection.checkIsContract(address);
+checkIsContract(address);
 ```
 
 Checks if the given address is a contract address.
@@ -140,7 +140,7 @@ Checks if the given address is a contract address.
 #### Example
 
 ```ts
-connection.checkIsContract('0x6295ee1b4f6dd65047762f924ecd367c17eabf8f').then(console.log);
+checkIsContract('0x6295ee1b4f6dd65047762f924ecd367c17eabf8f').then(console.log);
 > true
 
 ```
