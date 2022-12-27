@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.725176863446">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.725454781594">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=2.4.0.725176863446" rel="stylesheet" />
+    <link href="../../../../resources/css/retype.css?v=2.4.0.725454781594" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../../resources/js/config.js?v=2.4.0.725176863446" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../../resources/js/config.js?v=2.4.0.725454781594" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../../resources/js/lunr.js?v=2.4.0.725176863446" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../../resources/js/prism.js?v=2.4.0.725176863446" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../../resources/js/lunr.js?v=2.4.0.725454781594" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../../resources/js/prism.js?v=2.4.0.725454781594" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -353,7 +353,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">checkIsContract(address);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">checkIsContract(connection, address);</code></pre>
 </doc-codeblock></div>
 <p>Checks if the given address is a contract address.</p>
 <doc-anchor-target id="parameters-2">
@@ -362,11 +362,18 @@
         <span>Parameters</span>
     </h4>
 </doc-anchor-target>
-<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>connection</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>Connection</span>
+</span>: Connection to interact with blockchain</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>address</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: The address to check</p>
+</span>: The address to check</li>
+</ol>
 <doc-anchor-target id="returns-2">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#returns-2">#</doc-anchor-trigger>
@@ -383,8 +390,67 @@
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">checkIsContract('0x6295ee1b4f6dd65047762f924ecd367c17eabf8f').then(console.log);
+<pre class="language-typescript"><code v-pre class="language-typescript">checkIsContract(connection, '0x6295ee1b4f6dd65047762f924ecd367c17eabf8f').then(console.log);
 &gt; true
+</code></pre>
+</doc-codeblock></div>
+<hr />
+<doc-anchor-target id="getmessagehash">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getmessagehash">#</doc-anchor-trigger>
+        <span>getMessageHash</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">getMessageHash(connection, data);</code></pre>
+</doc-codeblock></div>
+<p>Get messageHash by fake signing transaction</p>
+<doc-anchor-target id="parameters-3">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-3">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>connection</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>Connection</span>
+</span>: Connection to interact with blockchain</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>data</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>object</span>
+</span>: Unsigned transaction</li>
+</ol>
+<doc-anchor-target id="returns-3">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-3">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: Message hash of transaction</p>
+<doc-anchor-target id="example-3">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-3">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">getMessageHash(
+  connection,
+  {
+    to: &quot;0x4390CDBBdf5ACD2c45906fF8eB3a051Bb83e5DBB&quot;,
+    from: &quot;0x2DB04a470E7058D8b0F3caf650127e538E6907e6&quot;,
+    gas: 0x43aab,
+    gasPrice: 0x00,
+    nonce: 10,
+    data: &quot;0xb61d27f6000000000000000000000000ffd5c659b4d421fc03b500d9a4e5d91dab5080ef0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000001643b88f73700000000000000000000000000000000000000000000000000000000000000400000000000040000000000008a7c5cc8f8e3c43556d959b2aafa24edaabc0c8000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;,
+  }
+).then(console.log);
+&gt; &quot;0xe14531122e105ff7e0b65e6259dc6093df6b540ef1e24d5a312b731342c7c531&quot;
 </code></pre>
 </doc-codeblock></div>
 

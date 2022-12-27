@@ -124,14 +124,15 @@ Send signed transaction
 ### checkIsContract
 
 ```ts
-checkIsContract(address);
+checkIsContract(connection, address);
 ```
 
 Checks if the given address is a contract address.
 
 #### Parameters
 
-[!badge variant="warning" text="address"] - [!badge variant="warning" text="string"]: The address to check
+1. [!badge variant="warning" text="connection"] - [!badge variant="warning" text="Connection"]: Connection to interact with blockchain
+2. [!badge variant="warning" text="address"] - [!badge variant="warning" text="string"]: The address to check
 
 #### Returns
 
@@ -140,7 +141,44 @@ Checks if the given address is a contract address.
 #### Example
 
 ```ts
-checkIsContract('0x6295ee1b4f6dd65047762f924ecd367c17eabf8f').then(console.log);
+checkIsContract(connection, '0x6295ee1b4f6dd65047762f924ecd367c17eabf8f').then(console.log);
 > true
+
+```
+
+---
+
+### getMessageHash
+
+```ts
+getMessageHash(connection, data);
+```
+
+Get messageHash by fake signing transaction
+
+#### Parameters
+
+1. [!badge variant="warning" text="connection"] - [!badge variant="warning" text="Connection"]: Connection to interact with blockchain
+2. [!badge variant="warning" text="data"] - [!badge variant="warning" text="object"]: Unsigned transaction
+
+#### Returns
+
+[!badge variant="danger" text="string"]: Message hash of transaction
+
+#### Example
+
+```ts
+getMessageHash(
+  connection,
+  {
+    to: "0x4390CDBBdf5ACD2c45906fF8eB3a051Bb83e5DBB",
+    from: "0x2DB04a470E7058D8b0F3caf650127e538E6907e6",
+    gas: 0x43aab,
+    gasPrice: 0x00,
+    nonce: 10,
+    data: "0xb61d27f6000000000000000000000000ffd5c659b4d421fc03b500d9a4e5d91dab5080ef0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000001643b88f73700000000000000000000000000000000000000000000000000000000000000400000000000040000000000008a7c5cc8f8e3c43556d959b2aafa24edaabc0c8000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  }
+).then(console.log);
+> "0xe14531122e105ff7e0b65e6259dc6093df6b540ef1e24d5a312b731342c7c531"
 
 ```
