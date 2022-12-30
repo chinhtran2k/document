@@ -97,6 +97,7 @@ ddr.mintDDR(
       tokenId: '4',
       patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
       ddrId: '004',
+      hashData: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
       hashValue: '0x5a4a0007bfa43aa14263173f539ba71bd5b9f94c1f95f5ad3f35091b572e0fde'
     }
   ]
@@ -206,18 +207,21 @@ ddr.mintBatchDDR(
       tokenId: '1',
       patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
       ddrId: '001',
+      hashData: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
       hashValue: '0x32d97897a6e3f401637d45f03c4788c3d8a79eb736476ca3970c14ba9b9bf283'
     },
     {
       tokenId: '2',
       patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
       ddrId: '002',
+      hashData: '0x94f5115f6287e66e3fc9bbd6e4f621f7657efd388e304c810ce7d381b654f59f',
       hashValue: '0x64ce86632349fe1acbbb697ca8f2d499eaf102908e57a99f9637ac886fb090ee'
     },
     {
       tokenId: '3',
       patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
       ddrId: '003',
+      hashData: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
       hashValue: '0xdd26a1411fb1b535a8f4c5d33c8367d2bf98c4c8ff18331c8575648488584592'
     }
   ]
