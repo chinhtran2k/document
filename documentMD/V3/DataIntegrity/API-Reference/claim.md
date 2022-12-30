@@ -22,7 +22,7 @@ Mint and lock CLaim.
 
 1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: Address of provider/patient was created from DID.
 2. [!badge variant="warning" text="accountId"] - [!badge variant="warning" text="string"]: Account Id off-chain was sent from Pharumo.
-3. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of Provider.
+3. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of provider/patient.
 4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"] : Private key of contract creator(admin).
 5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account.
 
@@ -31,7 +31,7 @@ Mint and lock CLaim.
 1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found (check receipt).
 2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]: Event logs of transactions.
 3. [!badge variant="danger" text="tokenId"] - [!badge variant="danger" text="string"]: Id of Provider token.
-3. [!badge variant="danger" text="hashValue"] - [!badge variant="danger" text="string"]: Data lock was hashed by the keccak256.
+3. [!badge variant="danger" text="hashValue"] - [!badge variant="danger" text="string"]: Hash Value lock of claim was hashed by the keccak256.
 
 #### Example
 
@@ -88,7 +88,7 @@ claim.mintClaim(
 claim.getListAddressOfClaim();
 ```
 
-Get List Address Of Claim
+Get list address Of Claim
 
 #### Parameters
 
@@ -96,7 +96,7 @@ None
 
 #### Returns
 
-[!badge variant="danger" text="String"]: List Address of Claim.
+[!badge variant="danger" text="String"]: Array address of claim.
 
 #### Example
 
@@ -141,7 +141,7 @@ Provider.getListHashValueProvider("0x9573Cda4F4f645764767561D1EF3b4b84647aC19").
 ### getHashClaim
 
 ```ts
-patient.getHashClaim(providerDID);
+patient.getHashClaim(accountDID);
 ```
 
 Get Claim Data.

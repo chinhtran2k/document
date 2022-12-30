@@ -52,7 +52,7 @@ dataIntegrity.checkIntegritySingleDDR(
 
 ```ts
 dataIntegrity.checkIntegritySingleDDR(
-  claimDID,
+  accountDID,
   tokenId,
   accountId,
   hashedDataClaim,
@@ -63,7 +63,7 @@ Check The Integrity Of Single Claim.
 
 #### Parameters
 
-1. [!badge variant="warning" text="claimDID"] - [!badge variant="warning" text="string"]: Address of provider/patient was created from DID.
+1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: Address of provider/patient was created from DID.
 2. [!badge variant="warning" text="tokenId"] - [!badge variant="warning" text="string"]: Token Id of lock claim.
 3. [!badge variant="warning" text="accountId"] - [!badge variant="warning" text="string"]: Account Id off-chain was sent from Pharumo.
 4. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data of claim.
@@ -98,7 +98,7 @@ Check the integrity of single ddrBranch.
 #### Parameters
 
 1. [!badge variant="warning" text="tokenId"] - [!badge variant="warning" text="string"]: Token Id of lock ddrBranch.
-1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]:  Address of provider/patient was created from DID.
+1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]:  Address of patient was created from DID.
 2. [!badge variant="warning" text="ddrsId"] - [!badge variant="warning" text="Array\<string>"]: Array of raw DDR ID of DDRs belong to the patient.
 2. [!badge variant="warning" text="ddrHashedData"] - [!badge variant="warning" text="Array\<string>"]: List data hash of ddr.
 
