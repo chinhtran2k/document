@@ -20,7 +20,7 @@ Mint and lock Patient
 
 #### Parameters
 
-1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
+1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of patient was created from DID
 2. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of patient
 3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"] : Private key of contract creator(admin)
 4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
@@ -30,6 +30,7 @@ Mint and lock Patient
 1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check receipt).
 2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]: Event logs of transactions.
 3. [!badge variant="danger" text="tokenId"] - [!badge variant="danger" text="string"]: Id of Patient token.
+4. [!badge variant="danger" text="hashValue"] - [!badge variant="danger" text="string"]: Hash lock was hashed by the keccak256.
 
 #### Example
 
@@ -42,37 +43,35 @@ patient.mintPatient(
   .then(console.log);
 > {
   receipt: {
-    root: "0x0000000000000000000000000000000000000000000000000000000000000000",
-    cumulativeGasUsed: 1210878,
-    logsBloom:
-      "0x00000000000000000080040400000000000000000000000000000000200000000000000000000802000000000000000000000200000080000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000020000000000000000000800000000000000000000000010000000000080000080000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000040000002000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000",
-    logs: [[Object], [Object]],
+    root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 691847,
+    logsBloom: '0x00000000000000000080040400000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000040000000000000000000000000008020000000000000000040000000000000000000000000000020000000000000000000800000000000000000000000010
+000000000000000080000000000000000000000000000000000000000010000000000080000000000000000000800000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000000000',
+    logs: [ [Object], [Object] ],
     status: true,
-    transactionHash:
-      "0x1eee8a69ab89b1206dee736b1115feccee41bbe43c8bb5fc9a6f204c66ab6bf3",
+    transactionHash: '0x322a70ccbf7dca1944ccf8081607a28d6aee0eb9f4fd656022ef6de69b978284',
     transactionIndex: 0,
-    blockHash:
-      "0x9375085f4e86a80aed5734ce96fbf0317a77230e8dc0c476b82f93b4a949d659",
-    blockNumber: 1654534,
-    gasUsed: 1210878,
+    blockHash: '0x8ab5dbcb517c4cdd5c7885cceba6dbc2f99fc292f154aec4133bda78e4563ced',
+    blockNumber: 1988310,
+    gasUsed: 691847,
     contractAddress: null,
-    from: "0x51C4B0487e16186da402daebE06C4cD71b5015c8",
-    to: "0xBC5D5AFBeb63446a2C3BF1a72213Ca8E92fEdfFc",
+    from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+    to: '0x709fA4284e17fD2729448F2EF162a1eB51A240DC'
   },
   eventLogs: [
     {
-      name: "Transfer",
+      name: 'Transfer',
       events: [Array],
-      address: "0xBC5D5AFBeb63446a2C3BF1a72213Ca8E92fEdfFc",
+      address: '0x709fA4284e17fD2729448F2EF162a1eB51A240DC'
     },
     {
-      name: "PatientLockTokenMinted",
+      name: 'PatientLockTokenMinted',
       events: [Array],
-      address: "0xBC5D5AFBeb63446a2C3BF1a72213Ca8E92fEdfFc",
-    },
+      address: '0x709fA4284e17fD2729448F2EF162a1eB51A240DC'
+    }
   ],
-  tokenId: "8",
-  hashValue: '0xd27c798b1a6acf164ecccc0c3a501a88f0007f350905663ffc4ee8911fc764c9'
+  tokenId: '1',
+  hashValue: '0x182c94dc0e41f941c2327a5b500227d449e1ec85eedeea84e0740c54be2b42c1'
 }
 ```
 
@@ -88,18 +87,18 @@ Get The Hash Value Of Patient
 
 #### Parameters
 
-[!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
+[!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of patient was created from DID
 
 #### Returns
 
-[!badge variant="danger" text="String"]: Hash Value of Patient
+[!badge variant="danger" text="String"]: Hash value of patient
 
 #### Example
 
 ```ts
-patient.getPatientRootHashValue("0x7Aaf39BBD7Dd755EaA50F992522A4Eb3d8cd75a0")
+patient.getPatientRootHashValue("0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218")
   .then(console.log);
-> "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae"
+> "0x182c94dc0e41f941c2327a5b500227d449e1ec85eedeea84e0740c54be2b42c1"
 ```
 
 ---
@@ -125,15 +124,9 @@ None
 ```ts
 patient.getListRootHashValue().then(console.log);
 >[
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae",
-  "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae",
+  '0x182c94dc0e41f941c2327a5b500227d449e1ec85eedeea84e0740c54be2b42c1',
+  '0x49d59884178c25ac9d4122b49b94492f887374e8062f6f617729e0ca10bb4f14',
+  '0xf2baf6d2f921e3bb7eb5e66d7a67d6caeaeb49691d0d681c3865d9b134f7e391'
 ]
 ```
 
@@ -141,27 +134,31 @@ patient.getListRootHashValue().then(console.log);
 
 ---
 
-### getHashClaim
+### getListAddressPatient
 
 ```ts
-patient.getHashClaim(patientDID);
+patient.getListAddressPatient(patientDID);
 ```
 
-Get Claim Data Was Hashed By Keccak256
+Get All Address Of Patient.
 
 #### Parameters
 
-[!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID
+None
 
 #### Returns
 
-[!badge variant="warning" text="hashedValue"] - [!badge variant="warning" text="string"]: Claim Data was hashed by keccak256
+[!badge variant="danger" text="Array\<String>"]: Array address of patient.
 #### Example
 
 ```ts
-patient.getHashClaim('0xd0a2926d4f07121c3a29EbdFF514556a82Cb9F7C').then(console.log);
+patient.getListAddressPatient().then(console.log);
 
-> 0x2695156ad586fff58bd6938d09897d9b1392afd1f65d0a9310890250e46b7c29
+> [ 
+  '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+  '0xd0a2926d4f07121c3a29EbdFF514556a82Cb9F7C',
+  '0x54fD56b9a4a8686F4855F5678F24DdFf196fC7CA'
+   ]
 ```
 
 ---

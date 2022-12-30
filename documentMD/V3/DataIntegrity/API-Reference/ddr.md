@@ -20,8 +20,8 @@ Create DDR for Patients.
 
 #### Parameters
 
-1. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: Data was hashed by the keccak256.
-2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: Id off-chain was sent from Pharumo.
+1. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: Data of DDR was hashed by the keccak256.
+2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: DID Id off-chain was sent from Pharumo.
 3. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"] (optional): The uri of DDR.
 4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID.
 5. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey.
@@ -115,7 +115,7 @@ Create many DDRs for Patients.
 
 #### Parameters
 
-1. [!badge variant="warning" text="hashedDatas"] - [!badge variant="warning" text="Array\<String>"]: List of datas were hashed by the keccak256.
+1. [!badge variant="warning" text="hashedDatas"] - [!badge variant="warning" text="Array\<String>"]: List datas of DDR were hashed by the keccak256.
 2. [!badge variant="warning" text="ddrIds"] - [!badge variant="warning" text="Array\<String>"]: List of ids offline was sent from Pharumo.
 3. [!badge variant="warning" text="uris"] - [!badge variant="warning" text="Array\<String>"]: List of uris of DDR.
 4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID.
@@ -236,7 +236,7 @@ Allow address of patient to access id of ddr.
 
 #### Parameters
 
-1. [!badge variant="warning" text="ddrIds"] - [!badge variant="warning" text="Array\<string>"]: Array of DDR id.
+1. [!badge variant="warning" text="ddrIds"] - [!badge variant="warning" text="Array\<string>"]: Array of DDR Id off-chain was sent from Pharumo..
 2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID.
 3. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey.
 4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account.
@@ -332,11 +332,16 @@ Get the ddr with certain ddr id.
 #### Parameters
 
 1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID.
-2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: DDR raw id.
+2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: DDR Id off-chain was sent from Pharumo.
 
 #### Returns
 
-[!badge variant="danger" text="ddr"] - [!badge variant="danger" text="any"]:ddr.
+1. [!badge variant="danger" text="tokenId"] - [!badge variant="danger" text="string"]: Token Id of ddr.
+2. [!badge variant="danger" text="patientDID"] - [!badge variant="danger" text="string"]: Address of Patient was created from DID.
+3. [!badge variant="danger" text="ddrId"] - [!badge variant="danger" text="string"]: DDR Id off-chain was sent from Pharumo.
+4. [!badge variant="danger" text="hashData"] - [!badge variant="danger" text="string"]: Data of DDR was hashed by the keccak256.
+5. [!badge variant="danger" text="ddrHashValue"] - [!badge variant="danger" text="string"]: Hash Value of DDR.
+6. [!badge variant="danger" text="didConsentedOf"] - [!badge variant="danger" text="string"]: Array providers address shared by patient.
 
 
 #### Example
@@ -346,16 +351,16 @@ ddr.getDDR("0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218","001")
   .then(console.log);
 > Result {
   '0': '1',
-  '1': '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+  '1': '0xaBbb7c90c47c074E908f6576352DeaA60De7cb89',
   '2': '001',
   '3': '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
-  '4': '0x32d97897a6e3f401637d45f03c4788c3d8a79eb736476ca3970c14ba9b9bf283',
+  '4': '0xe80e5f640ae07e9bc09f6a1df7db8be2ca2eb09ee03d74dc9551d0d7ddb83546',
   '5': [],
   tokenId: '1',
-  patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+  patientDID: '0xaBbb7c90c47c074E908f6576352DeaA60De7cb89',
   ddrId: '001',
-  ddr: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
-  ddrHashValue: '0x32d97897a6e3f401637d45f03c4788c3d8a79eb736476ca3970c14ba9b9bf283',
+  hashData: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
+  ddrHashValue: '0xe80e5f640ae07e9bc09f6a1df7db8be2ca2eb09ee03d74dc9551d0d7ddb83546',
   didConsentedOf: []
 }
 ```
@@ -377,7 +382,12 @@ Get all the ddr
 
 #### Returns
 
-[!badge variant="danger" text="ddrs"] - [!badge variant="danger" text="Array\<any>"]:Array of ddrs.
+1. [!badge variant="danger" text="tokenId"] - [!badge variant="danger" text="string"]: Token Id of ddr.
+2. [!badge variant="danger" text="patientDID"] - [!badge variant="danger" text="string"]: Address of Patient was created from DID.
+3. [!badge variant="danger" text="ddrId"] - [!badge variant="danger" text="string"]: DDR Id off-chain was sent from Pharumo.
+4. [!badge variant="danger" text="hashData"] - [!badge variant="danger" text="string"]: Data of DDR was hashed by the keccak256.
+5. [!badge variant="danger" text="ddrHashValue"] - [!badge variant="danger" text="string"]: Hash Value of DDR.
+6. [!badge variant="danger" text="didConsentedOf"] - [!badge variant="danger" text="string"]: Array providers address shared by patient.
 
 
 #### Example
@@ -397,7 +407,7 @@ ddr.getAllDDR("0xd0a2926d4f07121c3a29EbdFF514556a82Cb9F7C")
     tokenId: '1',
     patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
     ddrId: '001',
-    ddr: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
+    hashData: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
     ddrHashValue: '0x32d97897a6e3f401637d45f03c4788c3d8a79eb736476ca3970c14ba9b9bf283',
     didConsentedOf: []
   },
@@ -411,7 +421,7 @@ ddr.getAllDDR("0xd0a2926d4f07121c3a29EbdFF514556a82Cb9F7C")
     tokenId: '2',
     patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
     ddrId: '002',
-    ddr: '0x94f5115f6287e66e3fc9bbd6e4f621f7657efd388e304c810ce7d381b654f59f',
+    hashData: '0x94f5115f6287e66e3fc9bbd6e4f621f7657efd388e304c810ce7d381b654f59f',
     ddrHashValue: '0x64ce86632349fe1acbbb697ca8f2d499eaf102908e57a99f9637ac886fb090ee',
     didConsentedOf: []
   },
@@ -425,7 +435,7 @@ ddr.getAllDDR("0xd0a2926d4f07121c3a29EbdFF514556a82Cb9F7C")
     tokenId: '3',
     patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
     ddrId: '003',
-    ddr: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
+    hashData: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
     ddrHashValue: '0xdd26a1411fb1b535a8f4c5d33c8367d2bf98c4c8ff18331c8575648488584592',
     didConsentedOf: []
   },
@@ -439,7 +449,7 @@ ddr.getAllDDR("0xd0a2926d4f07121c3a29EbdFF514556a82Cb9F7C")
     tokenId: '4',
     patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
     ddrId: '004',
-    ddr: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
+    hashData: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
     ddrHashValue: '0x5a4a0007bfa43aa14263173f539ba71bd5b9f94c1f95f5ad3f35091b572e0fde',
     didConsentedOf: []
   }

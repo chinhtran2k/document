@@ -20,7 +20,7 @@ Mint Lock DDRBranch.
 
 #### Parameters
 
-1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID.
+1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of patient was created from DID.
 2. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of DDRBranch.
 3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"] : Private key of contract creator(admin).
 4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account.
@@ -30,7 +30,7 @@ Mint Lock DDRBranch.
 1. [!badge variant="danger" text="receipt"] - [!badge variant="danger" text="object"]: A transaction receipt object, or null if no receipt was found. (check receipt).
 2. [!badge variant="danger" text="eventLogs"] - [!badge variant="danger" text="object"]: Event logs of transactions.
 3. [!badge variant="danger" text="tokenId"] - [!badge variant="danger" text="string"]: Id of DDRBranch token.
-3. [!badge variant="danger" text="hashValue"] - [!badge variant="danger" text="string"]: Data lock was hashed by the keccak256.
+3. [!badge variant="danger" text="hashValue"] - [!badge variant="danger" text="string"]: Hash lock was hashed by the keccak256.
 
 #### Example
 
@@ -108,14 +108,14 @@ ddrBranch.getListRootHashDDR().then(console.log);
 ### getAllHashDDROfPatient
 
 ```ts
-getAllHashDDROfPatient(Patient);
+getAllHashDDROfPatient(patientDID);
 ```
 
 Get All Hash Value DDRBranh Of Patient.
 
 #### Parameters
 
-[!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of PatientDID was created from DID.
+[!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of patient was created from DID.
 
 #### Returns
 
@@ -143,7 +143,7 @@ Get All TokenID DDRBranh Of Patient.
 
 #### Parameters
 
-[!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of PatientDID was created from DID.
+[!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of patient was created from DID.
 
 #### Returns
 
