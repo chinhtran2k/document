@@ -10,7 +10,7 @@ This module for claim lock level.
 
 ---
 
-### mintProvider
+### mintClaim
 
 ```ts
 claim.mintClaim(accountDID, accountId, uri, privateKey, nonce);
@@ -82,7 +82,7 @@ claim.mintClaim(
 
 ---
 
-### getListAddressOfProvider
+### getListAddressOfClaim
 
 ```ts
 claim.getListAddressOfClaim();
@@ -130,7 +130,7 @@ Get Hash Value Of Claim.
 #### Example
 
 ```ts
-Provider.getListHashValueProvider("0x9573Cda4F4f645764767561D1EF3b4b84647aC19").then(console.log);
+claim.getHashValueClaim("0x9573Cda4F4f645764767561D1EF3b4b84647aC19").then(console.log);
 > "0x413febeb7faf0762a3c79ac10354ff4096db8ac927d64e9a81355e5671a6d6b9"
 ```
 
@@ -148,7 +148,7 @@ Get Claim Data.
 
 #### Parameters
 
-[!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]: Address of provider/patient was created from DID
+[!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: Address of provider/patient was created from DID
 
 #### Returns
 

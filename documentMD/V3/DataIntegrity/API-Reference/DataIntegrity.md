@@ -110,7 +110,7 @@ Check the integrity of single ddrBranch.
 #### Example
 
 ```ts
-dataIntegrity.checkIntegritySingleProvider(
+dataIntegrity.checkIntegritySingleDDRBranch(
    "1",
    "0xCB805208DfA4966B14B1CfAf05a5d899ADF24d1b",
    ["001","002"],
@@ -146,7 +146,7 @@ Check the integrity of single disclosureBranch.
 #### Example
 
 ```ts
-dataIntegrity.checkIntegritySingleProvider(
+dataIntegrity.checkIntegritySingleDisclosureBranch(
    "1",
    "0x7f97Db6245E35234Da84E46C7F42E4F722855237",
    "0xCB805208DfA4966B14B1CfAf05a5d899ADF24d1b",
@@ -211,7 +211,6 @@ dataIntegrity.checkIntegritySinglePatient(
 ```ts
 dataIntegrity.checkIntegrityStudy(
   rootHashValuesPatient,
-  rootHashValuesProvider
 );
 ```
 
@@ -220,10 +219,9 @@ Check the integrity study
 #### Parameters
 
 1. [!badge variant="warning" text="rootHashValuesPatient"] - [!badge variant="warning" text="Array\<string>"]: Array of root hash values of all patients
-2. [!badge variant="warning" text="rootHashValuesProvider"] - [!badge variant="warning" text="Array\<string>"]: Array of root hash values of all providers
 
 !!! Warning Warn
-`rootHashValuesPatient`, `rootHashValuesProvider` must be input by true order (which is added first, eg: `[\<PatientHash1>, \<PatientHash2>]`), or the result will be wrong
+`rootHashValuesPatient` must be input by true order (which is added first, eg: `[\<PatientHash1>]`), or the result will be wrong
 !!!
 
 #### Returns
@@ -242,9 +240,7 @@ dataIntegrity.checkIntegrityStudy(
   "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
   "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
   "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae",
-  "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae"],
-  ["0051bd68c174759f9b23b1ab213c7901c4b97d4d519879d14a4f6133c12f80fd",
-  "70a5f2406b818add7e4c6469b61194f228525080e46ddfb118388e630a9c4bda",])
+  "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae"])
   .then(console.log);
 
 > true
