@@ -13,14 +13,14 @@ This module use to mint/share/consent/lock DDR.
 ### mintDDR
 
 ```ts
-ddr.mintDDR(hashedData, ddrId, uri, patientDID, delegateKey, nonce);
+ddr.mintDDR(hashedValue, ddrId, uri, patientDID, delegateKey, nonce);
 ```
 
 Create DDR for Patients.
 
 #### Parameters
 
-1. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: Data of DDR was hashed by the keccak256.
+1. [!badge variant="warning" text="hashedValue"] - [!badge variant="warning" text="string"]: Data of DDR was hashed by the keccak256 from Pharumo.
 2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: DID Id off-chain was sent from Pharumo.
 3. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"] (optional): The uri of DDR.
 4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID.
@@ -47,58 +47,58 @@ ddr.mintDDR(
 > {
   receipt: {
     root: '0x0000000000000000000000000000000000000000000000000000000000000000',
-    cumulativeGasUsed: 627328,
-    logsBloom: '0x0000000000000000008002040000000000000000002200000000000000000000000000000000000000000000000000000000000000000100000000000004000000000400000000000000000a000000000000000000040000000010020000000008000000020048000000000000000800000000001040000000000010000000000000000000000000000000200000004000002000000000000010000000000000000000000000800010000000080000000000000800000000002000088000000000000002000000000000000000000000800000008000000000000000000060000000000000000000000000000000000000000000000000000000000000000000',
+    cumulativeGasUsed: 606473,
+    logsBloom: '0x00000000000000000080020400000000400000000000000000001000000000000000000008000000000000000000000000000000000001000000000000040000000004000400000000000008000000000000000000040000000000000200000108000000020040000000000000000800000000001040000000000010
+000000000040000000000000000000200000004000000080000000000010000000000000000000000000800010000000000000000000000000000000002000000000000000010002000000000000000100000000800000008000000000000000000060000000000000000000000000000000000000000000000000010000000000000000',
     logs: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
     status: true,
-    transactionHash: '0xe38d67a52136dd7666bd3e24c5508902b37018ede5006649c104d0f2e04053dc',
+    transactionHash: '0x751f90a54ce3f37d9999d80afa03652124c24318348ece917b1f4daf23d4e284',
     transactionIndex: 0,
-    blockHash: '0xa8ee416af4f58993c8785f882b261efd1f30761a5c2074d92a9caeb812e30a5a',
-    blockNumber: 1980000,
-    gasUsed: 627328,
+    blockHash: '0x67c87882b06448f5296db7998c7fb54164f7b4839615e8d11ca3710295fd9a46',
+    blockNumber: 2035158,
+    gasUsed: 606473,
     contractAddress: null,
     from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
-    to: '0x0365a7EEd6eaD34037F8E47c023aD9aa6C56F0cD'
+    to: '0xb007880f85F038bBE3641736c23B1cc2e083e79a'
   },
   eventLogs: [
     {
       name: 'ExecutionRequested',
       events: [Array],
-      address: '0x0365a7EEd6eaD34037F8E47c023aD9aa6C56F0cD'
+      address: '0xb007880f85F038bBE3641736c23B1cc2e083e79a'
     },
     {
       name: 'Approved',
       events: [Array],
-      address: '0x0365a7EEd6eaD34037F8E47c023aD9aa6C56F0cD'
+      address: '0xb007880f85F038bBE3641736c23B1cc2e083e79a'
     },
     {
       name: 'Transfer',
       events: [Array],
-      address: '0xaD3dAf99B78936064E2C4841338766Cb61e7A6Bc'
+      address: '0x49417fbd8830A333136d2Eb04eb4988eb11F03fF'
     },
     {
       name: 'MintedDDR',
       events: [Array],
-      address: '0xaD3dAf99B78936064E2C4841338766Cb61e7A6Bc'
+      address: '0x49417fbd8830A333136d2Eb04eb4988eb11F03fF'
     },
     {
       name: 'DDRTokenLocked',
       events: [Array],
-      address: '0xaD3dAf99B78936064E2C4841338766Cb61e7A6Bc'
+      address: '0x49417fbd8830A333136d2Eb04eb4988eb11F03fF'
     },
     {
       name: 'Executed',
       events: [Array],
-      address: '0x0365a7EEd6eaD34037F8E47c023aD9aa6C56F0cD'
+      address: '0xb007880f85F038bBE3641736c23B1cc2e083e79a'
     }
   ],
   ddrs: [
     {
       tokenId: '4',
-      patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+      patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
       ddrId: '004',
-      hashData: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
-      hashValue: '0x5a4a0007bfa43aa14263173f539ba71bd5b9f94c1f95f5ad3f35091b572e0fde'
+      hashedValue: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177'
     }
   ]
 };
@@ -109,14 +109,14 @@ ddr.mintDDR(
 ### mintBatchDDR
 
 ```ts
-ddr.mintBatchDDR(hashedDatas, ddrIds, uris, patientDID, delegateKey, nonce);
+ddr.mintBatchDDR(hashedValues, ddrIds, uris, patientDID, delegateKey, nonce);
 ```
 
 Create many DDRs for Patients.
-
+ 
 #### Parameters
 
-1. [!badge variant="warning" text="hashedDatas"] - [!badge variant="warning" text="Array\<String>"]: List datas of DDR were hashed by the keccak256.
+1. [!badge variant="warning" text="hashedValues"] - [!badge variant="warning" text="Array\<String>"]: List datas of DDR were hashed by the keccak256 from Pharumo.
 2. [!badge variant="warning" text="ddrIds"] - [!badge variant="warning" text="Array\<String>"]: List of ids offline was sent from Pharumo.
 3. [!badge variant="warning" text="uris"] - [!badge variant="warning" text="Array\<String>"]: List of uris of DDR.
 4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID.
@@ -145,10 +145,10 @@ ddr.mintBatchDDR(
     )
   .then(console.log);
 > {
-  receipt: {
     root: '0x0000000000000000000000000000000000000000000000000000000000000000',
-    cumulativeGasUsed: 1579985,
-    logsBloom: '0x04000000000000000000020000000000000000000002000000000000000000000000000000000000000000000000000000000000020001008000000000040000000000000000000080000008000000000000000000040000000010020000000000000000020048000000000000000800000000001040000000000010000000000000020000000100000000200000004000002000000000000000000000000000000000000000800000000100080000000000000800800000000000080000400000000002000000000000000000000000800000000010000000000000000060000000000000000000000000000000000000000000008000000000000000400000',
+    cumulativeGasUsed: 1516067,
+    logsBloom: '0x04000000000000000000020000000000000000000000000000001000000000000000000008000000000000000000000000000000020001000000000000040002000000000000000000000008000000000000000000040000000000000200000100000000020040000000000000000800000000001040000000000010
+020000000040000000000000000000200000004000042080000000000000000000000000000000000000801000000100010000000000000000800000000000000000400000000002000000000000000100000000800000000000000000000000000060000000000000000000000000000000000000000000008000010000000000000000',
     logs: [
       [Object], [Object],
       [Object], [Object],
@@ -156,73 +156,70 @@ ddr.mintBatchDDR(
       [Object]
     ],
     status: true,
-    transactionHash: '0xf2991269bf87b888287456949fbc9d3825819ff017b8e23d724fbe0c464d0e96',
+    transactionHash: '0xf7f4245575c6824db9a66f703442cf39f5279044aad82e35a195ec597f2aefaa',
     transactionIndex: 0,
-    blockHash: '0x33221f382ff9adddcf9d9bba623921ba30a9f23d378ae19e201831c58eab6468',
-    blockNumber: 1979961,
-    gasUsed: 1579985,
+    blockHash: '0xb3d4f0d8d03bb5337d299a60bdc7cc8c67fb63d3852d3ebcb810499b711c0843',
+    blockNumber: 2035122,
+    gasUsed: 1516067,
     contractAddress: null,
     from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
-    to: '0x0365a7EEd6eaD34037F8E47c023aD9aa6C56F0cD'
+    to: '0xb007880f85F038bBE3641736c23B1cc2e083e79a'
   },
   eventLogs: [
     {
       name: 'ExecutionRequested',
       events: [Array],
-      address: '0x0365a7EEd6eaD34037F8E47c023aD9aa6C56F0cD'
+      address: '0xb007880f85F038bBE3641736c23B1cc2e083e79a'
     },
     {
       name: 'Approved',
       events: [Array],
-      address: '0x0365a7EEd6eaD34037F8E47c023aD9aa6C56F0cD'
+      address: '0xb007880f85F038bBE3641736c23B1cc2e083e79a'
     },
     {
       name: 'Transfer',
       events: [Array],
-      address: '0xaD3dAf99B78936064E2C4841338766Cb61e7A6Bc'
+      address: '0x49417fbd8830A333136d2Eb04eb4988eb11F03fF'
     },
     {
       name: 'Transfer',
       events: [Array],
-      address: '0xaD3dAf99B78936064E2C4841338766Cb61e7A6Bc'
+      address: '0x49417fbd8830A333136d2Eb04eb4988eb11F03fF'
     },
     {
       name: 'Transfer',
       events: [Array],
-      address: '0xaD3dAf99B78936064E2C4841338766Cb61e7A6Bc'
+      address: '0x49417fbd8830A333136d2Eb04eb4988eb11F03fF'
     },
     {
       name: 'MintedBatchDDR',
       events: [Array],
-      address: '0xaD3dAf99B78936064E2C4841338766Cb61e7A6Bc'
+      address: '0x49417fbd8830A333136d2Eb04eb4988eb11F03fF'
     },
     {
       name: 'Executed',
       events: [Array],
-      address: '0x0365a7EEd6eaD34037F8E47c023aD9aa6C56F0cD'
+      address: '0xb007880f85F038bBE3641736c23B1cc2e083e79a'
     }
   ],
   ddrs: [
     {
       tokenId: '1',
-      patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+      patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
       ddrId: '001',
-      hashData: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
-      hashValue: '0x32d97897a6e3f401637d45f03c4788c3d8a79eb736476ca3970c14ba9b9bf283'
+      hashedValue: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31'
     },
     {
       tokenId: '2',
-      patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+      patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
       ddrId: '002',
-      hashData: '0x94f5115f6287e66e3fc9bbd6e4f621f7657efd388e304c810ce7d381b654f59f',
-      hashValue: '0x64ce86632349fe1acbbb697ca8f2d499eaf102908e57a99f9637ac886fb090ee'
+      hashedValue: '0x94f5115f6287e66e3fc9bbd6e4f621f7657efd388e304c810ce7d381b654f59f'
     },
     {
       tokenId: '3',
-      patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+      patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
       ddrId: '003',
-      hashData: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
-      hashValue: '0xdd26a1411fb1b535a8f4c5d33c8367d2bf98c4c8ff18331c8575648488584592'
+      hashedValue: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177'
     }
   ]
 };
@@ -343,9 +340,8 @@ Get the ddr with certain ddr id.
 1. [!badge variant="danger" text="tokenId"] - [!badge variant="danger" text="string"]: Token Id of ddr.
 2. [!badge variant="danger" text="patientDID"] - [!badge variant="danger" text="string"]: Address of Patient was created from DID.
 3. [!badge variant="danger" text="ddrId"] - [!badge variant="danger" text="string"]: DDR Id off-chain was sent from Pharumo.
-4. [!badge variant="danger" text="hashData"] - [!badge variant="danger" text="string"]: Data of DDR was hashed by the keccak256.
-5. [!badge variant="danger" text="ddrHashValue"] - [!badge variant="danger" text="string"]: Hash Value of DDR.
-6. [!badge variant="danger" text="didConsentedOf"] - [!badge variant="danger" text="string"]: Array providers address shared by patient.
+4. [!badge variant="danger" text="hashedValue"] - [!badge variant="danger" text="string"]: Data of DDR was hashed by the keccak256 from Pharumo.
+5. [!badge variant="danger" text="didConsentedOf"] - [!badge variant="danger" text="string"]: Array providers address shared by patient.
 
 
 #### Example
@@ -355,16 +351,14 @@ ddr.getDDR("0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218","001")
   .then(console.log);
 > Result {
   '0': '1',
-  '1': '0xaBbb7c90c47c074E908f6576352DeaA60De7cb89',
+  '1': '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
   '2': '001',
   '3': '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
-  '4': '0xe80e5f640ae07e9bc09f6a1df7db8be2ca2eb09ee03d74dc9551d0d7ddb83546',
-  '5': [],
+  '4': [],
   tokenId: '1',
-  patientDID: '0xaBbb7c90c47c074E908f6576352DeaA60De7cb89',
+  patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
   ddrId: '001',
-  hashData: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
-  ddrHashValue: '0xe80e5f640ae07e9bc09f6a1df7db8be2ca2eb09ee03d74dc9551d0d7ddb83546',
+  hashedValue: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
   didConsentedOf: []
 }
 ```
@@ -389,9 +383,8 @@ Get all the ddr
 1. [!badge variant="danger" text="tokenId"] - [!badge variant="danger" text="string"]: Token Id of ddr.
 2. [!badge variant="danger" text="patientDID"] - [!badge variant="danger" text="string"]: Address of Patient was created from DID.
 3. [!badge variant="danger" text="ddrId"] - [!badge variant="danger" text="string"]: DDR Id off-chain was sent from Pharumo.
-4. [!badge variant="danger" text="hashData"] - [!badge variant="danger" text="string"]: Data of DDR was hashed by the keccak256.
-5. [!badge variant="danger" text="ddrHashValue"] - [!badge variant="danger" text="string"]: Hash Value of DDR.
-6. [!badge variant="danger" text="didConsentedOf"] - [!badge variant="danger" text="string"]: Array providers address shared by patient.
+4. [!badge variant="danger" text="hashedValue"] - [!badge variant="danger" text="string"]: Data of DDR was hashed by the keccak256 from Pharumo.
+5. [!badge variant="danger" text="didConsentedOf"] - [!badge variant="danger" text="string"]: Array providers address shared by patient.
 
 
 #### Example
@@ -403,58 +396,50 @@ ddr.getAllDDR("0xd0a2926d4f07121c3a29EbdFF514556a82Cb9F7C")
 > [
   Result {
     '0': '1',
-    '1': '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+    '1': '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
     '2': '001',
     '3': '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
-    '4': '0x32d97897a6e3f401637d45f03c4788c3d8a79eb736476ca3970c14ba9b9bf283',
-    '5': [],
+    '4': [],
     tokenId: '1',
-    patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+    patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
     ddrId: '001',
-    hashData: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
-    ddrHashValue: '0x32d97897a6e3f401637d45f03c4788c3d8a79eb736476ca3970c14ba9b9bf283',
+    hashedValue: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
     didConsentedOf: []
   },
   Result {
     '0': '2',
-    '1': '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+    '1': '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
     '2': '002',
     '3': '0x94f5115f6287e66e3fc9bbd6e4f621f7657efd388e304c810ce7d381b654f59f',
-    '4': '0x64ce86632349fe1acbbb697ca8f2d499eaf102908e57a99f9637ac886fb090ee',
-    '5': [],
+    '4': [],
     tokenId: '2',
-    patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+    patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
     ddrId: '002',
-    hashData: '0x94f5115f6287e66e3fc9bbd6e4f621f7657efd388e304c810ce7d381b654f59f',
-    ddrHashValue: '0x64ce86632349fe1acbbb697ca8f2d499eaf102908e57a99f9637ac886fb090ee',
+    hashedValue: '0x94f5115f6287e66e3fc9bbd6e4f621f7657efd388e304c810ce7d381b654f59f',
     didConsentedOf: []
   },
   Result {
     '0': '3',
-    '1': '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+    '1': '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
     '2': '003',
     '3': '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
-    '4': '0xdd26a1411fb1b535a8f4c5d33c8367d2bf98c4c8ff18331c8575648488584592',
-    '5': [],
+    '4': [],
     tokenId: '3',
-    patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+    patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
     ddrId: '003',
-    hashData: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
-    ddrHashValue: '0xdd26a1411fb1b535a8f4c5d33c8367d2bf98c4c8ff18331c8575648488584592',
+    hashedValue: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
     didConsentedOf: []
   },
   Result {
     '0': '4',
-    '1': '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+    '1': '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
     '2': '004',
     '3': '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
-    '4': '0x5a4a0007bfa43aa14263173f539ba71bd5b9f94c1f95f5ad3f35091b572e0fde',
-    '5': [],
+    '4': [],
     tokenId: '4',
-    patientDID: '0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218',
+    patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
     ddrId: '004',
-    hashData: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
-    ddrHashValue: '0x5a4a0007bfa43aa14263173f539ba71bd5b9f94c1f95f5ad3f35091b572e0fde',
+    hashedValue: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
     didConsentedOf: []
   }
 ]
