@@ -24,8 +24,8 @@ const connection = new Connection("http://localhost:8545");
 
 const ddr =new DDR(connection);
 const ddr =new Claim(connection);
-const ddr =new DDRBranch(connection);
-const ddr =new DisclosureBranch(connection);
+const ddrBranch =new DDRBranch(connection);
+const disclosureBranch =new DisclosureBranch(connection);
 const patient =new Patient(connection);
 const erc20Proxy = new ERC20Proxy(connection);
 const pocStudy =new POCStudy(connection);

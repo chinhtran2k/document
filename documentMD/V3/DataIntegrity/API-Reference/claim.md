@@ -65,12 +65,12 @@ claim.mintClaim(
       address: '0xCB805208DfA4966B14B1CfAf05a5d899ADF24d1b'
     },
     {
-      name: 'claimLockTokenMinted',
+      name: 'ClaimLockTokenMinted',
       events: [Array],
       address: '0xCB805208DfA4966B14B1CfAf05a5d899ADF24d1b'
     },
     {
-      name: 'claimTokenLocked',
+      name: 'ClaimTokenLocked',
       events: [Array],
       address: '0xCB805208DfA4966B14B1CfAf05a5d899ADF24d1b'
     }

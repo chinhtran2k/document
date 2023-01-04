@@ -64,7 +64,7 @@ disclosureBranch.mintDisclosureBranch("0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F321
       address: '0x41Cc3F52C322eF03f674FcDA1Da174f11ee43811'
     },
     {
-      name: 'disclosureLockTokenMinted',
+      name: 'DisclosureLockTokenMinted',
       events: [Array],
       address: '0x41Cc3F52C322eF03f674FcDA1Da174f11ee43811'
     }
