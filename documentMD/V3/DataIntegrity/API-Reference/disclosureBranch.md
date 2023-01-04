@@ -10,7 +10,7 @@ This module for Consented Disclosure lock level
 
 ---
 
-### mintDDRBranch
+### mintDisclosureBranch
 
 ```ts
 mintDisclosureBranch(patientDID, providerDID, uri, privateKey, nonce?);
