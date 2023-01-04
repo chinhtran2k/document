@@ -23,7 +23,7 @@ import { DDR , Claim, DDRBranch, DisclosureBranch, Patient, POCStudy, DataIntegr
 const connection = new Connection("http://localhost:8545");
 
 const ddr =new DDR(connection);
-const ddr =new Claim(connection);
+const claim =new Claim(connection);
 const ddrBranch =new DDRBranch(connection);
 const disclosureBranch =new DisclosureBranch(connection);
 const patient =new Patient(connection);
