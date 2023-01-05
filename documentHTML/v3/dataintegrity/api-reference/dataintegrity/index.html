@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.726143756495">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.726208403784">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=2.4.0.726143756495" rel="stylesheet" />
+    <link href="../../../../resources/css/retype.css?v=2.4.0.726208403784" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../../resources/js/config.js?v=2.4.0.726143756495" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../../resources/js/config.js?v=2.4.0.726208403784" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../../resources/js/lunr.js?v=2.4.0.726143756495" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../../resources/js/prism.js?v=2.4.0.726143756495" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../../resources/js/lunr.js?v=2.4.0.726208403784" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../../resources/js/prism.js?v=2.4.0.726208403784" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -243,9 +243,8 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySingleDDR(
+<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySingleClaim(
   accountDID,
-  tokenId,
   accountId,
   hashedDataClaim,
 );</code></pre>
@@ -263,11 +262,6 @@
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
 </span>: Address of provider/patient was created from DID.</li>
-<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>tokenId</span>
-</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>string</span>
-</span>: Token Id of lock claim.</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
     <span>accountId</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
@@ -297,7 +291,6 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySingleClaim(
     &quot;0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba&quot;,
-    &quot;1&quot;,
     &quot;PT01&quot;,
     &quot;0xb643a5262d05b758a3b8977bf5d3690c6b3622ca98391d8ff3131ef9f84d50db&quot;)
     .then(console.log);
@@ -312,7 +305,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySingleDDRBranch(tokenId, patientDID, ddrsId, ddrHashedData);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dataIntegrity.checkIntegritySingleClaim(tokenId, patientDID, ddrsId, ddrHashedData);</code></pre>
 </doc-codeblock></div>
 <p>Check the integrity of single ddrBranch.</p>
 <doc-anchor-target id="parameters-2">

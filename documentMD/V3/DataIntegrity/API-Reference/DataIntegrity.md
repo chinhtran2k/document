@@ -51,9 +51,8 @@ dataIntegrity.checkIntegritySingleDDR(
 ### checkIntegritySingleClaim
 
 ```ts
-dataIntegrity.checkIntegritySingleDDR(
+dataIntegrity.checkIntegritySingleClaim(
   accountDID,
-  tokenId,
   accountId,
   hashedDataClaim,
 );
@@ -64,9 +63,8 @@ Check The Integrity Of Single Claim.
 #### Parameters
 
 1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: Address of provider/patient was created from DID.
-2. [!badge variant="warning" text="tokenId"] - [!badge variant="warning" text="string"]: Token Id of lock claim.
-3. [!badge variant="warning" text="accountId"] - [!badge variant="warning" text="string"]: Account Id off-chain was sent from Pharumo.
-4. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data of claim.
+2. [!badge variant="warning" text="accountId"] - [!badge variant="warning" text="string"]: Account Id off-chain was sent from Pharumo.
+3. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data of claim.
 
 #### Returns
 
@@ -77,7 +75,6 @@ Check The Integrity Of Single Claim.
 ```ts
 dataIntegrity.checkIntegritySingleClaim(
     "0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba",
-    "1",
     "PT01",
     "0xb643a5262d05b758a3b8977bf5d3690c6b3622ca98391d8ff3131ef9f84d50db")
     .then(console.log);
@@ -90,7 +87,7 @@ dataIntegrity.checkIntegritySingleClaim(
 ### checkIntegritySingleDDRBranch
 
 ```ts
-dataIntegrity.checkIntegritySingleDDRBranch(tokenId, patientDID, ddrsId, ddrHashedData);
+dataIntegrity.checkIntegritySingleClaim(tokenId, patientDID, ddrsId, ddrHashedData);
 ```
 
 Check the integrity of single ddrBranch.
