@@ -182,6 +182,7 @@ getMessageHash(
 > "0xe14531122e105ff7e0b65e6259dc6093df6b540ef1e24d5a312b731342c7c531"
 
 ```
+
 ---
 
 ### simulateCallTransaction
@@ -193,14 +194,17 @@ simulateCallTransaction(connection, data);
 Simulates a call to a smart contract on the Ethereum network by executing the contract's code without modifying the state of the blockchain.
 
 #### Parameters
+
 1. [!badge variant="warning" text="connection"] - [!badge variant="warning" text="Connection"]: Connection object to interact with the Ethereum network.
 2. [!badge variant="warning" text="data"] - [!badge variant="warning" text="any"]: The transaction data object containing the parameters of the call.
 
 #### Returns
+
 [!badge variant="danger" text="Promise"]: A promise that resolves to the return value of the simulated call.
 
 #### Example
-``` typescript
+
+```typescript
 simulateCallTransaction(
   connection,
   {
@@ -213,4 +217,31 @@ simulateCallTransaction(
 ).then(console.log);
 > "0x0000000000000000000000000000000000000000000000000000000000000001"
 
+```
+
+---
+
+### recoverMessageHashFromRawTx
+
+```ts
+recoverMessageHashFromRawTx(connection, rawTx);
+```
+
+Recovers the message hash of a transaction by signing a fake version of the transaction.
+
+#### Parameters
+
+1. [!badge variant="warning" text="connection"] - [!badge variant="warning" text="Connection"]: Connection object to interact with the Ethereum network.
+2. [!badge variant="warning" text="rawTx"] - [!badge variant="warning" text="string"]: The raw transaction data as a hexadecimal string.
+
+#### Returns
+
+[!badge variant="danger" text="string"]: A promise that resolves to the message hash of the transaction.
+
+```ts
+recoverMessageHashFromRawTx(
+  connection,
+  "0xf86a8086d55698372431831e848094f0109fc8df283027b6285cc889f5aa624eac1d5ba5f70a08a4190d314dfc2f8b8a0ec0bf9708b5c5f07bba25e3445b5d3e3f764c86941bcdc0018080"
+).then(console.log);
+> "0x6d2befdc620761b76e8e4d4f9de3f7c4e4b8d7e45f5deedf7c5860cf8f9e1d9a"
 ```
