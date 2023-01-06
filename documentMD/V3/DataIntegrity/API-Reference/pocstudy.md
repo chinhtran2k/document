@@ -4,7 +4,7 @@ icon: dot
 
 # POCStudy
 
-This module for POCStudy lock level
+This module for POCStudy lock level.
 
 ## Main function
 
@@ -13,7 +13,7 @@ This module for POCStudy lock level
 ### mintPOCStudy
 
 ```ts
-ddr.mintPOCStudy(uri, message, privateKey, nonce);
+ddr.mintPOCStudy(uri, message, privateKey, nonce?, isSimulate?);
 ```
 
 Create POC
@@ -21,9 +21,10 @@ Create POC
 #### Parameters
 
 1. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of POCStudy.
-2. [!badge variant="warning" text="message"] - [!badge variant="warning" text="string"]: The message was sent from Pharumo
-3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"] : Private key of contract creator(admin)
-4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
+2. [!badge variant="warning" text="message"] - [!badge variant="warning" text="string"]: The message was sent from Pharumo.
+3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"] : Private key of contract creator(admin).
+4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account.
+5. [!badge variant="warning" text="isSimulate"] - [!badge variant="warning" text="boolean"] (optional): Emulator status.
 
 #### Returns
 
@@ -80,7 +81,7 @@ pocStudy.mintPOCStudy('ggwp',
 pocStudy.getRootHashPOCPatient();
 ```
 
-Get Root Hash Value
+Get Root Hash Value.
 
 #### Parameters
 
@@ -105,7 +106,7 @@ pocStudy.getRootHashPOCPatient().then(console.log);
 pocStudy.getRootNodeIdPOCPatient();
 ```
 
-Get Hash Value of Root Node Patient
+Get Hash Value of Root Node Patient.
 
 #### Parameters
 
@@ -113,7 +114,7 @@ None
 
 #### Returns
 
-[!badge variant="danger" text="String"]: Hash Value of Root Node Patient
+[!badge variant="danger" text="String"]: Hash Value of Root Node Patient.
 
 #### Example
 

@@ -13,7 +13,7 @@ This module for Consented Disclosure lock level
 ### mintDisclosureBranch
 
 ```ts
-mintDisclosureBranch(patientDID, providerDID, uri, privateKey, nonce?);
+mintDisclosureBranch(patientDID, providerDID, uri, privateKey, nonce?, isSimulate?);
 ```
 
 Mint Lock DisclosureBranch.
@@ -25,6 +25,7 @@ Mint Lock DisclosureBranch.
 3. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of DisclosureBranch.
 4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"] : Private key of contract creator(admin).
 5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account.
+6. [!badge variant="warning" text="isSimulate"] - [!badge variant="warning" text="boolean"] (optional): Emulator status.
 
 #### Returns
 

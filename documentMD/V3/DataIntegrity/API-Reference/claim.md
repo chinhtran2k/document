@@ -13,7 +13,7 @@ This module for claim lock level.
 ### mintClaim
 
 ```ts
-claim.mintClaim(accountDID, accountId, uri, privateKey, nonce);
+claim.mintClaim(accountDID, accountId, uri, privateKey, nonce?, isSimulate?);
 ```
 
 Mint and lock CLaim.
@@ -25,6 +25,7 @@ Mint and lock CLaim.
 3. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of provider/patient.
 4. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"] : Private key of contract creator(admin).
 5. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account.
+6. [!badge variant="warning" text="isSimulate"] - [!badge variant="warning" text="boolean"] (optional): Emulator status.
 
 #### Returns
 

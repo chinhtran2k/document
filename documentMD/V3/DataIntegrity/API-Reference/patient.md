@@ -4,7 +4,7 @@ icon: dot
 
 # Patient
 
-This module for Patient lock level
+This module for Patient lock level.
 
 ## Main function
 
@@ -13,17 +13,18 @@ This module for Patient lock level
 ### mintPatient
 
 ```ts
-patient.mintPatient(patientDID, uri, privateKey, nonce);
+patient.mintPatient(patientDID, uri, privateKey, nonce?, isSimulate?);
 ```
 
 Mint and lock Patient
 
 #### Parameters
 
-1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of patient was created from DID
-2. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of patient
-3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"] : Private key of contract creator(admin)
-4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account
+1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of patient was created from DID.
+2. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of patient.
+3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"] : Private key of contract creator(admin).
+4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account.
+5. [!badge variant="warning" text="isSimulate"] - [!badge variant="warning" text="boolean"] (optional): Emulator status.
 
 #### Returns
 
@@ -83,15 +84,15 @@ patient.mintPatient(
 patient.getPatientRootHashValue(patientDID);
 ```
 
-Get The Hash Value Of Patient
+Get The Hash Value Of Patient.
 
 #### Parameters
 
-[!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of patient was created from DID
+[!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of patient was created from DID.
 
 #### Returns
 
-[!badge variant="danger" text="String"]: Hash value of patient
+[!badge variant="danger" text="String"]: Hash value of patient.
 
 #### Example
 
@@ -117,7 +118,7 @@ None
 
 #### Returns
 
-[!badge variant="danger" text="Array\<String>"]: Array of Hash Value
+[!badge variant="danger" text="Array\<String>"]: Array of Hash Value.
 
 #### Example
 

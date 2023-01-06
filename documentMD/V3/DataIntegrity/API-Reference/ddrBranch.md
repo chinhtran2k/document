@@ -4,7 +4,7 @@ icon: dot
 
 # DDRBranch
 
-This module for DDRBranch lock level
+This module for DDRBranch lock level.
 
 ## Main function
 
@@ -13,7 +13,7 @@ This module for DDRBranch lock level
 ### mintDDRBranch
 
 ```ts
-mintDDRBranch(patientDID, uri, privateKey, nonce?);
+mintDDRBranch(patientDID, uri, privateKey, nonce?, isSimulate?);
 ```
 
 Mint Lock DDRBranch.
@@ -24,6 +24,7 @@ Mint Lock DDRBranch.
 2. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"]: The uri of DDRBranch.
 3. [!badge variant="warning" text="privateKey"] - [!badge variant="warning" text="string"] : Private key of contract creator(admin).
 4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account.
+5. [!badge variant="warning" text="isSimulate"] - [!badge variant="warning" text="boolean"] (optional): Emulator status.
 
 #### Returns
 

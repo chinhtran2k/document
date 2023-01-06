@@ -13,7 +13,7 @@ This module use to mint/share/consent/lock DDR.
 ### mintDDR
 
 ```ts
-ddr.mintDDR(hashedValue, ddrId, uri, patientDID, delegateKey, nonce);
+ddr.mintDDR(hashedValue, ddrId, uri, patientDID, delegateKey, nonce?, isSimalate?);
 ```
 
 Create DDR for Patients.
@@ -26,6 +26,7 @@ Create DDR for Patients.
 4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID.
 5. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey.
 6. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account.
+7. [!badge variant="warning" text="isSimulate"] - [!badge variant="warning" text="boolean"] (optional): Emulator status.
 
 #### Returns
 
@@ -109,7 +110,7 @@ ddr.mintDDR(
 ### mintBatchDDR
 
 ```ts
-ddr.mintBatchDDR(hashedValues, ddrIds, uris, patientDID, delegateKey, nonce);
+ddr.mintBatchDDR(hashedValues, ddrIds, uris, patientDID, delegateKey, nonce?, isSimulate?);
 ```
 
 Create many DDRs for Patients.
@@ -122,6 +123,7 @@ Create many DDRs for Patients.
 4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID.
 5. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey.
 6. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account.
+7. [!badge variant="warning" text="isSimulate"] - [!badge variant="warning" text="boolean"] (optional): Emulator status.
 
 #### Returns
 
@@ -230,7 +232,7 @@ ddr.mintBatchDDR(
 ### sharedDDR
 
 ```ts
-ddr.sharedDDR(ddrIds, patientDID, delegateKey, nonce);
+ddr.sharedDDR(ddrIds, patientDID, delegateKey, nonce?, isSimulate?);
 ```
 
 Allow address of patient to access id of ddr.
@@ -241,6 +243,7 @@ Allow address of patient to access id of ddr.
 2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID.
 3. [!badge variant="warning" text="delegateKey"] - [!badge variant="warning" text="string"]: Private key of delegateKey.
 4. [!badge variant="warning" text="nonce"] - [!badge variant="warning" text="number"] (optional): The nonce of account.
+5. [!badge variant="warning" text="isSimulate"] - [!badge variant="warning" text="boolean"] (optional): Emulator status.
 
 #### Returns
 
@@ -443,6 +446,7 @@ ddr.getAllDDR("0xd0a2926d4f07121c3a29EbdFF514556a82Cb9F7C")
     didConsentedOf: []
   }
 ]
+```
 ---
 
 ### consentDisclosureDDR
