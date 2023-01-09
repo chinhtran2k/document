@@ -17,7 +17,6 @@ dataIntegrity.checkIntegritySingleDDR(
   patientDID,
   ddrId,
   hashedData,
-  ddrConsentedTo
 );
 ```
 
@@ -28,7 +27,6 @@ Check The Integrity Of Single DDR.
 1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: DID Address of Patient was created which has owner owns the DDR.
 2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: DDR ID off-chain was sent from Pharumo.
 3. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data of DDR that was hashed by keccak256.
-4. [!badge variant="warning" text="ddrConsentedTo"] - [!badge variant="warning" text="Array\<string>"]: List of Provider which DDR consented to.
 
 #### Returns
 
@@ -41,7 +39,6 @@ dataIntegrity.checkIntegritySingleDDR(
     "0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba",
     "0001",
     "0xf00814e2e916628483aef34d34f1f63cee0d8b67a2c7fbea160d2b5d188534c9"),
-    ["0xcA03F19695aee47057246615c059F94b0c2734e9"]
     .then(console.log);
 
 > true
