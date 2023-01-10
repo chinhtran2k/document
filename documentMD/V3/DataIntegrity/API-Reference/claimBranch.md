@@ -2,7 +2,7 @@
 icon: dot
 ---
 
-# Claim
+# ClaimBranch
 
 This module for claim lock level.
 

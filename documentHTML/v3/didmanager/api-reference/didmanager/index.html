@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.726638732933">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.726647828028">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=2.4.0.726638732933" rel="stylesheet" />
+    <link href="../../../../resources/css/retype.css?v=2.4.0.726647828028" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../../resources/js/config.js?v=2.4.0.726638732933" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../../resources/js/config.js?v=2.4.0.726647828028" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../../resources/js/lunr.js?v=2.4.0.726638732933" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../../resources/js/prism.js?v=2.4.0.726638732933" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../../resources/js/lunr.js?v=2.4.0.726647828028" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../../resources/js/prism.js?v=2.4.0.726647828028" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -1193,6 +1193,106 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript">dids.addrToKey(&quot;0x227E3b971F14d9ef9eB2A8C4309FddbE1E7EE140&quot;);
 &gt; &quot;0xf2791dd4aae12b2e3964c26ffbc5c5c1e33c3500acdf9d5ae89cb95a08c0a7b5&quot;</code></pre>
+</doc-codeblock></div>
+<hr />
+<doc-anchor-target id="getclaimskeyownedbyissuer-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getclaimskeyownedbyissuer-1">#</doc-anchor-trigger>
+        <span>getClaimsKeyOwnedByIssuer</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaimsKeyOwnedByIssuer(accountDID, issuer);</code></pre>
+</doc-codeblock></div>
+<p>Get list of claim keys owned by accountDID</p>
+<doc-anchor-target id="parameters-13">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-13">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>accountDID</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: DID contract address</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>issuer</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: The claim issuer</li>
+</ol>
+<doc-anchor-target id="returns-13">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-13">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>Array&lt;String&gt;</span>
+</span>: Array of claim keys</p>
+<doc-anchor-target id="example-11">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-11">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getClaimsKeyOwnedByIssuer(
+  &quot;0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724&quot;,
+  &quot;0xbf69608B714EEDD31199ce2DC21A64D09153A641&quot;
+).then(console.log);
+&gt; [ 'ACCOUNT_TYPE', 'ACCOUNT_ID' ]</code></pre>
+</doc-codeblock></div>
+<hr />
+<doc-anchor-target id="gethashclaim">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gethashclaim">#</doc-anchor-trigger>
+        <span>getHashClaim</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getHashClaim(accountDID, claimId);</code></pre>
+</doc-codeblock></div>
+<p>Get list of all claims owned by accountDID</p>
+<doc-anchor-target id="parameters-14">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-14">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>accountDID</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: DID contract address.</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>claimId</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span>: claimId of DID.</li>
+</ol>
+<doc-anchor-target id="returns-14">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-14">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>String</span>
+</span>: hash value of claim</p>
+<doc-anchor-target id="example-12">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-12">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getAllClaimsOwnedByIssuer(&quot;0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724&quot;, &quot;0xe52a4c9d0575970a000dd1a8372fb50c24cb1dc558269f582c609ff8568845ea)
+    .then(console.log);
+&gt; 0x856b65949b3a8ea8936fd02df953da7c8c1c3d66a7da09835e0a4e4fc3bfc842</code></pre>
 </doc-codeblock></div>
 
                                 

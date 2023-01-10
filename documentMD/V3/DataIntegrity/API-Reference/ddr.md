@@ -13,14 +13,14 @@ This module use to mint/share/consent/lock DDR.
 ### mintDDR
 
 ```ts
-ddr.mintDDR(hashedValue, ddrId, uri, patientDID, delegateKey, nonce?, isSimalate?);
+ddr.mintDDR(hashValue, ddrId, uri, patientDID, delegateKey, nonce?, isSimalate?);
 ```
 
 Create DDR for Patients.
 
 #### Parameters
 
-1. [!badge variant="warning" text="hashedValue"] - [!badge variant="warning" text="string"]: Data of DDR was hashed by the keccak256 from Pharumo.
+1. [!badge variant="warning" text="hashValue"] - [!badge variant="warning" text="string"]: Data of DDR was hashed by the keccak256 from Pharumo.
 2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: DID Id off-chain was sent from Pharumo.
 3. [!badge variant="warning" text="uri"] - [!badge variant="warning" text="string"] (optional): The uri of DDR.
 4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID.
@@ -99,7 +99,7 @@ ddr.mintDDR(
       tokenId: '4',
       patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
       ddrId: '004',
-      hashedValue: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177'
+      hashValue: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177'
     }
   ]
 };
@@ -110,14 +110,14 @@ ddr.mintDDR(
 ### mintBatchDDR
 
 ```ts
-ddr.mintBatchDDR(hashedValues, ddrIds, uris, patientDID, delegateKey, nonce?, isSimulate?);
+ddr.mintBatchDDR(hashValues, ddrIds, uris, patientDID, delegateKey, nonce?, isSimulate?);
 ```
 
 Create many DDRs for Patients.
  
 #### Parameters
 
-1. [!badge variant="warning" text="hashedValues"] - [!badge variant="warning" text="Array\<String>"]: List datas of DDR were hashed by the keccak256 from Pharumo.
+1. [!badge variant="warning" text="hashValues"] - [!badge variant="warning" text="Array\<String>"]: List datas of DDR were hashed by the keccak256 from Pharumo.
 2. [!badge variant="warning" text="ddrIds"] - [!badge variant="warning" text="Array\<String>"]: List of ids offline was sent from Pharumo.
 3. [!badge variant="warning" text="uris"] - [!badge variant="warning" text="Array\<String>"]: List of uris of DDR.
 4. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: Address of Patient was created from DID.
@@ -209,19 +209,19 @@ ddr.mintBatchDDR(
       tokenId: '1',
       patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
       ddrId: '001',
-      hashedValue: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31'
+      hashValue: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31'
     },
     {
       tokenId: '2',
       patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
       ddrId: '002',
-      hashedValue: '0x94f5115f6287e66e3fc9bbd6e4f621f7657efd388e304c810ce7d381b654f59f'
+      hashValue: '0x94f5115f6287e66e3fc9bbd6e4f621f7657efd388e304c810ce7d381b654f59f'
     },
     {
       tokenId: '3',
       patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
       ddrId: '003',
-      hashedValue: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177'
+      hashValue: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177'
     }
   ]
 };
@@ -343,7 +343,7 @@ Get the ddr with certain ddr id.
 1. [!badge variant="danger" text="tokenId"] - [!badge variant="danger" text="string"]: Token Id of ddr.
 2. [!badge variant="danger" text="patientDID"] - [!badge variant="danger" text="string"]: Address of Patient was created from DID.
 3. [!badge variant="danger" text="ddrId"] - [!badge variant="danger" text="string"]: DDR Id off-chain was sent from Pharumo.
-4. [!badge variant="danger" text="hashedValue"] - [!badge variant="danger" text="string"]: Data of DDR was hashed by the keccak256 from Pharumo.
+4. [!badge variant="danger" text="hashValue"] - [!badge variant="danger" text="string"]: Data of DDR was hashed by the keccak256 from Pharumo.
 5. [!badge variant="danger" text="didConsentedOf"] - [!badge variant="danger" text="string"]: Array providers address shared by patient.
 
 
@@ -361,7 +361,7 @@ ddr.getDDR("0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218","001")
   tokenId: '1',
   patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
   ddrId: '001',
-  hashedValue: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
+  hashValue: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
   didConsentedOf: []
 }
 ```
@@ -386,7 +386,7 @@ Get all the ddr
 1. [!badge variant="danger" text="tokenId"] - [!badge variant="danger" text="string"]: Token Id of ddr.
 2. [!badge variant="danger" text="patientDID"] - [!badge variant="danger" text="string"]: Address of Patient was created from DID.
 3. [!badge variant="danger" text="ddrId"] - [!badge variant="danger" text="string"]: DDR Id off-chain was sent from Pharumo.
-4. [!badge variant="danger" text="hashedValue"] - [!badge variant="danger" text="string"]: Data of DDR was hashed by the keccak256 from Pharumo.
+4. [!badge variant="danger" text="hashValue"] - [!badge variant="danger" text="string"]: Data of DDR was hashed by the keccak256 from Pharumo.
 5. [!badge variant="danger" text="didConsentedOf"] - [!badge variant="danger" text="string"]: Array providers address shared by patient.
 
 
@@ -406,7 +406,7 @@ ddr.getAllDDR("0xd0a2926d4f07121c3a29EbdFF514556a82Cb9F7C")
     tokenId: '1',
     patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
     ddrId: '001',
-    hashedValue: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
+    hashValue: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
     didConsentedOf: []
   },
   Result {
@@ -418,7 +418,7 @@ ddr.getAllDDR("0xd0a2926d4f07121c3a29EbdFF514556a82Cb9F7C")
     tokenId: '2',
     patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
     ddrId: '002',
-    hashedValue: '0x94f5115f6287e66e3fc9bbd6e4f621f7657efd388e304c810ce7d381b654f59f',
+    hashValue: '0x94f5115f6287e66e3fc9bbd6e4f621f7657efd388e304c810ce7d381b654f59f',
     didConsentedOf: []
   },
   Result {
@@ -430,7 +430,7 @@ ddr.getAllDDR("0xd0a2926d4f07121c3a29EbdFF514556a82Cb9F7C")
     tokenId: '3',
     patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
     ddrId: '003',
-    hashedValue: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
+    hashValue: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
     didConsentedOf: []
   },
   Result {
@@ -442,7 +442,7 @@ ddr.getAllDDR("0xd0a2926d4f07121c3a29EbdFF514556a82Cb9F7C")
     tokenId: '4',
     patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
     ddrId: '004',
-    hashedValue: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
+    hashValue: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
     didConsentedOf: []
   }
 ]

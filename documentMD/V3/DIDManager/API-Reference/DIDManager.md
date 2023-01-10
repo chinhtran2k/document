@@ -573,3 +573,59 @@ Hash address to key by `keccak256`
 dids.addrToKey("0x227E3b971F14d9ef9eB2A8C4309FddbE1E7EE140");
 > "0xf2791dd4aae12b2e3964c26ffbc5c5c1e33c3500acdf9d5ae89cb95a08c0a7b5"
 ```
+---
+
+### getClaimsKeyOwnedByIssuer
+
+```ts
+dids.getClaimsKeyOwnedByIssuer(accountDID, issuer);
+```
+
+Get list of claim keys owned by accountDID
+
+#### Parameters
+
+1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address
+2. [!badge variant="danger" text="issuer"] - [!badge variant="danger" text="string"]: The claim issuer
+
+#### Returns
+
+[!badge variant="danger" text="Array\<String>"]: Array of claim keys
+
+#### Example
+
+```ts
+dids.getClaimsKeyOwnedByIssuer(
+  "0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724",
+  "0xbf69608B714EEDD31199ce2DC21A64D09153A641"
+).then(console.log);
+> [ 'ACCOUNT_TYPE', 'ACCOUNT_ID' ]
+```
+
+---
+
+### getHashClaim
+
+```ts
+dids.getHashClaim(accountDID, claimId);
+```
+
+Get list of all claims owned by accountDID
+
+#### Parameters
+
+1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address.
+2. [!badge variant="warning" text="claimId"] - [!badge variant="danger" text="string"]: claimId of DID.
+
+
+#### Returns
+
+[!badge variant="danger" text="String"]: hash value of claim
+
+#### Example
+
+```ts
+dids.getAllClaimsOwnedByIssuer("0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724", "0xe52a4c9d0575970a000dd1a8372fb50c24cb1dc558269f582c609ff8568845ea)
+    .then(console.log);
+> 0x856b65949b3a8ea8936fd02df953da7c8c1c3d66a7da09835e0a4e4fc3bfc842
+```

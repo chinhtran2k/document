@@ -50,8 +50,9 @@ dataIntegrity.checkIntegritySingleDDR(
 ```ts
 dataIntegrity.checkIntegritySingleClaim(
   accountDID,
-  accountId,
-  hashedDataClaim,
+  claimIssuer,
+  claimKey,
+  hashClaimOffChain,
 );
 ```
 
@@ -60,8 +61,9 @@ Check The Integrity Of Single Claim.
 #### Parameters
 
 1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: Address of provider/patient was created from DID.
-2. [!badge variant="warning" text="accountId"] - [!badge variant="warning" text="string"]: Account Id off-chain was sent from Pharumo.
-3. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data of claim.
+2. [!badge variant="warning" text="claimIssuer"] - [!badge variant="warning" text="string"]: The issuer address of claim.
+3. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="string"]: The claim key of claim.
+4. [!badge variant="warning" text="hashClaimOffChain"] - [!badge variant="warning" text="string"]: hash value off chain of claim from DB.
 
 #### Returns
 
@@ -72,7 +74,44 @@ Check The Integrity Of Single Claim.
 ```ts
 dataIntegrity.checkIntegritySingleClaim(
     "0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba",
-    "PT01",
+    "0x6BCf373913ac17a3b0E58c23b3548D553e37b376",
+    "ACCOUNT_TYPE",
+    "0xb643a5262d05b758a3b8977bf5d3690c6b3622ca98391d8ff3131ef9f84d50db")
+    .then(console.log);
+
+> true
+```
+
+---
+
+### checkIntegritySingleClaimBranch
+
+```ts
+dataIntegrity.checkIntegritySingleClaimBranch(
+  tokenId,
+  accountId,
+  hashClaimBranchOffChain,
+);
+```
+
+Check The Integrity Of Single Claim.
+
+#### Parameters
+
+1. [!badge variant="warning" text="tokenId"] - [!badge variant="warning" text="number"]: tokenId of claim branch.
+2. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: Address of provider/patient was created from DID.
+3. [!badge variant="warning" text="hashClaimBranchOffChain"] - [!badge variant="warning" text="string"]: hash value off-chain of claim branch from DB.
+
+#### Returns
+
+[!badge variant="danger" text="boolean"]: true if the data is valid, false if the data is invalid
+
+#### Example
+
+```ts
+dataIntegrity.checkIntegritySingleClaimBranch(
+    1,
+    "0x6BCf373913ac17a3b0E58c23b3548D553e37b376",
     "0xb643a5262d05b758a3b8977bf5d3690c6b3622ca98391d8ff3131ef9f84d50db")
     .then(console.log);
 
@@ -84,17 +123,16 @@ dataIntegrity.checkIntegritySingleClaim(
 ### checkIntegritySingleDDRBranch
 
 ```ts
-dataIntegrity.checkIntegritySingleClaim(tokenId, patientDID, ddrsId, ddrHashedData);
+dataIntegrity.checkIntegritySingleDDRBranch(tokenId, patientDID, hashDDRBranchOffChain);
 ```
 
 Check the integrity of single ddrBranch.
 
 #### Parameters
 
-1. [!badge variant="warning" text="tokenId"] - [!badge variant="warning" text="string"]: Token Id of lock ddrBranch.
-1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]:  Address of patient was created from DID.
-2. [!badge variant="warning" text="ddrsId"] - [!badge variant="warning" text="Array\<string>"]: Array of raw DDR ID of DDRs belong to the patient.
-2. [!badge variant="warning" text="ddrHashedData"] - [!badge variant="warning" text="Array\<string>"]: List data hash of ddr.
+1. [!badge variant="warning" text="tokenId"] - [!badge variant="warning" text="number"]: Token Id of lock ddrBranch.
+2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]:  Address of patient was created from DID.
+3. [!badge variant="warning" text="hashDDRBranchOffChain"] - [!badge variant="warning" text="string"]: data hash off-chain of ddr branch from DB.
 
 
 #### Returns
@@ -105,10 +143,9 @@ Check the integrity of single ddrBranch.
 
 ```ts
 dataIntegrity.checkIntegritySingleDDRBranch(
-   "1",
+   1,
    "0xCB805208DfA4966B14B1CfAf05a5d899ADF24d1b",
-   ["001","002"],
-   ["0xf2baf6d2f921e3bb7eb5e66d7a67d6caeaeb49691d0d681c3865d9b134f7e391","0x62522366c86c332551d7e9d5ff0a1dad81bc17b0b7ad7ed5756ceaf11dedeccd"])
+   "0xf2baf6d2f921e3bb7eb5e66d7a67d6caeaeb49691d0d681c3865d9b134f7e391")
 ).then(console.log);
 
 > true
@@ -119,18 +156,16 @@ dataIntegrity.checkIntegritySingleDDRBranch(
 ### checkIntegritySingleDisclosureBranch
 
 ```ts
-dataIntegrity.checkIntegritySingleDisclosureBranch(tokenId, patientDID, providerDID, ddrsId, ddrHashedData);
+dataIntegrity.checkIntegritySingleDisclosureBranch(tokenId, patientDID, hashDisclosureBranchOffChain);
 ```
 
 Check the integrity of single disclosureBranch.
 
 #### Parameters
 
-1. [!badge variant="warning" text="tokenId"] - [!badge variant="warning" text="string"]: Token Id of lock ddrBranch.
+1. [!badge variant="warning" text="tokenId"] - [!badge variant="warning" text="number"]: Token Id of lock disclouseBranch.
 2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]:  Address of patient was created from DID.
-3. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="string"]:  Address of provider was created from DID.
-4. [!badge variant="warning" text="ddrsId"] - [!badge variant="warning" text="Array\<string>"]: Array of raw DDR ID of DDRs belong to the patient.
-5. [!badge variant="warning" text="ddrHashedData"] - [!badge variant="warning" text="Array\<string>"]: List data hash of ddr.
+3. [!badge variant="warning" text="hashDisclosureBranchOffChain"] - [!badge variant="warning" text="string"]: hash value off-chain of disclouse branch from DB.
 
 
 #### Returns
@@ -143,9 +178,7 @@ Check the integrity of single disclosureBranch.
 dataIntegrity.checkIntegritySingleDisclosureBranch(
    "1",
    "0x7f97Db6245E35234Da84E46C7F42E4F722855237",
-   "0xCB805208DfA4966B14B1CfAf05a5d899ADF24d1b",
-   ["001","002"],
-   ["0xf2baf6d2f921e3bb7eb5e66d7a67d6caeaeb49691d0d681c3865d9b134f7e391","0x62522366c86c332551d7e9d5ff0a1dad81bc17b0b7ad7ed5756ceaf11dedeccd"])
+   "0xf2baf6d2f921e3bb7eb5e66d7a67d6caeaeb49691d0d681c3865d9b134f7e391")
 ).then(console.log);
 
 > true
@@ -158,9 +191,7 @@ dataIntegrity.checkIntegritySingleDisclosureBranch(
 dataIntegrity.checkIntegritySinglePatient(
   tokenId,
   patientDID,
-  hashClaim,
-  ddrBranchHashs,
-  disclosureBranchHashs
+  hashPatientOffChain
 );
 ```
 
@@ -169,9 +200,7 @@ Check the integrity of single patient
 #### Parameters
 1. [!badge variant="warning" text="tokenId"] - [!badge variant="warning" text="string"]: tokenId of patient lock .
 2. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: DID Address of Patient which owner owns all the DDRs
-3. [!badge variant="warning" text="hashClaim"] - [!badge variant="warning" text="string"]: The data claim was hashed by the keccak256.
-4. [!badge variant="warning" text="ddrBranchHashs"] - [!badge variant="warning" text="Array\<string>"]: Array hashvalue of ddrBranch lock.
-5. [!badge variant="warning" text="disclosureBranchHashs"] - [!badge variant="warning" text="Array\<string>"]: Array hashvalue of disclosureBranch lock.
+3. [!badge variant="warning" text="hashPatientOffChain"] - [!badge variant="warning" text="string"]: hash value off-chain of patient from DB.
 
 #### Returns
 
@@ -181,19 +210,9 @@ Check the integrity of single patient
 
 ```ts
 dataIntegrity.checkIntegritySinglePatient(
-    "1",
+    1,
     "0x7f97Db6245E35234Da84E46C7F42E4F722855237",
     "0xb643a5262d05b758a3b8977bf5d3690c6b3622ca98391d8ff3131ef9f84d50db",
-    Array.from([
-      "0xf00814e2e916628483aef34d34f1f63cee0d8b67a2c7fbea160d2b5d188534c9",
-      "0x46f910e6fdee1489ecdcb31fd30eb4b8a2b0c6ddac7e252d1ef3c59d02f09c5e",
-      "0xd81a12bbbd8e1ada2e7ea6a82ec3b9b54464675977ed8af94b15320c698cac6d",
-    ]),
-    Array.from([
-      Array.from(["0xf7c4348c5d7fb312cf30866a9b68d58bd6b1c70bab4fe20880ed3afddd7f516f"]),
-      Array.from(["0xadf565076c326f51e03ae342d301ceabe6b5fe5062c541a401d753585a45026c"]),
-      Array.from(["0x4c765aa3a21a7e0e28f295222871c3b32bf526de25a87b008ef58c344988e946"])
-    ])
 ).then(console.log);
 
 > true
@@ -212,11 +231,7 @@ Check the integrity study
 
 #### Parameters
 
-1. [!badge variant="warning" text="rootHashValuesPatient"] - [!badge variant="warning" text="Array\<string>"]: Array of root hash values of all patients
-
-!!! Warning Warn
-`rootHashValuesPatient` must be input by true order (which is added first, eg: `[\<PatientHash1>]`), or the result will be wrong
-!!!
+1. [!badge variant="warning" text="rootHashValuesPatient"] - [!badge variant="warning" text="string"]: hash value off-chain of poc study from DB.
 
 #### Returns
 
@@ -226,15 +241,8 @@ Check the integrity study
 
 ```ts
 dataIntegrity.checkIntegrityStudy(
-  ["0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",  // This is just example, data can be alike
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030",
-  "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae",
-  "0xf1b58baf6d7650f6e7571ee0393e50619d4da8b02864d118cc44e3a6d894cbae"])
+  "0xc599d44fdb3d96d54427a825cdcadb3dc2e89902d33bdb64272005a1fe9fb030"  // This is just example, data can be alike
+  )
   .then(console.log);
 
 > true
