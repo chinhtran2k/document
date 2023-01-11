@@ -157,7 +157,7 @@ Get Claim Data.
 #### Example
 
 ```ts
-patient.getHashClaim('0x9573Cda4F4f645764767561D1EF3b4b84647aC19').then(console.log);
+patient.getHashDataClaim('0x9573Cda4F4f645764767561D1EF3b4b84647aC19').then(console.log);
 
 > 0x2695156ad586fff58bd6938d09897d9b1392afd1f65d0a9310890250e46b7c29
 ```
