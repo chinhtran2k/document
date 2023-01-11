@@ -126,7 +126,7 @@ Get Hash Value Of Claim.
 
 #### Returns
 
-[!badge variant="danger" text="String"]: Array of Hash Value.
+[!badge variant="danger" text="String"]: hash data was hashed claim lv1 by the keccak256.
 
 #### Example
 
@@ -153,7 +153,7 @@ Get Claim Data.
 
 #### Returns
 
-[!badge variant="warning" text="hashedValue"] - [!badge variant="warning" text="string"]: Claim data
+[!badge variant="warning" text="hashedValue"] - [!badge variant="warning" text="string"]: Hash claim lock
 #### Example
 
 ```ts

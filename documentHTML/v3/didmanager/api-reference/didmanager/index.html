@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.726647828028">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.726736323355">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=2.4.0.726647828028" rel="stylesheet" />
+    <link href="../../../../resources/css/retype.css?v=2.4.0.726736323355" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../../resources/js/config.js?v=2.4.0.726647828028" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../../resources/js/config.js?v=2.4.0.726736323355" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../../resources/js/lunr.js?v=2.4.0.726647828028" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../../resources/js/prism.js?v=2.4.0.726647828028" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../../resources/js/lunr.js?v=2.4.0.726736323355" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../../resources/js/prism.js?v=2.4.0.726736323355" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -1253,9 +1253,9 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.getHashClaim(accountDID, claimId);</code></pre>
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getHashClaim(accountDID, claimKey);</code></pre>
 </doc-codeblock></div>
-<p>Get list of all claims owned by accountDID</p>
+<p>Get hash claim of accountDID</p>
 <doc-anchor-target id="parameters-14">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-14">#</doc-anchor-trigger>
@@ -1269,10 +1269,10 @@
     <span>string</span>
 </span>: DID contract address.</li>
 <li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>claimId</span>
+    <span>claimKey</span>
 </span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>string</span>
-</span>: claimId of DID.</li>
+</span>: claimKey of DID.</li>
 </ol>
 <doc-anchor-target id="returns-14">
     <h4>
@@ -1290,7 +1290,7 @@
     </h4>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">dids.getAllClaimsOwnedByIssuer(&quot;0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724&quot;, &quot;0xe52a4c9d0575970a000dd1a8372fb50c24cb1dc558269f582c609ff8568845ea)
+<pre class="language-typescript"><code v-pre class="language-typescript">dids.getAllClaimsOwnedByIssuer(&quot;0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724&quot;, &quot;ACCOUNT_TYPE)
     .then(console.log);
 &gt; 0x856b65949b3a8ea8936fd02df953da7c8c1c3d66a7da09835e0a4e4fc3bfc842</code></pre>
 </doc-codeblock></div>

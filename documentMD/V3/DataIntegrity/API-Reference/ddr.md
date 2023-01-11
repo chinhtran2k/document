@@ -362,7 +362,6 @@ ddr.getDDR("0x91a6eBbDF60316065a9b0ddBeBB10e0fb51F3218","001")
   patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
   ddrId: '001',
   hashValue: '0xfa850c469e754b656ebf155b4b520e960d69baff52da021c9afbf26cb3a71c31',
-  didConsentedOf: []
 }
 ```
 ---
@@ -431,7 +430,6 @@ ddr.getAllDDR("0xd0a2926d4f07121c3a29EbdFF514556a82Cb9F7C")
     patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
     ddrId: '003',
     hashValue: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
-    didConsentedOf: []
   },
   Result {
     '0': '4',
@@ -443,7 +441,6 @@ ddr.getAllDDR("0xd0a2926d4f07121c3a29EbdFF514556a82Cb9F7C")
     patientDID: '0x7fc8cDB68e25B6Aa83Cbdf81B4adDBa3e58496be',
     ddrId: '004',
     hashValue: '0x292383490336287f71b0803c84828243418c4e70fb392679f2c0e5abb0772177',
-    didConsentedOf: []
   }
 ]
 ```

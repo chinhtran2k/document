@@ -607,15 +607,15 @@ dids.getClaimsKeyOwnedByIssuer(
 ### getHashClaim
 
 ```ts
-dids.getHashClaim(accountDID, claimId);
+dids.getHashClaim(accountDID, claimKey);
 ```
 
-Get list of all claims owned by accountDID
+Get hash claim of accountDID
 
 #### Parameters
 
 1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: DID contract address.
-2. [!badge variant="warning" text="claimId"] - [!badge variant="danger" text="string"]: claimId of DID.
+2. [!badge variant="warning" text="claimKey"] - [!badge variant="danger" text="string"]: claimKey of DID.
 
 
 #### Returns
@@ -625,7 +625,7 @@ Get list of all claims owned by accountDID
 #### Example
 
 ```ts
-dids.getAllClaimsOwnedByIssuer("0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724", "0xe52a4c9d0575970a000dd1a8372fb50c24cb1dc558269f582c609ff8568845ea)
+dids.getAllClaimsOwnedByIssuer("0xeAB6D21DC3e1eA9441D20EEDfD9133cf37732724", "ACCOUNT_TYPE)
     .then(console.log);
 > 0x856b65949b3a8ea8936fd02df953da7c8c1c3d66a7da09835e0a4e4fc3bfc842
 ```

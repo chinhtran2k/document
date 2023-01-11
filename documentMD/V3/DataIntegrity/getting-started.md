@@ -18,12 +18,12 @@ This SDK is wroted by typescript
 ```ts
 import { CONFIG } from "./src/config";
 import { Connection } from "./src/utils";
-import { DDR , Claim, DDRBranch, DisclosureBranch, Patient, POCStudy, DataIntegrity} from "./src/action";
+import { DDR , ClaimBranch, DDRBranch, DisclosureBranch, Patient, POCStudy, DataIntegrity} from "./src/action";
 
 const connection = new Connection("http://localhost:8545");
 
 const ddr =new DDR(connection);
-const claim =new Claim(connection);
+const claimBranch =new ClaimBranch(connection);
 const ddrBranch =new DDRBranch(connection);
 const disclosureBranch =new DisclosureBranch(connection);
 const patient =new Patient(connection);

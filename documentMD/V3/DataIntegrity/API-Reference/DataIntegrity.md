@@ -15,7 +15,7 @@ This module use for check integrity of data.
 ```ts
 dataIntegrity.checkIntegritySingleDDR(
   patientDID,
-  ddrId,
+  tokenId,
   hashedData,
 );
 ```
@@ -25,7 +25,7 @@ Check The Integrity Of Single DDR.
 #### Parameters
 
 1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: DID Address of Patient was created which has owner owns the DDR.
-2. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: DDR ID off-chain was sent from Pharumo.
+2. [!badge variant="warning" text="tokenId"] - [!badge variant="warning" text="number"]: tokenId of DDR.
 3. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data of DDR that was hashed by keccak256.
 
 #### Returns
@@ -37,7 +37,7 @@ Check The Integrity Of Single DDR.
 ```ts
 dataIntegrity.checkIntegritySingleDDR(
     "0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba",
-    "0001",
+    1,
     "0xf00814e2e916628483aef34d34f1f63cee0d8b67a2c7fbea160d2b5d188534c9"),
     .then(console.log);
 
