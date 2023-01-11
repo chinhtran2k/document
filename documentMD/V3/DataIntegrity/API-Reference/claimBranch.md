@@ -112,13 +112,13 @@ claim.getListAddressOfClaim()
 
 ---
 
-### getHashValueClaim
+### getHashValueClaimBranch
 
 ```ts
 claim.getHashValueClaim(accountDID);
 ```
 
-Get Hash Value Of Claim.
+Get Hash Value Of ClaimBranch Lock.
 
 #### Parameters
 
@@ -126,7 +126,7 @@ Get Hash Value Of Claim.
 
 #### Returns
 
-[!badge variant="danger" text="String"]: hash data was hashed claim lv1 by the keccak256.
+[!badge variant="danger" text="String"]: hash value of claimBranch lock.
 
 #### Example
 
@@ -139,10 +139,10 @@ claim.getHashValueClaim("0x9573Cda4F4f645764767561D1EF3b4b84647aC19").then(conso
 
 ---
 
-### getHashClaim
+### getHashDataClaim
 
 ```ts
-patient.getHashClaim(accountDID);
+patient.getHashDataClaim(accountDID);
 ```
 
 Get Claim Data.
@@ -153,7 +153,7 @@ Get Claim Data.
 
 #### Returns
 
-[!badge variant="warning" text="hashedValue"] - [!badge variant="warning" text="string"]: Hash claim lock
+[!badge variant="warning" text="hashedValue"] - [!badge variant="warning" text="string"]: hash data was hashed all claim of patientDID by the keccak256.
 #### Example
 
 ```ts
