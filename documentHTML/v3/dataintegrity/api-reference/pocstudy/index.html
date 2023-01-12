@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.726742173924">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.726811382625">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,12 +30,12 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../../resources/css/retype.css?v=2.4.0.726742173924" rel="stylesheet" />
+    <link href="../../../../resources/css/retype.css?v=2.4.0.726811382625" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../../resources/js/config.js?v=2.4.0.726742173924" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../../resources/js/config.js?v=2.4.0.726811382625" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../../resources/js/lunr.js?v=2.4.0.726742173924" data-turbo-eval="false" defer></script>
-    <script id="prism-js" type="text/javascript" src="../../../../resources/js/prism.js?v=2.4.0.726742173924" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../../resources/js/lunr.js?v=2.4.0.726811382625" data-turbo-eval="false" defer></script>
+    <script id="prism-js" type="text/javascript" src="../../../../resources/js/prism.js?v=2.4.0.726811382625" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -350,6 +350,165 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-typescript"><code v-pre class="language-typescript">pocStudy.getRootNodeIdPOCPatient().then(console.log);
 &gt; &quot;0xc9c0421f4fc69e49a6f8d43cade8d3768bb9968fc0b6c831170a4984933edf1e&quot;</code></pre>
+</doc-codeblock></div>
+<hr />
+<doc-anchor-target id="permamentlock">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#permamentlock">#</doc-anchor-trigger>
+        <span>permamentLock</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">ddr.permamentLock(privateKey, nonce?, isSimulate?);</code></pre>
+</doc-codeblock></div>
+<p>Permament Lock Owner.</p>
+<doc-anchor-target id="parameters-3">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameters-3">#</doc-anchor-trigger>
+        <span>Parameters</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>privateKey</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>string</span>
+</span> : Private key of contract creator(admin).</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>nonce</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>number</span>
+</span> (optional): The nonce of account.</li>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>isSimulate</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
+    <span>boolean</span>
+</span> (optional): Emulator status.</li>
+</ol>
+<doc-anchor-target id="returns-3">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-3">#</doc-anchor-trigger>
+        <span>Returns</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>receipt</span>
+</span> - <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>object</span>
+</span>: A transaction receipt object, or null if no receipt was found. (check receipt).</li>
+</ol>
+<doc-anchor-target id="example-3">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-3">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">pocStudy.mintPOCStudy('ggwp',
+        &quot;i am dev blockchain&quot;,
+        &quot;24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb&quot;)
+        .then(console.log);
+&gt; {
+   receipt: [
+    {
+      root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+      cumulativeGasUsed: 14798,
+      logsBloom: '0x00000000000000000080000400000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000001000000000000000000000000000000000000021000000000000000000800000000008000000000000000000000400000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000
+',
+      logs: [Array],
+      status: true,
+      transactionHash: '0xa2177f0130f344a8a0490428a3a7162c4a53038f748fca8e7b8bb32ecbb11d14',
+      transactionIndex: 0,
+      blockHash: '0x299c8a8869886b124ef1b4227982cfebdb15a83144e40492a867f7e29982e4d1',
+      blockNumber: 821897,
+      gasUsed: 14798,
+      contractAddress: null,
+      from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+      to: '0x23af3EEE7C48827dC9B0A92C01AA897591Bb447d'
+    },
+    {
+      root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+      cumulativeGasUsed: 29585,
+      logsBloom: '0x00000000000000000080000400000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000020000000000000000000800000000000000000000000000000000400000000000000000000000000000000000000000000000000010000000000000000000000000000000000001004080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000
+',
+      logs: [Array],
+      status: true,
+      transactionHash: '0x3ac0a39cb3979196f1975ef8f727f4fef35b2e12ae0e67850d2b067dc31ad52b',
+      transactionIndex: 1,
+      blockHash: '0x299c8a8869886b124ef1b4227982cfebdb15a83144e40492a867f7e29982e4d1',
+      blockNumber: 821897,
+      gasUsed: 14787,
+      contractAddress: null,
+      from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+      to: '0xCD7d5127a1B707Ff67d1Fb734eA5D0ff741e183b'
+    },
+    {
+      root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+      cumulativeGasUsed: 44383,
+      logsBloom: '0x00000000000000000080000400000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000020000000000000000000800000000000000000000000000000000400000000000000000000000000000000000400000000000000010000000000000000000000000000000010000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000
+',
+      logs: [Array],
+      status: true,
+      transactionHash: '0xffdef3bd6ebefcdebaa4aa610a4546f022549e128a25acf3ad2f3b8f217c48fa',
+      transactionIndex: 2,
+      blockHash: '0x299c8a8869886b124ef1b4227982cfebdb15a83144e40492a867f7e29982e4d1',
+      blockNumber: 821897,
+      gasUsed: 14798,
+      contractAddress: null,
+      from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+      to: '0x0A0fcEd3622c89A26Cfb8b6486aE48Ce3d8fBD67'
+    },
+    {
+      root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+      cumulativeGasUsed: 59159,
+      logsBloom: '0x00000000000000000080000400000000000000000000000010800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000020000000000000000000800000000000000000000000000000000400000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000008000000020000000000000000000000000000000000000000000000000000000000000000000
+',
+      logs: [Array],
+      status: true,
+      transactionHash: '0x59006a7c761624c64836201f8784970265d205e3301788e74f8db285235a13e5',
+      transactionIndex: 3,
+      blockHash: '0x299c8a8869886b124ef1b4227982cfebdb15a83144e40492a867f7e29982e4d1',
+      blockNumber: 821897,
+      gasUsed: 14776,
+      contractAddress: null,
+      from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+      to: '0x9976B36047FcE4d8A6b87235C8c86aDcb181e3B5'
+    },
+    {
+      root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+      cumulativeGasUsed: 73946,
+      logsBloom: '0x00000000000000000080000400000000000000000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000200020000000000000000000800000000000000000200000000000000400000000000000020000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000
+',
+      logs: [Array],
+      status: true,
+      transactionHash: '0x435dc1b2d6371b76cfa512802f76adfb29023b010f285245cc143c74d8b751cb',
+      transactionIndex: 4,
+      blockHash: '0x299c8a8869886b124ef1b4227982cfebdb15a83144e40492a867f7e29982e4d1',
+      blockNumber: 821897,
+      gasUsed: 14787,
+      contractAddress: null,
+      from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+      to: '0x2759c4BCcC1Dd45358ef8bc5F2c96b395791EF96'
+    },
+    {
+      root: '0x0000000000000000000000000000000000000000000000000000000000000000',
+      cumulativeGasUsed: 88744,
+      logsBloom: '0x00000000000000000080000400000000000000000000000000800080000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000020000000000000000000800000000000000000000000000000000400000000000000000000000000080000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000
+',
+      logs: [Array],
+      status: true,
+      transactionHash: '0xe559c735d9055dae2aa09162d38d9f9be26d112aa34a19894bd3567ad85886d6',
+      transactionIndex: 5,
+      blockHash: '0x299c8a8869886b124ef1b4227982cfebdb15a83144e40492a867f7e29982e4d1',
+      blockNumber: 821897,
+      gasUsed: 14798,
+      contractAddress: null,
+      from: '0x51C4B0487e16186da402daebE06C4cD71b5015c8',
+      to: '0xf06e8e01Ce9E463f8395529B4F006a2780d6969b'
+    }
+  ]
+}</code></pre>
 </doc-codeblock></div>
 
                                 
