@@ -13,7 +13,7 @@ This module for POCStudy lock level.
 ### mintPOCStudy
 
 ```ts
-ddr.mintPOCStudy(uri, message, privateKey, nonce?, isSimulate?);
+pocStudy.mintPOCStudy(uri, message, privateKey, nonce?, isSimulate?);
 ```
 
 Create POC
@@ -128,7 +128,7 @@ pocStudy.getRootNodeIdPOCPatient().then(console.log);
 ### permamentLock
 
 ```ts
-ddr.permamentLock(privateKey, nonce?, isSimulate?);
+pocStudy.permamentLock(privateKey, nonce?, isSimulate?);
 ```
 
 Permament Lock Owner.
@@ -146,10 +146,7 @@ Permament Lock Owner.
 #### Example
 
 ```ts
-pocStudy.mintPOCStudy('ggwp',
-        "i am dev blockchain",
-        "24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb")
-        .then(console.log);
+pocStudy.permamentLock("24118478a12cd8e910ec3ae69edc8bda17c70754dd00d13f28dda0aa0f8644bb").then(console.log);
 > {
    receipt: [
     {
