@@ -42,6 +42,7 @@ Check The Integrity Of Single DDR.
 dataIntegrity.checkIntegritySingleDDR(
     "0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba",
     1,
+    "001",
     "0xf00814e2e916628483aef34d34f1f63cee0d8b67a2c7fbea160d2b5d188534c9"),
     .then(console.log);
 
@@ -56,6 +57,7 @@ dataIntegrity.checkIntegritySingleClaim(
   accountDID,
   claimIssuer,
   claimKey,
+  claimValue,
   hashClaimOffChain,
 );
 ```
@@ -81,6 +83,7 @@ dataIntegrity.checkIntegritySingleClaim(
     "0x35Db94bf8f1773B71AA121ffDb9f527a0fe64bba",
     "0x6BCf373913ac17a3b0E58c23b3548D553e37b376",
     "ACCOUNT_TYPE",
+    "PATIENT",
     "0xb643a5262d05b758a3b8977bf5d3690c6b3622ca98391d8ff3131ef9f84d50db")
     .then(console.log);
 
