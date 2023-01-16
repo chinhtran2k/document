@@ -16,7 +16,9 @@ This module use for check integrity of data.
 dataIntegrity.checkIntegritySingleDDR(
   patientDID,
   tokenId,
+  ddrId,
   hashedData,
+  providerDID?
 );
 ```
 
@@ -26,7 +28,9 @@ Check The Integrity Of Single DDR.
 
 1. [!badge variant="warning" text="patientDID"] - [!badge variant="warning" text="string"]: DID Address of Patient was created which has owner owns the DDR.
 2. [!badge variant="warning" text="tokenId"] - [!badge variant="warning" text="number"]: tokenId of DDR.
-3. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data of DDR that was hashed by keccak256.
+3. [!badge variant="warning" text="ddrId"] - [!badge variant="warning" text="string"]: DID Id off-chain was sent from Pharumo.
+4. [!badge variant="warning" text="hashedData"] - [!badge variant="warning" text="string"]: The data of DDR that was hashed by keccak256.
+5. [!badge variant="warning" text="providerDID"] - [!badge variant="warning" text="number"] (optional): DID address of Provider, if exist then check ddr and ddr disclosure to provider lv1 else check ddr.
 
 #### Returns
 
@@ -63,7 +67,8 @@ Check The Integrity Of Single Claim.
 1. [!badge variant="warning" text="accountDID"] - [!badge variant="warning" text="string"]: Address of provider/patient was created from DID.
 2. [!badge variant="warning" text="claimIssuer"] - [!badge variant="warning" text="string"]: The issuer address of claim.
 3. [!badge variant="warning" text="claimKey"] - [!badge variant="warning" text="string"]: The claim key of claim.
-4. [!badge variant="warning" text="hashClaimOffChain"] - [!badge variant="warning" text="string"]: hash value off chain of claim from DB.
+4. [!badge variant="warning" text="claimValue"] - [!badge variant="warning" text="string"]: The claim value of claimKey.
+5. [!badge variant="warning" text="hashClaimOffChain"] - [!badge variant="warning" text="string"]: hash value off chain of claim from DB.
 
 #### Returns
 
